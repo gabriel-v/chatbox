@@ -1,0 +1,129 @@
+p {
+    font-size 16px; 
+}
+footer, header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    margin: 0px; 
+    vertical-align: center;
+    width: 100%;
+    padding: 10px;
+}
+header: {height: 15%; }
+footer {
+    float: bottom;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+body {
+    margin: 0px; 
+}
+
+#page-wrap {
+    height: 91vh;
+    width: 98vw;
+}
+
+#chat-wrap {
+    float: left;
+    width: 62%;
+    height: 65%;
+    border: 2px solid black;
+    margin: 1%;
+}
+
+#list-wrap {
+    float: right; 
+    height: 65%;
+    width: 32%;
+    border: 2px solid black;
+    margin: 1%;
+    text-align: center;
+}
+
+#chat-titlu {
+    height: 8%;
+    margin: 1%;
+    text-align: center;
+    color: black;
+}
+
+#zona-mesaje {
+    height: 74%;
+    margin: 1%;
+    border: 1px solid black;
+    overflow-y: auto;
+}
+
+#zona-trimitere {
+    position: relative;
+    height: 14%;
+}
+
+textarea { 
+    resize : none; 
+    vertical-align: center;
+}
+
+#casuta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    height: 14%;
+    width: 90%;
+    padding: 1%;
+
+    text-align: center;
+    margin: 3%;
+    border: 2px solid black;
+    font-size: 16px;
+    height: 21px;
+}
+
+.selectat {
+    text-decoration: underline;
+}
+.activ {
+    color: darkgreen;
+}
+.inactiv {
+    color: darkgray;
+}
+.mesaj-nou {
+    color: darkorange;
+}
+
+.mesajul-meu {
+    text-align: right;
+    padding-right: 10px;
+    color: darkblue;
+}
+
+.mesajul-lor {
+    text-align: left; 
+    padding-left: 10px;
+    color: darkgreen;
+}
+/* unvisited link */
+a:link {
+    color: lightblue;
+}
+
+/* visited link */
+a:visited {
+    color: lightblue;
+}
+
+/* mouse over link */
+a:hover {
+    color: lightgreen;
+}
+
+/* selected link */
+a:active {
+    color: orange;
+}
