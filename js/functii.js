@@ -5,7 +5,7 @@ var scroll_blocat = true;
 function trimite_ajax (date, func) { 
     $.ajax({
         type: 'POST',
-        url: "procese_ajax.php",
+        url: "php/procese_ajax.php",
         data: date,
         success: func,
         error: function(a, b, c) { 

@@ -8,7 +8,7 @@
   <title> CHATBOX </title>
 </head>
 
-<form name="form_inregistrare" method="post" action="creare_cont.php">
+<form name="form_inregistrare" method="post" action="php/creare_cont.php">
   <table width="500" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#eeeeee">
     <tr>
       <td colspan="3">

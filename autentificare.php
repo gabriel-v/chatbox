@@ -8,7 +8,7 @@
   <title> CHATBOX </title>
 </head>
 
-<form name="form_login" method="post" action="verifica_aut.php">
+<form name="form_login" method="post" action="php/verifica_aut.php">
   <table width="500" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#eeeeee">
     <tr>
       <td colspan="3"><h2 text-align="center">Autentificare</h2></td>
