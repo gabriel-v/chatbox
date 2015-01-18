@@ -71,6 +71,6 @@
 
   $_SESSION['ID'] = $id;
   $_SESSION['NUME'] = $nume;
-  redirect("home.php");
+  redirect("../home.php");
 ?>
 

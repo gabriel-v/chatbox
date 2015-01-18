@@ -1,7 +1,7 @@
 <?php
   session_start();
-  require_once("bd_functii.php");
-  require_once("functii.php");
+  require_once("php/bd_functii.php");
+  require_once("php/functii.php");
 
   if(!isset($_SESSION['NUME']) || !isset($_SESSION['ID'])) {
     redirect("autentificare.php");
@@ -15,8 +15,8 @@
     <title> CHATBOX </title>
     <link rel="stylesheet" href="style.css" type="text/css" /> 
 
-    <script src="jquery.min.js"></script>
-    <script src="functii.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/functii.js"></script>
     <script>
       $(function(){
           lista_utilizatori();
@@ -35,7 +35,7 @@
       <p>
       <?php 
         echo "Salut, $nume! #ID = $id.  <br />";
-        echo "IP-ul serverului: {$_SERVER['SERVER_ADDR']} <br />";
+        echo "IP-ul serverului: {$_SERVER['SERVER_ADDR']}.";
         echo "IP-ul tau:        {$_SERVER['REMOTE_ADDR']} <br />";
       ?>
       </p>

@@ -38,11 +38,11 @@
     // autentificare ok
     $_SESSION['ID'] =   $fetch['id'];
     $_SESSION['NUME'] = $fetch['nume'];
-    redirect("home.php");
+    redirect("../home.php");
   } else {
     // autentificare esuata
     $mesaje_erori[] = "AUTENTIFICARE ESUATA.";
     $_SESSION['ERORI'] = $mesaje_erori;
-    redirect("autentificare.php");
+    redirect("../autentificare.php");
   }
 ?>
