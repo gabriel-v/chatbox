@@ -24,7 +24,7 @@
 
   if(strlen($parola1) < 6){
     $avem_eroare = true;
-    $mesaje_erori[] = "Parola nu poate fi mai scurtă de 6 caractere. ";
+    $mesaje_erori[] = "Parola nu poate fi mai scurta de 6 caractere. ";
   }
 
   if($parola1 != $parola2) {

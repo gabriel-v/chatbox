@@ -36,7 +36,7 @@
       <?php 
         echo "Salut, $nume! #ID = $id.  <br />";
         echo "IP-ul serverului: {$_SERVER['SERVER_ADDR']} <br />";
-        echo "IP-ul tău:        {$_SERVER['REMOTE_ADDR']} <br />";
+        echo "IP-ul tau:        {$_SERVER['REMOTE_ADDR']} <br />";
       ?>
       </p>
       </header>
@@ -52,7 +52,7 @@
       <div id="list-wrap"></div>
 
       <footer> 
-      <h4> de Gabriel Vîjială </h4>
+      <h4> de Gabriel VIJIALA </h4>
       </footer>
 
     </div>

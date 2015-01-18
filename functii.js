@@ -20,7 +20,7 @@ function element_lista(u) {
 
 function actualizare_utilizator (u) {
     var p_id = "_u_"+u.nume;
-    if($('#' + p_id).length == 0) {
+    if($('#' + p_id).length === 0) {
         $('<p/>', {
             id: p_id,
             click: function(){ selecteaza(u); },
@@ -58,14 +58,14 @@ function tasta_jos(k) {
     if(!selectat || text.length >= $(this).attr('maxlength')) {
         event.preventDefault();
         $(this).val('');
-    } else if(k.keyCode == 13) {
+    } else if(k.keyCode === 13) {
         trimite(text);
         $(this).val('');
     }
 }
 
 function tasta_sus(k) {
-    if(k.keyCode == 13) {
+    if(k.keyCode === 13) {
         $(this).val('');
         event.preventDefault();
     }
@@ -90,7 +90,7 @@ function adauga_mesaj(text_mesaj, expeditor) {
     $('<p/>', {
         text: text_mesaj,
         id: 'mesaj',
-        class: (expeditor == selectat.id ? 'mesajul-lor': 'mesajul-meu'),
+        class: (expeditor === selectat.id ? 'mesajul-lor': 'mesajul-meu'),
     }).appendTo($('#zona-mesaje'));
 }
 

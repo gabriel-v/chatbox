@@ -1,16 +1,18 @@
 p {
-    font-size 16px; 
+    font-size: 16px; 
 }
 footer, header {
     background-color: #333;
     color: white;
     text-align: center;
     margin: 0px; 
-    vertical-align: center;
+    vertical-align: central;
     width: 100%;
     padding: 10px;
 }
-header: {height: 15%; }
+header {
+    height: 15%; 
+}
 footer {
     float: bottom;
     position: fixed;
@@ -65,7 +67,7 @@ body {
 
 textarea { 
     resize : none; 
-    vertical-align: center;
+    vertical-align: central;
 }
 
 #casuta {
