@@ -17,6 +17,7 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/functii.js"></script>
+
     <script>
       $(function(){
           lista_utilizatori();
@@ -25,7 +26,7 @@
       });
     </script>
   </head>
-  <body onload="setInterval('incarca_mesaje()', 1200)">
+  <body>
 
     <div id="page-wrap">
 

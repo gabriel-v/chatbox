@@ -2,6 +2,29 @@ var selectat = null;
 
 var scroll_blocat = true;
 
+var websocket = new WebSocket("ws://localhost:8080");
+websocket.onopen = function(data) {
+    console.log("Conexiune realizata cu succes: " + data);
+};
+websocket.onmessage = function(data) {
+    console.log("Primit mesaj: " + data);
+    
+    if(selectat && selectat.id === data.id_expeditor) {
+        adauga_mesaj(data.text_mesaj, data.id_expeditor);
+    } else {
+        element_lista(data.id_expeditor).addClass('mesaj_nou');
+        //TODO aranjamente pentru removeClass(online / offline)
+    }
+};
+websocket.onclose = function(data) {
+    console.log("Conexiunea se inchide: " + data);
+};
+websocket.onerror = function(data) {
+    console.error("Eroare in websocket: " + data);
+};
+
+
+
 function trimite_ajax (date, func) { 
     $.ajax({
         type: 'POST',
@@ -15,11 +38,11 @@ function trimite_ajax (date, func) {
 }
 
 function element_lista(u) {
-    return $("#_u_" + u.nume);
+    return $("#_u_" + u.id);
 }
 
 function actualizare_utilizator (u) {
-    var p_id = "_u_"+u.nume;
+    var p_id = "_u_"+u.id;
     if($('#' + p_id).length === 0) {
         $('<p/>', {
             id: p_id,
@@ -44,7 +67,8 @@ function lista_utilizatori() {
 function selecteaza(u) {
     $('#chat-titlu').text(u.nume);
     var p = element_lista(u);
-    if(selectat) element_lista(selectat).removeClass('selectat');
+    if(selectat) 
+        element_lista(selectat).removeClass('selectat');
     selectat = u;
     element_lista(selectat).addClass('selectat');
     $('#casuta').val('');
@@ -73,17 +97,19 @@ function tasta_sus(k) {
 
 
 function trimite(mesaj) {
-    trimite_ajax(
-            {
+    date = {
                 'operatie': 'trimitere',
                 'spre': selectat.id,
-                'text': mesaj, 
-            }, 
+                'text': mesaj
+            };
+    trimite_ajax(
+            date, 
             function(data) 
             { 
                 console.log(data); 
                 incarca_mesaje();
             });
+    websocket.send(date.toString());
 
 }
 function adauga_mesaj(text_mesaj, expeditor) {
