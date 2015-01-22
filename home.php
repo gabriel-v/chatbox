@@ -13,6 +13,7 @@
 <html>
   <head> 
     <title> CHATBOX </title>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="style.css" type="text/css" /> 
 
     <script src="js/jquery.min.js"></script>

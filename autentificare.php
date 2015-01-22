@@ -6,6 +6,7 @@
 <!DOCTYPE html>
 <head> 
   <title> CHATBOX </title>
+  <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
 </head>
 
 <form name="form_login" method="post" action="php/verifica_aut.php">
