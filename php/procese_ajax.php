@@ -20,7 +20,7 @@
       break;
 
     case "trimitere": 
-      $id_destinatar = $_POST['spre'];
+      $id_destinatar = $_POST['id_destinatar'];
       $text = $_POST['text'];
       $q  = "INSERT INTO mesaje (expeditor, destinatar, text, data, citit) ";
       $q .= "VALUES (?, ?, ?, ?, ?)";
@@ -36,8 +36,13 @@
 
       $raspuns = interogare_vector_bd($q, $arg);
       break;
+    
+    case "id_utilizator" :
+        $raspuns['id'] = $id;
+        $raspuns['nume'] = $nume;
+        break;
+    
     }
-
 /*    $fh = fopen("fisier.txt", 'a') or die("nu se poate deschide fisierul");
     fwrite($fh , print_r($raspuns, true) . "\n\n");
     fclose($fh); */

@@ -20,7 +20,7 @@
 
     <script>
       $(function(){
-          lista_utilizatori();
+          init();
           $('#casuta').keydown(tasta_jos);
           $('#casuta').keyup (tasta_sus);
       });

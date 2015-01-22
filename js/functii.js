@@ -1,19 +1,48 @@
 var selectat = null; 
-
+var utilizator = null;
 var scroll_blocat = true;
 
 var websocket = new WebSocket("ws://localhost:8080");
+
 websocket.onopen = function(data) {
-    console.log("Conexiune realizata cu succes: " + data);
+    trimite_ajax(
+            {
+                'operatie': 'id_utilizator'
+            }, 
+            function(data) {
+                data = $.parseJSON(data);
+                utilizator = data;
+                console.log("Gasit utilizator: " + data.nume + " id = " + data.id);
+                date_init = {
+                    'operatie': 'initializare',
+                    'id_utilizator': utilizator.id,
+                    'nume_utilizator': utilizator.nume
+                };
+                websocket.send(JSON.stringify(date_init));
+            });
+    console.log("Conexiune realizata cu succes: " + JSON.stringify(data));
 };
-websocket.onmessage = function(data) {
-    console.log("Primit mesaj: " + data);
+websocket.onmessage = function(raspuns) {
+   // data = JSON.parse(data);
+    text = raspuns.data;
+    console.log("Primit mesaj: " + raspuns.data);
+    data = JSON.parse(text);
     
-    if(selectat && selectat.id === data.id_expeditor) {
-        adauga_mesaj(data.text_mesaj, data.id_expeditor);
+    if(data.operatie === 'trimitere') {
+        if(selectat && selectat.id === data.id_expeditor) {
+            adauga_mesaj(data.text, data.id_expeditor);
+            console.log("Adaugat mesaj: conversatie curenta, text = " + data.text);
+        } else {
+            var element = element_lista(data.id_expeditor);
+            element.addClass('mesaj-nou');
+            
+            console.log("Adaugat mesaj: alta conversatie");
+        }
+    } else if (data.operatie === 'stare_utilizator') {
+        actualizare_utilizator({'id': data.id, 'stare': data.tip});
     } else {
-        element_lista(data.id_expeditor).addClass('mesaj_nou');
-        //TODO aranjamente pentru removeClass(online / offline)
+        console.error("Eroare (websocket.onmessage): \n\
+            data.operatie nu este de tipul cunoscut");
     }
 };
 websocket.onclose = function(data) {
@@ -22,7 +51,6 @@ websocket.onclose = function(data) {
 websocket.onerror = function(data) {
     console.error("Eroare in websocket: " + data);
 };
-
 
 
 function trimite_ajax (date, func) { 
@@ -37,8 +65,8 @@ function trimite_ajax (date, func) {
     });
 }
 
-function element_lista(u) {
-    return $("#_u_" + u.id);
+function element_lista(id) {
+    return $("#_u_" + id);
 }
 
 function actualizare_utilizator (u) {
@@ -47,8 +75,13 @@ function actualizare_utilizator (u) {
         $('<p/>', {
             id: p_id,
             click: function(){ selecteaza(u); },
-            text: u.nume,
+            text: u.nume
         }).appendTo($("div#list-wrap"));
+    }
+    if(u.stare === 'online') {
+        element_lista(u.id).addClass('online').removeClass('offline');
+    } else if(u.stare === 'offline') {
+        element_lista(u.id).removeClass('online').addClass('offline');
     }
 }
 
@@ -66,11 +99,11 @@ function lista_utilizatori() {
 
 function selecteaza(u) {
     $('#chat-titlu').text(u.nume);
-    var p = element_lista(u);
+    var p = element_lista(u.id);
     if(selectat) 
-        element_lista(selectat).removeClass('selectat');
+        element_lista(selectat.id).removeClass('selectat');
     selectat = u;
-    element_lista(selectat).addClass('selectat');
+    element_lista(selectat.id).addClass('selectat').removeClass('mesaj-nou');
     $('#casuta').val('');
     incarca_mesaje();
 }
@@ -95,29 +128,36 @@ function tasta_sus(k) {
     }
 }
 
-
 function trimite(mesaj) {
     date = {
                 'operatie': 'trimitere',
-                'spre': selectat.id,
+                'id_expeditor': utilizator.id,
+                'id_destinatar': selectat.id,
+                'nume_destinatar': selectat.nume,
                 'text': mesaj
             };
+    websocket.send(JSON.stringify(date));
+    adauga_mesaj(mesaj, utilizator.id);
+    //console.log("datele de trimis sunt " + JSON.stringify(date));
     trimite_ajax(
             date, 
             function(data) 
             { 
-                console.log(data); 
-                incarca_mesaje();
+               
+               // console.log("Mesaj trimis " + data); 
+               // incarca_mesaje();
             });
-    websocket.send(date.toString());
+    
 
 }
+
 function adauga_mesaj(text_mesaj, expeditor) {
     $('<p/>', {
         text: text_mesaj,
         id: 'mesaj',
-        class: (expeditor === selectat.id ? 'mesajul-lor': 'mesajul-meu'),
+        class: (expeditor === selectat.id ? 'mesajul-lor': 'mesajul-meu')
     }).appendTo($('#zona-mesaje'));
+    $('#zona-mesaje').scrollHeight = $('#zona-mesaje').scrollTop;
 }
 
 function incarca_mesaje() {
@@ -129,7 +169,7 @@ function incarca_mesaje() {
     trimite_ajax(
             {
                 'operatie': 'mesaje',
-                'cu': selectat.id,
+                'cu': selectat.id
             }, 
             function(data) {
                 data = $.parseJSON(data);
@@ -137,6 +177,10 @@ function incarca_mesaje() {
                     adauga_mesaj(data[i].text, data[i].expeditor);
                 }
             });
+}
+
+function init() {
+    lista_utilizatori();    
 }
 
 

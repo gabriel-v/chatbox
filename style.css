@@ -88,15 +88,17 @@ textarea {
 
 .selectat {
     text-decoration: underline;
+    font-weight: bold 
 }
-.activ {
+.online {
     color: darkgreen;
 }
-.inactiv {
+.offline {
     color: darkgray;
 }
 .mesaj-nou {
-    color: darkorange;
+    color: darkorange !important;
+    font-weight: bold !important;
 }
 
 .mesajul-meu {
