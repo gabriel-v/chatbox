@@ -66,7 +66,7 @@ class ChatListener implements MessageComponentInterface {
         switch($date['operatie']) {
             case 'trimitere': 
                 
-                $trimis = trimite_mesaj($date['id_destinatar'], $mesaj);
+                $trimis = $this->trimite_mesaj($date['id_destinatar'], $mesaj);
                 
                 if($trimis) {
                     echo "MESAJ [ {$this->legaturi[$resId]['nume']} --> {$date['nume_destinatar']} ]\n";
@@ -78,7 +78,7 @@ class ChatListener implements MessageComponentInterface {
                 break;
             
             case 'initializare': 
-                initializare_utilizator($expeditor, $date['id_utilizator'], $date['nume_utilizator']);
+                $this->initializare_utilizator($expeditor, $date['id_utilizator'], $date['nume_utilizator']);
                 break;
         }
 
