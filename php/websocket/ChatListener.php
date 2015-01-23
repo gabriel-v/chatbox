@@ -12,6 +12,17 @@ class ChatListener implements MessageComponentInterface {
         $this->clienti = new \SplObjectStorage;
         echo 'ChatListener initializat' ;
     }
+    
+    function trimite_mesaj($id_destinatar, $mesaj) {
+        $trimis = false;
+        foreach ($this->clienti as $client) {
+            if ($this->legaturi[$client->resourceId]['id'] === $id_destinatar) {
+                $client->send($mesaj);
+                $trimis = true;
+            }
+        }
+        return $trimis;
+    }
 
     public function onOpen(ConnectionInterface $conexiune) {
         // Store the new connection to send messages to later
@@ -27,18 +38,14 @@ class ChatListener implements MessageComponentInterface {
         $resId = $expeditor->resourceId;
         $date = json_decode($msg, true);
         
-        echo "onMessage($resId, $msg) : \n";
+        echo "onMessage($resId, $mesaj) : \n";
         
         print_r($date);
         switch($date['operatie']) {
             case 'trimitere': 
-                $trimis = false;
-                foreach ($this->clienti as $client) {
-                    if ($this->legaturi[$client->resourceId]['id'] === $date['id_destinatar']) {
-                        $client->send($msg);
-                        $trimis = true;
-                    }
-                }
+                
+                $trimis = trimite_mesaj($date['id_destinatar'], $mesaj);
+                
                 if($trimis) {
                     echo "MESAJ [ {$this->legaturi[$resId]['nume']} --> {$date['nume_destinatar']} ]\n";
                     echo "TEXT: {$date['text']}\n";
@@ -59,7 +66,7 @@ class ChatListener implements MessageComponentInterface {
                 $transmisie = array(
                     'id' => $date['id_utilizator'],
                     'operatie' => 'stare_utilizator',
-                    'tip' => 'online');
+                    'stare' => 'online');
                 $transmisie_text = json_encode($transmisie);
                 foreach($this->clienti as $client) {
                     if($expeditor !== $client) {
