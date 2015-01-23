@@ -2,55 +2,64 @@ var selectat = null;
 var utilizator = null;
 var scroll_blocat = true;
 
-var websocket = new WebSocket("ws://localhost:8080");
+var websocket = null;
 
-websocket.onopen = function(data) {
-    trimite_ajax(
-            {
-                'operatie': 'id_utilizator'
-            }, 
-            function(data) {
-                data = $.parseJSON(data);
-                utilizator = data;
-                console.log("Gasit utilizator: " + data.nume + " id = " + data.id);
-                date_init = {
-                    'operatie': 'initializare',
-                    'id_utilizator': utilizator.id,
-                    'nume_utilizator': utilizator.nume
-                };
-                websocket.send(JSON.stringify(date_init));
-            });
-    console.log("Conexiune realizata cu succes: " + JSON.stringify(data));
-};
-websocket.onmessage = function(raspuns) {
-   // data = JSON.parse(data);
-    text = raspuns.data;
-    console.log("Primit mesaj: " + raspuns.data);
-    data = JSON.parse(text);
+function init_websocket() {
+    websocket = new WebSocket("ws://" + window.location.hostname +":8080");
     
-    if(data.operatie === 'trimitere') {
-        if(selectat && selectat.id === data.id_expeditor) {
-            adauga_mesaj(data.text, data.id_expeditor);
-            console.log("Adaugat mesaj: conversatie curenta, text = " + data.text);
+    websocket.onopen = function(data) {
+        trimite_ajax(
+                {
+                    'operatie': 'id_utilizator'
+                }, 
+                function(data) {
+                    data = $.parseJSON(data);
+                    utilizator = data;
+                    console.log("Gasit utilizator: " + data.nume + " id = " + data.id);
+                    date_init = {
+                        'operatie': 'initializare',
+                        'id_utilizator': utilizator.id,
+                        'nume_utilizator': utilizator.nume
+                    };
+                    websocket.send(JSON.stringify(date_init));
+                    
+                });
+        $('#casuta').prop('disabled', false);
+        console.log("Conexiune realizata cu succes: " + JSON.stringify(data));
+    };
+    websocket.onmessage = function(raspuns) {
+       // data = JSON.parse(data);
+        text = raspuns.data;
+        console.log("Primit mesaj: " + raspuns.data);
+        data = JSON.parse(text);
+
+        if(data.operatie === 'trimitere') {
+            if(selectat && selectat.id === data.id_expeditor) {
+                adauga_mesaj(data.text, data.id_expeditor);
+            //    console.log("Adaugat mesaj: conversatie curenta, text = " + data.text);
+            } else {
+                var element = element_lista(data.id_expeditor);
+                element.addClass('mesaj-nou');
+
+             //   console.log("Adaugat mesaj: alta conversatie");
+            }
+        } else if (data.operatie === 'stare_utilizator') {
+            actualizare_utilizator({'id': data.id, 'stare': data.stare});
         } else {
-            var element = element_lista(data.id_expeditor);
-            element.addClass('mesaj-nou');
-            
-            console.log("Adaugat mesaj: alta conversatie");
+            console.error("Eroare (websocket.onmessage): \n\
+                data.operatie nu este de tipul cunoscut");
         }
-    } else if (data.operatie === 'stare_utilizator') {
-        actualizare_utilizator({'id': data.id, 'stare': data.tip});
-    } else {
-        console.error("Eroare (websocket.onmessage): \n\
-            data.operatie nu este de tipul cunoscut");
-    }
-};
-websocket.onclose = function(data) {
-    console.log("Conexiunea se inchide: " + data);
-};
-websocket.onerror = function(data) {
-    console.error("Eroare in websocket: " + data);
-};
+    };
+    websocket.onclose = function(data) {
+        console.log("Conexiunea se inchide: " + data);
+        $('#casuta').prop('disabled', true);
+    };
+    websocket.onerror = function(data) {
+        console.error("Eroare in websocket: " + data);
+    };
+    
+}
+
 
 
 function trimite_ajax (date, func) { 
@@ -181,7 +190,11 @@ function incarca_mesaje() {
 }
 
 function init() {
+    $('#casuta').prop('disabled', true);
+    init_websocket();
     lista_utilizatori();    
+    $('#casuta').keydown(tasta_jos);
+    $('#casuta').keyup (tasta_sus);
 }
 
 

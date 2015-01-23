@@ -22,8 +22,7 @@
     <script>
       $(function(){
           init();
-          $('#casuta').keydown(tasta_jos);
-          $('#casuta').keyup (tasta_sus);
+          
       });
     </script>
   </head>
