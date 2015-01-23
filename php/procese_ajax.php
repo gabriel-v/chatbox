@@ -15,7 +15,12 @@
   switch($operatie) {
 
     case "utilizatori": 
-      $q = "SELECT nume, id, activ FROM utilizatori WHERE id!=?";
+      $q = "SELECT nume, id, "
+            . "CASE activ "
+            . "WHEN 1 THEN 'online' "
+            . "WHEN 0 THEN 'offline' "
+            . "END CASE AS \"stare\" "
+            . "FROM utilizatori WHERE id!=?";
       $raspuns = interogare_vector_bd($q, $id);
       break;
 
