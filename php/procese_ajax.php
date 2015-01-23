@@ -19,9 +19,9 @@
             . "CASE activ "
             . "WHEN 1 THEN 'online' "
             . "WHEN 0 THEN 'offline' "
-            . "END CASE AS \"stare\" "
+            . "END AS \"stare\" "
             . "FROM utilizatori WHERE id!=?";
-      $raspuns = interogare_vector_bd($q, $id);
+      $raspuns = interogare_vector_bd($q, $id); 
       break;
 
     case "trimitere": 
