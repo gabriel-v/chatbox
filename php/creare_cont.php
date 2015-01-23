@@ -8,7 +8,7 @@
     redirect("../inregistrare.php");
   }
 
-  function exista_utilizator($nume){
+  function exista_utilizator($nume) {
     $f = interogare_bd("SELECT COUNT(*) FROM utilizatori WHERE nume=?", $nume);
     return $f['COUNT(*)'] >= 1;
   }
