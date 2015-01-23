@@ -99,7 +99,7 @@ function lista_utilizatori() {
 
 function selecteaza(u) {
     $('#chat-titlu').text(u.nume);
-    var p = element_lista(u.id);
+    //var p = element_lista(u.id);
     if(selectat) 
         element_lista(selectat.id).removeClass('selectat');
     selectat = u;
@@ -157,7 +157,8 @@ function adauga_mesaj(text_mesaj, expeditor) {
         id: 'mesaj',
         class: (expeditor === selectat.id ? 'mesajul-lor': 'mesajul-meu')
     }).appendTo($('#zona-mesaje'));
-    $('#zona-mesaje').scrollHeight = $('#zona-mesaje').scrollTop;
+    //$('#zona-mesaje').scrollHeight = $('#zona-mesaje').scrollTop;
+    $("#zona-mesaje").animate({ scrollTop: $('#zona-mesaje')[0].scrollHeight}, 150);
 }
 
 function incarca_mesaje() {
