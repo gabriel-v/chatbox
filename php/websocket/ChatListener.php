@@ -23,6 +23,28 @@ class ChatListener implements MessageComponentInterface {
         }
         return $trimis;
     }
+    
+    function initializare_utilizator($utilizator, $id, $nume) {
+        
+    
+        $this->legaturi[$utilizator->resourceId] = array(
+            'id' => $id, 
+            'nume'=> $nume);
+
+        //TODO baze de date: login
+
+        $transmisie = array(
+            'id' => $id,
+            'operatie' => 'stare_utilizator',
+            'stare' => 'online');
+        $transmisie_text = json_encode($transmisie);
+        foreach($this->clienti as $client) {
+            if($utilizator !== $client) {
+                $client->send($transmisie_text);
+            }
+        }
+        
+    }
 
     public function onOpen(ConnectionInterface $conexiune) {
         // Store the new connection to send messages to later
@@ -33,10 +55,10 @@ class ChatListener implements MessageComponentInterface {
         echo "\n";
     }
 
-    public function onMessage(ConnectionInterface $expeditor, $msg) {
+    public function onMessage(ConnectionInterface $expeditor, $mesaj) {
         
         $resId = $expeditor->resourceId;
-        $date = json_decode($msg, true);
+        $date = json_decode($mesaj, true);
         
         echo "onMessage($resId, $mesaj) : \n";
         
@@ -56,23 +78,7 @@ class ChatListener implements MessageComponentInterface {
                 break;
             
             case 'initializare': 
-                $date_utilizator = array(
-                    'id' => $date['id_utilizator'], 
-                    'nume'=> $date['nume_utilizator']);
-                $this->legaturi[$expeditor->resourceId] = $date_utilizator;
-                
-                //TODO baze de date: login
-
-                $transmisie = array(
-                    'id' => $date['id_utilizator'],
-                    'operatie' => 'stare_utilizator',
-                    'stare' => 'online');
-                $transmisie_text = json_encode($transmisie);
-                foreach($this->clienti as $client) {
-                    if($expeditor !== $client) {
-                        $client->send($transmisie_text);
-                    }
-                }
+                initializare_utilizator($expeditor, $date['id_utilizator'], $date['nume_utilizator']);
                 break;
         }
 
