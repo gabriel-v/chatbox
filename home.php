@@ -13,19 +13,21 @@
 <html>
   <head> 
     <title> CHATBOX </title>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
     <link rel="stylesheet" href="style.css" type="text/css" /> 
 
     <script src="js/jquery.min.js"></script>
     <script src="js/functii.js"></script>
+
     <script>
       $(function(){
-          lista_utilizatori();
+          init();
           $('#casuta').keydown(tasta_jos);
           $('#casuta').keyup (tasta_sus);
       });
     </script>
   </head>
-  <body onload="setInterval('incarca_mesaje()', 1200)">
+  <body>
 
     <div id="page-wrap">
 
