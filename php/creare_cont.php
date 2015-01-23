@@ -5,7 +5,7 @@
 
   function afiseaza_eroare($m) {
     $_SESSION['ERORI'] = $m;
-    redirect("inregistrare.php");
+    redirect("../inregistrare.php");
   }
 
   function exista_utilizator($nume){
