@@ -30,11 +30,11 @@
     echo "</table>";
   }   
   
-$user_agent     =   $_SERVER['HTTP_USER_AGENT'];
+
 
 function gaseste_sistem_operare() { 
 
-    global $user_agent;
+    $user_agent     =   $_SERVER['HTTP_USER_AGENT'];
 
     $os_platform    =   "Unknown OS Platform";
 
@@ -77,7 +77,7 @@ function gaseste_sistem_operare() {
 
 function gaseste_browser() {
 
-    global $user_agent;
+    $user_agent     =   $_SERVER['HTTP_USER_AGENT'];
 
     $browser        =   "Unknown Browser";
 
