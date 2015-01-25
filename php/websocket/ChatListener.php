@@ -4,7 +4,7 @@ namespace Chatbox;
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
-require '../db_functii.php';
+require '../bd_functii.php';
 
 class ChatListener implements MessageComponentInterface {
     protected $clienti;
@@ -33,7 +33,7 @@ class ChatListener implements MessageComponentInterface {
             'id' => $id, 
             'nume'=> $nume);
 
-        //TODO baze de date: login
+        //TODO baze de date: generare sesiune
 
         $transmisie = array(
             'id' => $id,
