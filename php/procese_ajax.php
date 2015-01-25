@@ -49,9 +49,33 @@
       inserare_bd($q, $arg);
       break;
     
-    case "id_utilizator" :
+    case "sesiune_noua" :
         $raspuns['id'] = $id;
         $raspuns['nume'] = $nume;
+        $q = "SELECT COUNT(*) FROM sesiuni";
+        $numar_sesiuni = interogare_bd($q)['COUNT(*)'];
+        
+        
+        $cheie = hash('sha256', rand(), false) 
+                . hash('sha256', $numar_sesiuni, false);
+                         
+        
+        $q = "INSERT INTO sesiuni "
+                . "(cheie_sesiune, id_utilizator, inceput, adresa_ip, browser, platforma) "
+                . "VALUES (?, ?, ?, ?, ?, ?)";
+        $date_sesiune = array(
+            $cheie, 
+            $id, 
+            acum(), 
+            $_SERVER['REMOTE_ADDR'], 
+            gaseste_browser(), 
+            gaseste_sistem_operare()
+        );
+        
+        inserare_bd($q, $date_sesiune);
+        
+        $raspuns['cheie_sesiune'] = $cheie;
+        
         break;
     
     }
