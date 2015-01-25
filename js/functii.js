@@ -10,7 +10,7 @@ function init_websocket() {
     websocket.onopen = function(data) {
         trimite_ajax(
                 {
-                    'operatie': 'id_utilizator'
+                    'operatie': 'sesiune_noua'
                 }, 
                 function(data) {
                     data = $.parseJSON(data);
@@ -18,8 +18,7 @@ function init_websocket() {
                     console.log("Gasit utilizator: " + data.nume + " id = " + data.id);
                     date_init = {
                         'operatie': 'initializare',
-                        'id_utilizator': utilizator.id,
-                        'nume_utilizator': utilizator.nume
+                        'cheie': utilizator.cheie_sesiune,
                     };
                     websocket.send(JSON.stringify(date_init));
                     
