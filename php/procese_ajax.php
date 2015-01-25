@@ -36,14 +36,14 @@
     case "mesaje": 
       $id2 = $_POST['cu'];
       $q = "SELECT * FROM mesaje "
-              . "WHERE ( expeditor=:id AND destinatar=:id2 ) "
-              . "OR ( expeditor=:id2 AND destinatar=:id )";
+              . "WHERE ( id_expeditor=:id AND id_destinatar=:id2 ) "
+              . "OR ( id_expeditor=:id2 AND id_destinatar=:id )";
       $arg = array('id' => $id, 'id2' => $id2);
 
       $raspuns = interogare_vector_bd($q, $arg);
       
       $q = "UPDATE mesaje SET citit = 1 "
-              . "WHERE  expeditor=:id2 AND destinatar=:id  "
+              . "WHERE  id_expeditor=:id2 AND id_destinatar=:id  "
               . "AND citit = 0";
       //$raspuns['update'] = inserare_bd($q, $arg);
       inserare_bd($q, $arg);

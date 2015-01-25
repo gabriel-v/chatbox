@@ -6,8 +6,8 @@ USE `chat`;
 DROP TABLE IF EXISTS `mesaje`;
 CREATE TABLE IF NOT EXISTS `mesaje` (
   `id_mesaj` bigint(20) unsigned NOT NULL,
-  `expeditor` bigint(20) NOT NULL,
-  `destinatar` bigint(20) NOT NULL,
+  `id_expeditor` bigint(20) NOT NULL,
+  `id_destinatar` bigint(20) NOT NULL,
   `text` text CHARACTER SET utf16 COLLATE utf16_romanian_ci NOT NULL,
   `data` datetime NOT NULL,
   `citit` tinyint(1) NOT NULL
