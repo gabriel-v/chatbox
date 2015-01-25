@@ -4,6 +4,8 @@ namespace Chatbox;
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
+require '../bd_functii.php';
+
 class ChatListener implements MessageComponentInterface {
     protected $clienti;
     protected $legaturi = array(0 => null); // resID => array(nume=> .. , id => .. )
@@ -11,6 +13,60 @@ class ChatListener implements MessageComponentInterface {
     public function __construct() {
         $this->clienti = new \SplObjectStorage;
         echo 'ChatListener initializat' ;
+    }
+    
+    function trimite_mesaj($id_destinatar, $mesaj) {
+        $trimis = false;
+        foreach ($this->clienti as $client) {
+            if ($this->legaturi[$client->resourceId]['id'] === $id_destinatar) {
+                $client->send($mesaj);
+                $trimis = true;
+            }
+        }
+        return $trimis;
+    }
+    
+    function initializeaza_sesiune($utilizator, $id, $nume) {
+        
+    
+        $this->legaturi[$utilizator->resourceId] = array(
+            'id' => $id, 
+            'nume'=> $nume);
+
+        //TODO baze de date: generare sesiune
+
+        $transmisie = array(
+            'id' => $id,
+            'operatie' => 'stare_utilizator',
+            'stare' => 'online');
+        $transmisie_text = json_encode($transmisie);
+        foreach($this->clienti as $client) {
+            if($utilizator !== $client) {
+                $client->send($transmisie_text);
+            }
+        }
+        
+        $q = "UPDATE utilizatori SET activ = 1 WHERE id = ?";
+        inserare_bd($q, $id);
+        
+    }
+    
+    function sfarseste_sesiune($conexiune, $id, $nume) {
+        
+        $transmisie = array(
+                    'id' => $id,
+                    'operatie' => 'stare_utilizator',
+                    'tip' => 'online');
+        
+        $transmisie_text = json_encode($transmisie);
+        foreach($this->clienti as $client) {
+            if($conexiune !== $client) {
+                $client->send($transmisie_text);
+            }
+        }
+        
+        $q = "UPDATE utilizatori SET activ = 0 WHERE id = ?";
+        inserare_bd($q, $id);
     }
 
     public function onOpen(ConnectionInterface $conexiune) {
@@ -22,23 +78,19 @@ class ChatListener implements MessageComponentInterface {
         echo "\n";
     }
 
-    public function onMessage(ConnectionInterface $expeditor, $msg) {
+    public function onMessage(ConnectionInterface $expeditor, $mesaj) {
         
         $resId = $expeditor->resourceId;
-        $date = json_decode($msg, true);
+        $date = json_decode($mesaj, true);
         
-        echo "onMessage($resId, $msg) : \n";
+        echo "onMessage($resId, $mesaj) : \n";
         
         print_r($date);
         switch($date['operatie']) {
             case 'trimitere': 
-                $trimis = false;
-                foreach ($this->clienti as $client) {
-                    if ($this->legaturi[$client->resourceId]['id'] === $date['id_destinatar']) {
-                        $client->send($msg);
-                        $trimis = true;
-                    }
-                }
+                
+                $trimis = $this->trimite_mesaj($date['id_destinatar'], $mesaj);
+                
                 if($trimis) {
                     echo "MESAJ [ {$this->legaturi[$resId]['nume']} --> {$date['nume_destinatar']} ]\n";
                     echo "TEXT: {$date['text']}\n";
@@ -49,23 +101,7 @@ class ChatListener implements MessageComponentInterface {
                 break;
             
             case 'initializare': 
-                $date_utilizator = array(
-                    'id' => $date['id_utilizator'], 
-                    'nume'=> $date['nume_utilizator']);
-                $this->legaturi[$expeditor->resourceId] = $date_utilizator;
-                
-                //TODO baze de date: login
-
-                $transmisie = array(
-                    'id' => $date['id_utilizator'],
-                    'operatie' => 'stare_utilizator',
-                    'tip' => 'online');
-                $transmisie_text = json_encode($transmisie);
-                foreach($this->clienti as $client) {
-                    if($expeditor !== $client) {
-                        $client->send($transmisie_text);
-                    }
-                }
+                $this->initializeaza_sesiune($expeditor, $date['id_utilizator'], $date['nume_utilizator']);
                 break;
         }
 
@@ -77,23 +113,15 @@ class ChatListener implements MessageComponentInterface {
         $this->clienti->detach($conexiune);
         
         //TODO: baza de date - offline
+        $id = $this->legaturi[$conexiune->resourceId]['id'];
+        $nume = $this->legaturi[$conexiune->resourceId]['nume'];
         
-        $transmisie = array(
-                    'id' => $this->legaturi[$conexiune->resourceId]['id'],
-                    'operatie' => 'stare_utilizator',
-                    'tip' => 'online');
-        
-        $transmisie_text = json_encode($transmisie);
-        foreach($this->clienti as $client) {
-            if($conexiune !== $client) {
-                $client->send($transmisie_text);
-            }
-        }
+        $this->sfarseste_sesiune($conexiune, $id, $nume);
 
         echo "Conexiunea [ \n\t"
         . "resId={$conexiune->resourceId}, \n\t"
-        . "nume={$this->legaturi[$conexiune->resourceId]['nume']}, \n\t"
-        . "id={$this->legaturi[$conexiune->resourceId]['id']} \n s-a sfarsit. \n";
+        . "nume=$nume, \n\t"
+        . "id=$id \n s-a sfarsit. \n";
         
         unset($this->legaturi[$conexiune->resourceId]);
     }

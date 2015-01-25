@@ -15,8 +15,13 @@
   switch($operatie) {
 
     case "utilizatori": 
-      $q = "SELECT nume, id, activ FROM utilizatori WHERE id!=?";
-      $raspuns = interogare_vector_bd($q, $id);
+      $q = "SELECT nume, id, "
+            . "CASE activ "
+            . "WHEN 1 THEN 'online' "
+            . "WHEN 0 THEN 'offline' "
+            . "END AS \"stare\" "
+            . "FROM utilizatori WHERE id!=?";
+      $raspuns = interogare_vector_bd($q, $id); 
       break;
 
     case "trimitere": 
@@ -30,11 +35,18 @@
 
     case "mesaje": 
       $id2 = $_POST['cu'];
-      $q = "SELECT * FROM mesaje WHERE ( expeditor=:id AND destinatar=:id2 )";
-      $q.= " OR ( expeditor=:id2 AND destinatar=:id )";
+      $q = "SELECT * FROM mesaje "
+              . "WHERE ( expeditor=:id AND destinatar=:id2 ) "
+              . "OR ( expeditor=:id2 AND destinatar=:id )";
       $arg = array('id' => $id, 'id2' => $id2);
 
       $raspuns = interogare_vector_bd($q, $arg);
+      
+      $q = "UPDATE mesaje SET citit = 1 "
+              . "WHERE  expeditor=:id2 AND destinatar=:id  "
+              . "AND citit = 0";
+      //$raspuns['update'] = inserare_bd($q, $arg);
+      inserare_bd($q, $arg);
       break;
     
     case "id_utilizator" :

@@ -25,7 +25,7 @@
 
   if($avem_eroare == true) {
     $_SESSION['ERORI'] = $mesaje_erori;
-    redirect("autentificare.php");
+    redirect("../autentificare.php");
   }
 
   conectare_baza_date();

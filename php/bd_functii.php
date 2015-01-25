@@ -25,9 +25,10 @@
     global $_H_;
 
     if(! $_H_) {
-      echo "<h1> EROARE: NU S-A FACUT CONEXIUNEA LA BAZA DE DATE! </h1>";
-      debug_print_backtrace();
-      exit();
+      //echo "<h1> EROARE: NU S-A FACUT CONEXIUNEA LA BAZA DE DATE! </h1>";
+      //debug_print_backtrace();
+      //exit();
+       conectare_baza_date();
     }
     $STH = $_H_->prepare($q_str);
     $STH->setFetchMode(PDO::FETCH_ASSOC);
@@ -41,11 +42,11 @@
         $STH->execute($argument);
       } else {
         // argumentul este un element, treci doar elementul
-        if(preg_match('/[*\']/', $argument)) {
+       /* if(preg_match('/[*\']/', $argument)) {
           echo "<h1> EROARE: ARGUMENT NEVALID PENTRU: <br />" . 
             "interogare_bd($q_str, $argument) !!! </h1>";
-          exit();
-        }
+          exit(); 
+        }*/
         $STH->execute(array($argument));
       }
     }
@@ -65,7 +66,7 @@
   function interogare_vector_bd($q_str, $argument = null) {
     $STH = genereaza_STH_bd($q_str, $argument);
     $vector = array();
-    while($x = $STH->fetch()) $vector[] = $x;
+    while($x = $STH->fetch()) { $vector[] = $x; }
     return $vector;
   }
 
