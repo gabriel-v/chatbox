@@ -59,6 +59,10 @@ function init_websocket() {
     
 }
 
+function logout() {
+    websocket.close();
+    window.location.href = 'autentificare.php';
+}
 
 
 function trimite_ajax (date, func) { 
