@@ -26,7 +26,7 @@ class ChatListener implements MessageComponentInterface {
         return $trimis;
     }
     
-    function initializare_utilizator($utilizator, $id, $nume) {
+    function initializeaza_sesiune($utilizator, $id, $nume) {
         
     
         $this->legaturi[$utilizator->resourceId] = array(
@@ -49,6 +49,24 @@ class ChatListener implements MessageComponentInterface {
         $q = "UPDATE utilizatori SET activ = 1 WHERE id = ?";
         inserare_bd($q, $id);
         
+    }
+    
+    function sfarseste_sesiune($conexiune, $id, $nume) {
+        
+        $transmisie = array(
+                    'id' => $id,
+                    'operatie' => 'stare_utilizator',
+                    'tip' => 'online');
+        
+        $transmisie_text = json_encode($transmisie);
+        foreach($this->clienti as $client) {
+            if($conexiune !== $client) {
+                $client->send($transmisie_text);
+            }
+        }
+        
+        $q = "UPDATE utilizatori SET activ = 0 WHERE id = ?";
+        inserare_bd($q, $id);
     }
 
     public function onOpen(ConnectionInterface $conexiune) {
@@ -83,7 +101,7 @@ class ChatListener implements MessageComponentInterface {
                 break;
             
             case 'initializare': 
-                $this->initializare_utilizator($expeditor, $date['id_utilizator'], $date['nume_utilizator']);
+                $this->initializeaza_sesiune($expeditor, $date['id_utilizator'], $date['nume_utilizator']);
                 break;
         }
 
@@ -96,24 +114,13 @@ class ChatListener implements MessageComponentInterface {
         
         //TODO: baza de date - offline
         $id = $this->legaturi[$conexiune->resourceId]['id'];
-        $transmisie = array(
-                    'id' => $id,
-                    'operatie' => 'stare_utilizator',
-                    'tip' => 'online');
+        $nume = $this->legaturi[$conexiune->resourceId]['nume'];
         
-        $transmisie_text = json_encode($transmisie);
-        foreach($this->clienti as $client) {
-            if($conexiune !== $client) {
-                $client->send($transmisie_text);
-            }
-        }
-        
-        $q = "UPDATE utilizatori SET activ = 1 WHERE id = ?";
-        inserare_bd($q, $id);
+        $this->sfarseste_sesiune($conexiune, $id, $nume);
 
         echo "Conexiunea [ \n\t"
         . "resId={$conexiune->resourceId}, \n\t"
-        . "nume={$this->legaturi[$conexiune->resourceId]['nume']}, \n\t"
+        . "nume=$nume, \n\t"
         . "id=$id \n s-a sfarsit. \n";
         
         unset($this->legaturi[$conexiune->resourceId]);
