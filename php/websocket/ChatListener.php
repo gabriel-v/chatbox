@@ -4,6 +4,8 @@ namespace Chatbox;
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
+require '../db_functii.php';
+
 class ChatListener implements MessageComponentInterface {
     protected $clienti;
     protected $legaturi = array(0 => null); // resID => array(nume=> .. , id => .. )
@@ -43,6 +45,9 @@ class ChatListener implements MessageComponentInterface {
                 $client->send($transmisie_text);
             }
         }
+        
+        $q = "UPDATE utilizatori SET activ = 1 WHERE id = ?";
+        inserare_bd($q, $id);
         
     }
 
@@ -90,9 +95,9 @@ class ChatListener implements MessageComponentInterface {
         $this->clienti->detach($conexiune);
         
         //TODO: baza de date - offline
-        
+        $id = $this->legaturi[$conexiune->resourceId]['id'];
         $transmisie = array(
-                    'id' => $this->legaturi[$conexiune->resourceId]['id'],
+                    'id' => $id,
                     'operatie' => 'stare_utilizator',
                     'tip' => 'online');
         
@@ -102,11 +107,14 @@ class ChatListener implements MessageComponentInterface {
                 $client->send($transmisie_text);
             }
         }
+        
+        $q = "UPDATE utilizatori SET activ = 1 WHERE id = ?";
+        inserare_bd($q, $id);
 
         echo "Conexiunea [ \n\t"
         . "resId={$conexiune->resourceId}, \n\t"
         . "nume={$this->legaturi[$conexiune->resourceId]['nume']}, \n\t"
-        . "id={$this->legaturi[$conexiune->resourceId]['id']} \n s-a sfarsit. \n";
+        . "id=$id \n s-a sfarsit. \n";
         
         unset($this->legaturi[$conexiune->resourceId]);
     }
