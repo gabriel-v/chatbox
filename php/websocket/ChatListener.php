@@ -66,7 +66,7 @@ class ChatListener implements MessageComponentInterface {
         $transmisie = array(
                     'id' => $id,
                     'operatie' => 'stare_utilizator',
-                    'tip' => 'online');
+                    'tip' => 'offline');
         
         $transmisie_text = json_encode($transmisie);
         foreach($this->clienti as $client) {
@@ -79,7 +79,7 @@ class ChatListener implements MessageComponentInterface {
         inserare_bd($q, $id);
         
         $q = "UPDATE sesiuni SET sfarsit = ? WHERE cheie_sesiune = ?";
-        inserare_bd($q, array(acum(), $cheie));
+        inserare_bd($q, array(\acum(), $cheie));
         
     }
 
