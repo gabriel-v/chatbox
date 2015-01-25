@@ -34,7 +34,7 @@ function init_websocket() {
 
         if(data.operatie === 'trimitere') {
             if(selectat && selectat.id === data.id_expeditor) {
-                adauga_mesaj(data.text, data.id_expeditor);
+                adauga_mesaj(data.text, "primit");
             //    console.log("Adaugat mesaj: conversatie curenta, text = " + data.text);
             } else {
                 var element = element_lista(data.id_expeditor);
@@ -125,7 +125,7 @@ function tasta_jos(k) {
     text = $.trim(text);
 
     if(!selectat || text.length >= $(this).attr('maxlength')) {
-        event.preventDefault();
+        k.preventDefault();
         $(this).val('');
     } else if(k.keyCode === 13) {
         trimite(text);
@@ -136,20 +136,19 @@ function tasta_jos(k) {
 function tasta_sus(k) {
     if(k.keyCode === 13) {
         $(this).val('');
-        event.preventDefault();
+        k.preventDefault();
     }
 }
 
 function trimite(mesaj) {
     date = {
                 'operatie': 'trimitere',
-                'id_expeditor': utilizator.id,
                 'id_destinatar': selectat.id,
                 'nume_destinatar': selectat.nume,
                 'text': mesaj
             };
     websocket.send(JSON.stringify(date));
-    adauga_mesaj(mesaj, utilizator.id);
+    adauga_mesaj(mesaj, "trimis");
     //console.log("datele de trimis sunt " + JSON.stringify(date));
     trimite_ajax(
             date, 
@@ -163,11 +162,11 @@ function trimite(mesaj) {
 
 }
 
-function adauga_mesaj(text_mesaj, expeditor) {
+function adauga_mesaj(text_mesaj, tip_mesaj) {
     $('<p/>', {
         text: text_mesaj,
         id: 'mesaj',
-        class: (expeditor === selectat.id ? 'mesajul-lor': 'mesajul-meu')
+        class: (tip_mesaj === 'primit' ? 'mesaj-primit': 'mesaj-trimis')
     }).appendTo($('#zona-mesaje'));
     //$('#zona-mesaje').scrollHeight = $('#zona-mesaje').scrollTop;
     $("#zona-mesaje").animate({ scrollTop: $('#zona-mesaje')[0].scrollHeight}, 150);
@@ -187,7 +186,8 @@ function incarca_mesaje() {
             function(data) {
                 data = $.parseJSON(data);
                 for(var i = 0; i<data.length; i++) {
-                    adauga_mesaj(data[i].text, data[i].expeditor);
+                    adauga_mesaj(data[i].text, 
+                        (data[i].id_expeditor === selectat.id ? 'primit' : 'trimis'));
                 }
             });
 }
@@ -198,6 +198,7 @@ function init() {
     lista_utilizatori();    
     $('#casuta').keydown(tasta_jos);
     $('#casuta').keyup (tasta_sus);
+    
 }
 
 

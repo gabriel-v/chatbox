@@ -101,13 +101,13 @@ textarea {
     font-weight: bold !important;
 }
 
-.mesajul-meu {
+.mesaj-trimis {
     text-align: right;
     padding-right: 10px;
     color: darkblue;
 }
 
-.mesajul-lor {
+.mesaj-primit {
     text-align: left; 
     padding-left: 10px;
     color: darkgreen;

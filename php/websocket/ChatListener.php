@@ -16,11 +16,14 @@ class ChatListener implements MessageComponentInterface {
         echo 'ChatListener initializat' ;
     }
     
-    function trimite_mesaj($id_destinatar, $mesaj) {
+    function trimite_mesaj($expeditor, $mesaj) {
         $trimis = false;
+        $mesaj['id_expeditor'] = $this->legaturi[$expeditor->resourceId]['id'];
         foreach ($this->clienti as $client) {
-            if ($this->legaturi[$client->resourceId]['id'] === $id_destinatar) {
-                $client->send($mesaj);
+            if ($this->legaturi[$client->resourceId]['id'] === $mesaj['id_destinatar'] || 
+                    ($this->legaturi[$client->resourceId]['id'] === $mesaj['id_expeditor'] &&
+                    $client != $expeditor)) {
+                $client->send(json_encode($mesaj));
                 $trimis = true;
             }
         }
@@ -66,7 +69,7 @@ class ChatListener implements MessageComponentInterface {
         $transmisie = array(
                     'id' => $id,
                     'operatie' => 'stare_utilizator',
-                    'tip' => 'offline');
+                    'stare' => 'offline');
         
         $transmisie_text = json_encode($transmisie);
         foreach($this->clienti as $client) {
@@ -103,7 +106,7 @@ class ChatListener implements MessageComponentInterface {
         switch($date['operatie']) {
             case 'trimitere': 
                 
-                $trimis = $this->trimite_mesaj($date['id_destinatar'], $mesaj);
+                $trimis = $this->trimite_mesaj($expeditor, $date);
                 
                 if($trimis) {
                     echo "MESAJ [ {$this->legaturi[$resId]['nume']} --> {$date['nume_destinatar']} ]\n";
