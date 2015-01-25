@@ -5,6 +5,7 @@ use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
 require '../bd_functii.php';
+require '../functii.php';
 
 class ChatListener implements MessageComponentInterface {
     protected $clienti;
