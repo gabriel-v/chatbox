@@ -36,22 +36,68 @@
     case "mesaje": 
       $id2 = $_POST['cu'];
       $q = "SELECT * FROM mesaje "
-              . "WHERE ( expeditor=:id AND destinatar=:id2 ) "
-              . "OR ( expeditor=:id2 AND destinatar=:id )";
+              . "WHERE ( id_expeditor=:id AND id_destinatar=:id2 ) "
+              . "OR ( id_expeditor=:id2 AND id_destinatar=:id )";
       $arg = array('id' => $id, 'id2' => $id2);
 
       $raspuns = interogare_vector_bd($q, $arg);
       
       $q = "UPDATE mesaje SET citit = 1 "
-              . "WHERE  expeditor=:id2 AND destinatar=:id  "
+              . "WHERE  id_expeditor=:id2 AND id_destinatar=:id  "
               . "AND citit = 0";
       //$raspuns['update'] = inserare_bd($q, $arg);
       inserare_bd($q, $arg);
       break;
     
-    case "id_utilizator" :
+    case "sesiune_noua" :
         $raspuns['id'] = $id;
         $raspuns['nume'] = $nume;
+        $data_acum = acum();
+        $browser = gaseste_browser() || "necunoscut";
+        $platforma = gaseste_sistem_operare() || "necunoscut";
+        $adresa_ip = $_SERVER['REMOTE_ADDR'];
+        
+        // Cauta o sesiune recenta (< 100 secunde). Daca exista, refoloseste-o.
+        $q = "SELECT id_sesiune, cheie_sesiune FROM sesiuni "
+                . "WHERE ? - sfarsit < 100 AND "
+                . "id_utilizator = ? AND "
+                . "adresa_ip = ? AND "
+                . "browser = ? AND "
+                . "platforma = ? ";
+        $sesiune_recenta = interogare_bd($q, array($data_acum, $id, $adresa_ip, $browser, $platforma));
+        
+        if($sesiune_recenta) {
+            $q = "UPDATE sesiuni SET sfarsit = NULL WHERE id_sesiune = ?";
+            inserare_bd($q, $sesiune_recenta['id_sesiune']);
+            $raspuns['cheie_sesiune'] = $sesiune_recenta['cheie_sesiune'];
+        } else {
+            
+            // genereaza o noua sesiune
+            
+            $q = "SELECT COUNT(*) FROM sesiuni";
+            $numar_sesiuni = interogare_bd($q)['COUNT(*)'];
+
+            $cheie = hash('sha256', rand(), false) 
+                    . hash('sha256', $numar_sesiuni, false);
+
+
+            $q = "INSERT INTO sesiuni "
+                    . "(cheie_sesiune, id_utilizator, inceput, adresa_ip, browser, platforma) "
+                    . "VALUES (?, ?, ?, ?, ?, ?)";
+            $date_sesiune = array(
+                $cheie, 
+                $id, 
+                $data_acum, 
+                $adresa_ip, 
+                $browser, 
+                $platforma
+            );
+
+            inserare_bd($q, $date_sesiune);
+
+            $raspuns['cheie_sesiune'] = $cheie;
+        }
+        
         break;
     
     }

@@ -5,6 +5,7 @@ use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
 require '../bd_functii.php';
+require '../functii.php';
 
 class ChatListener implements MessageComponentInterface {
     protected $clienti;
@@ -15,23 +16,35 @@ class ChatListener implements MessageComponentInterface {
         echo 'ChatListener initializat' ;
     }
     
-    function trimite_mesaj($id_destinatar, $mesaj) {
+    function trimite_mesaj($expeditor, $mesaj) {
         $trimis = false;
+        $mesaj['id_expeditor'] = $this->legaturi[$expeditor->resourceId]['id'];
         foreach ($this->clienti as $client) {
-            if ($this->legaturi[$client->resourceId]['id'] === $id_destinatar) {
-                $client->send($mesaj);
+            if ($this->legaturi[$client->resourceId]['id'] === $mesaj['id_destinatar'] || 
+                    ($this->legaturi[$client->resourceId]['id'] === $mesaj['id_expeditor'] &&
+                    $client != $expeditor)) {
+                $client->send(json_encode($mesaj));
                 $trimis = true;
             }
         }
         return $trimis;
     }
     
-    function initializeaza_sesiune($utilizator, $id, $nume) {
+    function initializeaza_sesiune($utilizator, $cheie) {
+        /*$q = 'SELECT id, nume FROM utilizatori WHERE id IN '
+                . '( SELECT id_utilizator FROM sesiuni '
+                . 'WHERE cheie_sesiune = ?)'; */
         
+        $q = 'SELECT u.id AS "id", u.nume AS "nume", s.cheie_sesiune AS "cheie" '
+                . 'FROM utilizatori u JOIN sesiuni s '
+                . 'ON (u.id = s.id_utilizator) '
+                . 'WHERE s.cheie_sesiune = ? '
+                . 'ORDER BY s.inceput DESC';
+        
+        $date_utilizator = interogare_bd($q, $cheie);
+        $id = $date_utilizator['id'];
     
-        $this->legaturi[$utilizator->resourceId] = array(
-            'id' => $id, 
-            'nume'=> $nume);
+        $this->legaturi[$utilizator->resourceId] = $date_utilizator;
 
         //TODO baze de date: generare sesiune
 
@@ -51,12 +64,12 @@ class ChatListener implements MessageComponentInterface {
         
     }
     
-    function sfarseste_sesiune($conexiune, $id, $nume) {
+    function sfarseste_sesiune($conexiune, $id, $cheie) {
         
         $transmisie = array(
                     'id' => $id,
                     'operatie' => 'stare_utilizator',
-                    'tip' => 'online');
+                    'stare' => 'offline');
         
         $transmisie_text = json_encode($transmisie);
         foreach($this->clienti as $client) {
@@ -67,6 +80,10 @@ class ChatListener implements MessageComponentInterface {
         
         $q = "UPDATE utilizatori SET activ = 0 WHERE id = ?";
         inserare_bd($q, $id);
+        
+        $q = "UPDATE sesiuni SET sfarsit = ? WHERE cheie_sesiune = ?";
+        inserare_bd($q, array(\acum(), $cheie));
+        
     }
 
     public function onOpen(ConnectionInterface $conexiune) {
@@ -89,7 +106,7 @@ class ChatListener implements MessageComponentInterface {
         switch($date['operatie']) {
             case 'trimitere': 
                 
-                $trimis = $this->trimite_mesaj($date['id_destinatar'], $mesaj);
+                $trimis = $this->trimite_mesaj($expeditor, $date);
                 
                 if($trimis) {
                     echo "MESAJ [ {$this->legaturi[$resId]['nume']} --> {$date['nume_destinatar']} ]\n";
@@ -101,7 +118,7 @@ class ChatListener implements MessageComponentInterface {
                 break;
             
             case 'initializare': 
-                $this->initializeaza_sesiune($expeditor, $date['id_utilizator'], $date['nume_utilizator']);
+                $this->initializeaza_sesiune($expeditor, $date['cheie']);
                 break;
         }
 
@@ -115,8 +132,9 @@ class ChatListener implements MessageComponentInterface {
         //TODO: baza de date - offline
         $id = $this->legaturi[$conexiune->resourceId]['id'];
         $nume = $this->legaturi[$conexiune->resourceId]['nume'];
+        $cheie = $this->legaturi[$conexiune->resourceId]['cheie'];
         
-        $this->sfarseste_sesiune($conexiune, $id, $nume);
+        $this->sfarseste_sesiune($conexiune, $id, $cheie);
 
         echo "Conexiunea [ \n\t"
         . "resId={$conexiune->resourceId}, \n\t"

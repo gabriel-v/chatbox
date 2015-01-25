@@ -32,7 +32,7 @@
 
       <header>
       <h2> CHATBOX - SQL + PHP + JS </h2>
-      <a href="autentificare.php"> LOGOUT </a>
+      <input type='button' value='LOGOUT' onclick="logout()" />
       <p>
       <?php 
         echo "Salut, $nume! #ID = $id.  <br />";
