@@ -31,15 +31,23 @@
     <div id="page-wrap">
 
       <header>
-      <h2> CHATBOX - SQL + PHP + JS </h2>
-      <input type='button' value='LOGOUT' onclick="logout()" />
-      <p>
-      <?php 
-        echo "Salut, $nume! #ID = $id.  <br />";
-        echo "IP-ul serverului: {$_SERVER['SERVER_ADDR']}.";
-        echo "IP-ul tau:        {$_SERVER['REMOTE_ADDR']} <br />";
-      ?>
-      </p>
+      <h2> CHATBOX </h2>
+      <table>
+          <tr>
+              <td>
+        <input type='button' value='Deconectare' onclick="logout()" />
+              </td>
+              <td>
+        <p>
+        <?php 
+          echo "Salut, $nume! #ID = $id. | ";
+          echo "IP server: {$_SERVER['SERVER_ADDR']}. | ";
+          echo "IP utilizator: {$_SERVER['REMOTE_ADDR']} <br />";
+        ?>
+        </p>
+        </td>
+      </tr>
+      </table>
       </header>
 
       <div id="chat-wrap">
@@ -51,9 +59,11 @@
       </div>
 
       <div id="list-wrap"></div>
+      
 
       <footer> 
-      <h4> de Gabriel VIJIALA </h4>
+          <div id="stare-sistem"></div>
+        <h5> Gabriel Vîjială -- 2014/2015 </h5>
       </footer>
 
     </div>

@@ -4,6 +4,25 @@ var scroll_blocat = true;
 
 var websocket = null;
 
+function conexiune_deschisa() {
+    
+}
+
+function conexiune_inchisa() {
+
+}
+
+function stare_sistem(stare, functional) {
+    if(functional) {
+        $('#casuta').prop('disabled', false);
+        $('#stare-sistem').css('color','#22ff22');
+    } else {
+        $('#casuta').prop('disabled', true);
+        $('#stare-sistem').css('color','#ff2222');   
+    }
+    $('#stare-sistem').text(stare);
+}
+
 function init_websocket() {
     websocket = new WebSocket("ws://" + window.location.hostname +":8080");
     
@@ -23,7 +42,7 @@ function init_websocket() {
                     websocket.send(JSON.stringify(date_init));
                     
                 });
-        $('#casuta').prop('disabled', false);
+        stare_sistem("Conexiune stabilită.", true);
         console.log("Conexiune realizata cu succes: " + JSON.stringify(data));
     };
     websocket.onmessage = function(raspuns) {
@@ -51,10 +70,12 @@ function init_websocket() {
     };
     websocket.onclose = function(data) {
         console.log("Conexiunea se inchide: " + data);
-        $('#casuta').prop('disabled', true);
+        
+        stare_sistem('Conexiune inchisa.', false);
     };
     websocket.onerror = function(data) {
         console.error("Eroare in websocket: " + data);
+        stare_sistem('Erori in conexiunea websocket!', false)
     };
     
 }
@@ -169,7 +190,7 @@ function adauga_mesaj(text_mesaj, tip_mesaj) {
         class: (tip_mesaj === 'primit' ? 'mesaj-primit': 'mesaj-trimis')
     }).appendTo($('#zona-mesaje'));
     //$('#zona-mesaje').scrollHeight = $('#zona-mesaje').scrollTop;
-    $("#zona-mesaje").animate({ scrollTop: $('#zona-mesaje')[0].scrollHeight}, 150);
+    $("#zona-mesaje").animate({ scrollTop: $('#zona-mesaje')[0].scrollHeight}, 15);
 }
 
 function incarca_mesaje() {
@@ -193,7 +214,7 @@ function incarca_mesaje() {
 }
 
 function init() {
-    $('#casuta').prop('disabled', true);
+    stare_sistem('Pornire... ', false);
     init_websocket();
     lista_utilizatori();    
     $('#casuta').keydown(tasta_jos);
