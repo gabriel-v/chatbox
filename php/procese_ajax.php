@@ -27,7 +27,7 @@
     case "trimitere": 
       $id_destinatar = $_POST['id_destinatar'];
       $text = $_POST['text'];
-      $q  = "INSERT INTO mesaje (expeditor, destinatar, text, data, citit) ";
+      $q  = "INSERT INTO mesaje (id_expeditor, id_destinatar, text, data, citit) ";
       $q .= "VALUES (?, ?, ?, ?, ?)";
       $arg = array($id, $id_destinatar, $text, acum(), 0);
       $raspuns['ok'] = inserare_bd($q, $arg);
