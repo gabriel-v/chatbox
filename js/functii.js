@@ -24,7 +24,7 @@ function stare_sistem(stare, functional) {
 }
 
 function init_websocket() {
-    websocket = new WebSocket("ws://" + window.location.hostname +":8080");
+    websocket = new WebSocket("ws://" + window.location.hostname +":8090");
     
     websocket.onopen = function(data) {
         trimite_ajax(
@@ -75,7 +75,7 @@ function init_websocket() {
     };
     websocket.onerror = function(data) {
         console.error("Eroare in websocket: " + data);
-        stare_sistem('Erori in conexiunea websocket!', false)
+        stare_sistem('Erori in conexiunea websocket!', false);
     };
     
 }
