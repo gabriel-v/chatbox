@@ -7,6 +7,7 @@
 <head> 
   <title> chatbox </title>
   <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <form name="form_inregistrare" method="post" action="php/creare_cont.php">
