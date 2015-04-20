@@ -15,10 +15,14 @@ function conexiune_inchisa() {
 function stare_sistem(stare, functional) {
     if(functional) {
         $('#casuta').prop('disabled', false);
-        $('#stare-sistem').css('color','#22ff22');
+        //$('#stare-sistem').css('color','#22ff22');
+        $('#stare-sistem').removeClass('label-danger');
+        $('#stare-sistem').addClass('label-primary');
+        
     } else {
         $('#casuta').prop('disabled', true);
-        $('#stare-sistem').css('color','#ff2222');   
+        $('#stare-sistem').removeClass('label-primary');
+        $('#stare-sistem').addClass('label-danger');
     }
     $('#stare-sistem').text(stare);
 }
