@@ -20,7 +20,7 @@
             . "WHEN 1 THEN 'online' "
             . "WHEN 0 THEN 'offline' "
             . "END AS \"stare\" "
-            . "FROM utilizatori WHERE id!=?";
+            . "FROM utilizatori WHERE id!=? AND auto_generat = 0";
       $raspuns = interogare_vector_bd($q, $id); 
       break;
 
@@ -37,7 +37,7 @@
       $id2 = $_POST['cu'];
       $q = "SELECT * FROM mesaje "
               . "WHERE ( id_expeditor=:id AND id_destinatar=:id2 ) "
-              . "OR ( id_expeditor=:id2 AND id_destinatar=:id )";
+              . "OR ( id_expeditor=:id2 AND id_destinatar=:id ) AND auto_generat = 0";
       $arg = array('id' => $id, 'id2' => $id2);
 
       $raspuns = interogare_vector_bd($q, $arg);
@@ -53,8 +53,8 @@
         $raspuns['id'] = $id;
         $raspuns['nume'] = $nume;
         $data_acum = acum();
-        $browser = gaseste_browser() || "necunoscut";
-        $platforma = gaseste_sistem_operare() || "necunoscut";
+        $browser = gaseste_browser();
+        $platforma = gaseste_sistem_operare();
         $adresa_ip = $_SERVER['REMOTE_ADDR'];
         
         // Cauta o sesiune recenta (< 100 secunde). Daca exista, refoloseste-o.
@@ -63,7 +63,8 @@
                 . "id_utilizator = ? AND "
                 . "adresa_ip = ? AND "
                 . "browser = ? AND "
-                . "platforma = ? ";
+                . "platforma = ? AND "
+                . "auto_generat = 0 ";
         $sesiune_recenta = interogare_bd($q, array($data_acum, $id, $adresa_ip, $browser, $platforma));
         
         if($sesiune_recenta) {
