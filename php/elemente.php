@@ -22,10 +22,11 @@ function echo_comentariu() { ?>
 --> 
 <?php }
 
-function echo_navbar($logged_in = false) {?>
+function echo_navbar($athome = false) {?>
 <div class="navbar navbar-default navbar-inverse navbar-static-top">
     <div class="container">
         <div class="navbar-header">
+            
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
@@ -49,7 +50,8 @@ function echo_navbar($logged_in = false) {?>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <?php if($logged_in) { ?>
+                        <?php if($athome) { ?>
+                        <p class="navbar-text"><span id="stare-sistem" class="label label-success"></span></p>
                         <button onclick="logout()" class="btn navbar-btn btn-default">
                             Deconectare
                         </button>

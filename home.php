@@ -14,7 +14,7 @@ $id = $_SESSION['ID'];
 <html>
     <head> 
         <?php        echo_head(); ?>
-        <link rel="stylesheet" href="css/style.css" type="text/css" />
+        <link rel="stylesheet" href="css/home.css" type="text/css" />
         <script src="js/functii.js"></script>
         <script>
             $(function () {
@@ -31,8 +31,6 @@ $id = $_SESSION['ID'];
             <div class="container container-fluid">
                 <div class="row"> 
                     <div class="row-same-height row-full-height">
-
-
                         <div class="col-sm-8 col-xs-12 col-full-height">            
                             <div id="chat-wrap" class="content">
                                 <h2 id="chat-titlu">&lt;=====&gt;</h2>
@@ -50,25 +48,9 @@ $id = $_SESSION['ID'];
                                 </div>
                             </div>
                         </div>
-
-
                     </div>                
                 </div>
             </div>
-
-
-            <footer class="footer sticky-footer"> 
-                <div class="container">
-                    <div class="row">
-                        <h4 class="col-sm-6"> 
-                            <span id="stare-sistem" class="label label-primary">
-                                
-                            </span></h4>
-                        <h4 class="col-sm-6 pull-right">(c) Gabriel Vîjială  2014-2015</h4>
-                    </div>
-                </div>
-            </footer>
         </div>
-
     </body>
 </html>

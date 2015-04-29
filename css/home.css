@@ -37,14 +37,14 @@ footer {
 }
 
 #chat-wrap {
-   height: calc(95vh - 100px);
+   height: calc(98vh - 100px);
     border: 2px solid black;
     //margin: 1%;
 }
 
 
 #list-wrap {    
-    height: calc(95vh - 100px);
+    height: calc(98vh - 100px);
     //min-height: calc(90vh - 100px);
     overflow-y: auto;
     border: 2px solid black;
@@ -60,7 +60,7 @@ footer {
 }
 
 #zona-mesaje {
-    height: calc(98% - 110px);
+    height: calc(100% - 126px);
     margin: 2%;
     border: 1px solid black;
     overflow-y: scroll;

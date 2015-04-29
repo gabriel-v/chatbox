@@ -4,24 +4,16 @@ var scroll_blocat = true;
 
 var websocket = null;
 
-function conexiune_deschisa() {
-    
-}
-
-function conexiune_inchisa() {
-
-}
-
 function stare_sistem(stare, functional) {
     if(functional) {
         $('#casuta').prop('disabled', false);
         //$('#stare-sistem').css('color','#22ff22');
         $('#stare-sistem').removeClass('label-danger');
-        $('#stare-sistem').addClass('label-primary');
+        $('#stare-sistem').addClass('label-success');
         
     } else {
         $('#casuta').prop('disabled', true);
-        $('#stare-sistem').removeClass('label-primary');
+        $('#stare-sistem').removeClass('label-success');
         $('#stare-sistem').addClass('label-danger');
     }
     $('#stare-sistem').text(stare);
@@ -111,8 +103,10 @@ function actualizare_utilizator (u) {
     if($('#' + p_id).length === 0) {
         $('<p/>', {
             id: p_id,
+            style: 'cursor: pointer;',
             click: function(){ selecteaza(u); },
-            text: u.nume
+            text: u.nume,
+            class: "list-group-item"
         }).appendTo($("div#list-wrap"));
     }
     if(u.stare === 'online') {
@@ -138,9 +132,9 @@ function selecteaza(u) {
     $('#chat-titlu').text(u.nume);
     //var p = element_lista(u.id);
     if(selectat) 
-        element_lista(selectat.id).removeClass('selectat');
+        element_lista(selectat.id).removeClass('selectat active');
     selectat = u;
-    element_lista(selectat.id).addClass('selectat').removeClass('mesaj-nou');
+    element_lista(selectat.id).addClass('selectat active').removeClass('mesaj-nou');
     $('#casuta').val('');
     incarca_mesaje();
 }
