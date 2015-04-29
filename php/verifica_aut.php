@@ -26,6 +26,8 @@
   if($avem_eroare == true) {
     $_SESSION['ERORI'] = $mesaje_erori;
     redirect("../autentificare.php");
+  } else {
+      unset($_SESSION['ERORI']);
   }
 
   conectare_baza_date();
@@ -41,7 +43,7 @@
     redirect("../home.php");
   } else {
     // autentificare esuata
-    $mesaje_erori[] = "AUTENTIFICARE ESUATA.";
+    $mesaje_erori[] = "Autentificare eșuată";
     $_SESSION['ERORI'] = $mesaje_erori;
     redirect("../autentificare.php");
   }

@@ -19,7 +19,11 @@
         <!-- http://getbootstrap.com/examples/signin/ -->
         <div class="container">
             <div class="row">
-             <?php if(isset($_SESSION['ERORI'])) { ?>
+             
+            
+          <form class="form-signin" role="login" 
+                action="php/verifica_aut.php" method="post">
+              <?php if(isset($_SESSION['ERORI'])) { ?>
                 
                 <!-- inspirat din http://devgirl.org/2012/08/06/styling-your-app-with-twitter-bootstrap/ -->
                 <!--<div class="alert alert-block alert-error">
@@ -29,8 +33,8 @@
                 </div> !-->
 
                 <div class="alert alert-danger" role="alert">
-                    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-                    <span class="sr-only">Eroare:</span>
+                    <span class="glyphicon glyphicon-exclamation-sign text-center" aria-hidden="true"></span>
+                    <span class="sr-only text-center">Eroare:</span>
                     <ul class="eroare">
                     <?php 
                             foreach($_SESSION['ERORI'] as $eroare) {
@@ -41,9 +45,6 @@
                         </ul>
                 </div>
             <?php } ?>
-            
-          <form class="form-signin" role="login" 
-                action="php/verifica_aut.php" method="post">
             <h2 class="form-signin-heading center-block text-center">Autentificare</h2>
             <label for="inputEmail" class="sr-only">Nume</label>
             <input type="text" name="nume" id="nume" class="form-control" 
