@@ -2,6 +2,7 @@
 session_start();
 require_once("php/bd_functii.php");
 require_once("php/functii.php");
+require_once("php/elemente.php");
 
 if (!isset($_SESSION['NUME']) || !isset($_SESSION['ID'])) {
     redirect("autentificare.php");
@@ -12,30 +13,12 @@ $id = $_SESSION['ID'];
 <!DOCTYPE html>
 <html>
     <head> 
-        <title> chatbox </title>
-
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
-
-        
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css"/>
-        
-        <link rel="stylesheet" href="css/style.css" type="text/css" /> 
-        <!--<link rel="stylesheet" href="css/height-tweaks.css" type="text/css" />--> 
-
-
-        <script src="js/jquery.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <?php        echo_head(); ?>
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
         <script src="js/functii.js"></script>
-
-
         <script>
             $(function () {
                 init();
-
             });
         </script>
     </head>
@@ -43,29 +26,16 @@ $id = $_SESSION['ID'];
 
         <div id="page-wrap">
 
-            <nav class="navbar navbar-inverse navbar-static-top">
-                <div class="container">
-                    <div class="navbar-brand">
-                        <strong> chatbox </strong>
-                    </div>
-                    <ul class="nav navbar-nav">
-                        <li> <a> Despre </a> </li>
-                        <li>
-                            <form action="#">
-                                <button onclick="logout()" class="btn btn-default navbar-btn">Deconectare</button>
-                            </form>
-                        </li>
-                </div>
-            </nav>
+            <?php            echo_navbar(true); ?>
 
             <div class="container container-fluid">
                 <div class="row"> 
                     <div class="row-same-height row-full-height">
 
 
-                        <div class="col-sm-8 col-full-height">            
+                        <div class="col-sm-8 col-xs-12 col-full-height">            
                             <div id="chat-wrap" class="content">
-                                <h2 id="chat-titlu">--></h2>
+                                <h2 id="chat-titlu">&lt;=====&gt;</h2>
                                 <div id="zona-mesaje"></div>
                                 <form id="zona-trimitere">
                                     <textarea id="casuta" rows="1" maxlength="2000"> 
@@ -74,7 +44,7 @@ $id = $_SESSION['ID'];
                             </div> 
                         </div>
 
-                        <div class="col-sm-4 sidebar-outer col-full-height"> 
+                        <div class="col-sm-4 col-xs-12 sidebar-outer col-full-height"> 
                             <div class="sidebar">
                                 <div id="list-wrap" class="list-group">
                                 </div>

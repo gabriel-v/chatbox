@@ -188,12 +188,17 @@ function trimite(mesaj) {
 }
 
 function adauga_mesaj(text_mesaj, tip_mesaj) {
-    $('<p/>', {
-        text: text_mesaj,
+    var panel = $('<div/>', {
+        class: 'panel',
         id: 'mesaj',
         class: (tip_mesaj === 'primit' ? 'mesaj-primit': 'mesaj-trimis')
-    }).appendTo($('#zona-mesaje'));
-    //$('#zona-mesaje').scrollHeight = $('#zona-mesaje').scrollTop;
+    });
+    var p = $('<p/>', {
+        text: text_mesaj
+    });
+    p.appendTo(panel);
+    panel.appendTo($('#zona-mesaje'));
+    
     $("#zona-mesaje").animate({ scrollTop: $('#zona-mesaje')[0].scrollHeight}, 15);
 }
 
