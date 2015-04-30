@@ -1,5 +1,15 @@
 <?php
 
+/* * * 
+ * chatbox
+ * 
+ * Copyright (c) Gabriel Vîjială: 2014, 2015 
+ * 
+ * Acest proiect a fost asamblat pentru Atestatul Profesional 
+ * la terminarea liceului, pentru gradul de Programator Ajutor.
+ * 
+ */
+
 function acum() {
     return date('Y-m-d H:i:s');
 }
@@ -97,7 +107,5 @@ function gaseste_browser() {
 
     return $browser;
 }
-
-
 
 ?>

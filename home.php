@@ -1,4 +1,14 @@
 <?php
+/* * * 
+ * chatbox
+ * 
+ * Copyright (c) Gabriel Vîjială: 2014, 2015 
+ * 
+ * Acest proiect a fost asamblat pentru Atestatul Profesional 
+ * la terminarea liceului, pentru gradul de Programator Ajutor.
+ * 
+ */
+
 session_start();
 require_once("php/bd_functii.php");
 require_once("php/functii.php");
@@ -11,9 +21,10 @@ $nume = $_SESSION['NUME'];
 $id = $_SESSION['ID'];
 ?>
 <!DOCTYPE html>
+<?php echo_comentariu(); ?>
 <html>
     <head> 
-        <?php        echo_head(); ?>
+<?php echo_head(); ?>
         <link rel="stylesheet" href="css/home.css" type="text/css" />
         <script src="js/functii.js"></script>
         <script>
@@ -26,7 +37,7 @@ $id = $_SESSION['ID'];
 
         <div id="page-wrap">
 
-            <?php            echo_navbar('home'); ?>
+<?php echo_navbar('home'); ?>
 
             <div class="container container-fluid">
                 <div class="row"> 

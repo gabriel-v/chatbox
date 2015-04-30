@@ -1,5 +1,14 @@
 <?php
 
+/* * * 
+ * chatbox
+ * 
+ * Copyright (c) Gabriel Vîjială: 2014, 2015 
+ * 
+ * Acest proiect a fost asamblat pentru Atestatul Profesional 
+ * la terminarea liceului, pentru gradul de Programator Ajutor.
+ * 
+ */
 include 'bd_config.php';
 $_H_ = null;
 
@@ -14,8 +23,7 @@ function conectare_baza_date() {
         // Creaza un DATABASE HANDLE ->
         //      un link intre aplicatia de php si serverul cu baza de date.
         $DBH = new PDO("mysql:host={$bd_config['host']};"
-            . "dbname={$bd_config['nume']}", 
-            $bd_config['user'], $bd_config['pass']);
+                . "dbname={$bd_config['nume']}", $bd_config['user'], $bd_config['pass']);
 
         // Cere ca erorile sa declanseze lansarea de exceptii.
         $DBH->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

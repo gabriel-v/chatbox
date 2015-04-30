@@ -1,6 +1,8 @@
 <?php 
 
 /*** 
+ * chatbox
+ * 
  * Copyright (c) Gabriel Vîjială: 2014, 2015 
  * 
  * Acest proiect a fost asamblat pentru Atestatul Profesional 
