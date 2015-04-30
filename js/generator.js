@@ -32,13 +32,20 @@ $(function () {
     function maybeUpdate(element) {
         var c = element.children(".element-lista");
         $.get('php/generator_ajax.php', {tip: element.attr('id'), numar: c.length}, function (data) {
+            console.log("Incercare de parse pentru id = " + element.attr('id') + " si mesaj = \n" + data);
             var lista = JSON.parse(data);
             
             element.children(".element-lista").each(function(i){
                 if(Math.random() < 1.0 / 6.5) {
+//                    $(this).animate({backgroundColor: "lightblue"}, 1300);
+//                    setTimeout(function() {
+//                        $(this).css("background-color", "lightblue");
+//                        $(this).text(lista[i]);
+//                        $(this).animate({backgroundColor: "#FFFFFF"}, 1300);
+//                    }, 1300);
                     $(this).css("background-color", "lightblue");
                     $(this).text(lista[i]);
-                    $(this).animate({backgroundColor: "#FFFFFF"}, 2700);
+                    $(this).animate({backgroundColor: "#FFFFFF"}, 1600);
                 }
                     
             });
@@ -59,7 +66,7 @@ $(function () {
     
     function descarca(element) {
         element.empty();
-        $.get('php/generator_ajax.php', {tip: element.attr('id'), numar: 6}, function (data) {
+        $.get('php/generator_ajax.php', {tip: element.attr('id'), numar: 7}, function (data) {
             var lista = JSON.parse(data);
             for (var i = 0; i < lista.length; i++) {
                 $("<p/>", {
