@@ -14,7 +14,7 @@ function conectare_baza_date() {
         // Creaza un DATABASE HANDLE ->
         //      un link intre aplicatia de php si serverul cu baza de date.
         $DBH = new PDO("mysql:host={$bd_config['host']};"
-            . "dbname={$bd_config['name']}", 
+            . "dbname={$bd_config['nume']}", 
             $bd_config['user'], $bd_config['pass']);
 
         // Cere ca erorile sa declanseze lansarea de exceptii.
