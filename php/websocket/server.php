@@ -4,8 +4,8 @@ use Ratchet\Http\HttpServer;
 use Ratchet\WebSocket\WsServer;
 use Chatbox\ChatListener;
 
-require 'vendor/autoload.php';
-require 'ChatListener.php';
+require dirname(__FILE__).'/vendor/autoload.php';
+require dirname(__FILE__).'/ChatListener.php';
 
  $server = IoServer::factory(
         new HttpServer(
