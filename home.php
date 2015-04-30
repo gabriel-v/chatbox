@@ -26,7 +26,7 @@ $id = $_SESSION['ID'];
 
         <div id="page-wrap">
 
-            <?php            echo_navbar(true); ?>
+            <?php            echo_navbar('home'); ?>
 
             <div class="container container-fluid">
                 <div class="row"> 

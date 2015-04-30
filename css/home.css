@@ -37,8 +37,9 @@ footer {
 }
 
 #chat-wrap {
+    margin-bottom: 15px;
    height: calc(98vh - 100px);
-    border: 2px solid black;
+   border: 2px solid black;
     //margin: 1%;
 }
 
