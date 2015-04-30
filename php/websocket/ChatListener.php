@@ -4,8 +4,8 @@ namespace Chatbox;
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
-require '../bd_functii.php';
-require '../functii.php';
+require dirname(dirname(__FILE__)).'/bd_functii.php';
+require dirname(dirname(__FILE__)).'/functii.php';
 
 class ChatListener implements MessageComponentInterface {
     protected $clienti;
@@ -13,7 +13,7 @@ class ChatListener implements MessageComponentInterface {
 
     public function __construct() {
         $this->clienti = new \SplObjectStorage;
-        echo 'ChatListener initializat' ;
+        echo 'ChatListener initializat!\n'.  \acum()."\n\n" ;
     }
     
     function trimite_mesaj($expeditor, $mesaj) {
@@ -31,9 +31,6 @@ class ChatListener implements MessageComponentInterface {
     }
     
     function initializeaza_sesiune($utilizator, $cheie) {
-        /*$q = 'SELECT id, nume FROM utilizatori WHERE id IN '
-                . '( SELECT id_utilizator FROM sesiuni '
-                . 'WHERE cheie_sesiune = ?)'; */
         
         $q = 'SELECT u.id AS "id", u.nume AS "nume", s.cheie_sesiune AS "cheie" '
                 . 'FROM utilizatori u JOIN sesiuni s '
@@ -42,6 +39,12 @@ class ChatListener implements MessageComponentInterface {
                 . 'ORDER BY s.inceput DESC';
         
         $date_utilizator = interogare_bd($q, $cheie);
+        
+        if(!$date_utilizator) {
+            // cheia nu este autentificata
+            deconectare_baza_date();
+            return;
+        }
         $id = $date_utilizator['id'];
     
         $this->legaturi[$utilizator->resourceId] = $date_utilizator;
@@ -61,6 +64,8 @@ class ChatListener implements MessageComponentInterface {
         
         $q = "UPDATE utilizatori SET activ = 1 WHERE id = ?";
         inserare_bd($q, $id);
+        
+        deconectare_baza_date();
         
     }
     
@@ -84,15 +89,14 @@ class ChatListener implements MessageComponentInterface {
         $q = "UPDATE sesiuni SET sfarsit = ? WHERE cheie_sesiune = ?";
         inserare_bd($q, array(\acum(), $cheie));
         
+        deconectare_baza_date();
     }
 
     public function onOpen(ConnectionInterface $conexiune) {
         // Store the new connection to send messages to later
         $this->clienti->attach($conexiune);
         
-        echo "Conexiune noua! resourceID: " . $conexiune->resourceId;
-
-        echo "\n";
+        echo "Conexiune noua! resourceID: " . $conexiune->resourceId . "\n";
     }
 
     public function onMessage(ConnectionInterface $expeditor, $mesaj) {
@@ -112,8 +116,8 @@ class ChatListener implements MessageComponentInterface {
                     echo "MESAJ [ {$this->legaturi[$resId]['nume']} --> {$date['nume_destinatar']} ]\n";
                     echo "TEXT: {$date['text']}\n";
                 } else {
-                    echo "MESAJUL [ {$this->legaturi[$resId]['nume']} --> {$date['nume_destinatar']} ]";
-                    echo " NU A PUTUT FOST TRANSMIS";
+                    echo "MESAJUL [ {$this->legaturi[$resId]['nume']} --> {$date['nume_destinatar']} ]\n";
+                    echo " NU A PUTUT FOST TRANSMIS\n";
                 }
                 break;
             
