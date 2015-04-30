@@ -58,21 +58,21 @@
         $platforma = gaseste_sistem_operare();
         $adresa_ip = $_SERVER['REMOTE_ADDR'];
         
-//        // Cauta o sesiune recenta (< 100 secunde). Daca exista, refoloseste-o.
-//        $q = "SELECT id_sesiune, cheie_sesiune FROM sesiuni "
-//                . "WHERE ? - sfarsit < 100 AND "
-//                . "id_utilizator = ? AND "
-//                . "adresa_ip = ? AND "
-//                . "browser = ? AND "
-//                . "platforma = ? AND "
-//                . "auto_generat = 0 ";
-//        $sesiune_recenta = interogare_bd($q, array($data_acum, $id, $adresa_ip, $browser, $platforma));
-//        
-//        if($sesiune_recenta) {
-//            $q = "UPDATE sesiuni SET sfarsit = NULL WHERE id_sesiune = ?";
-//            inserare_bd($q, $sesiune_recenta['id_sesiune']);
-//            $raspuns['cheie_sesiune'] = $sesiune_recenta['cheie_sesiune'];
-//        } else {
+        // Cauta o sesiune recenta (< 100 secunde). Daca exista, refoloseste-o.
+        $q = "SELECT id_sesiune, cheie_sesiune FROM sesiuni "
+                . "WHERE ? - sfarsit < 100 AND "
+                . "id_utilizator = ? AND "
+                . "adresa_ip = ? AND "
+                . "browser = ? AND "
+                . "platforma = ? AND "
+                . "auto_generat = 0 ";
+        $sesiune_recenta = interogare_bd($q, array($data_acum, $id, $adresa_ip, $browser, $platforma));
+        
+        if($sesiune_recenta) {
+            $q = "UPDATE sesiuni SET sfarsit = NULL WHERE id_sesiune = ?";
+            inserare_bd($q, $sesiune_recenta['id_sesiune']);
+            $raspuns['cheie_sesiune'] = $sesiune_recenta['cheie_sesiune'];
+        } else {
             
             // genereaza o noua sesiune
             
@@ -98,7 +98,7 @@
             inserare_bd($q, $date_sesiune);
 
             $raspuns['cheie_sesiune'] = $cheie;
-//        }
+        }
         
         break;
     
