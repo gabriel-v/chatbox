@@ -31,9 +31,10 @@ switch ($operatie) {
                 . "WHEN 1 THEN 'online' "
                 . "WHEN 0 THEN 'offline' "
                 . 'END AS "stare",'
-                . '(SELECT BIT_AND(citit) FROM mesaje where id_destinatar = u.id) AS "citit" '
-                . "FROM utilizatori u WHERE id!=? AND auto_generat = 0";
-        $raspuns = interogare_vector_bd($q, $id);
+                . '(SELECT BIT_AND(citit) FROM mesaje '
+                . 'WHERE id_expeditor = u.id and id_destinatar = :id) AS "citit" '
+                . "FROM utilizatori u WHERE id!=:id AND auto_generat = 0";
+        $raspuns = interogare_vector_bd($q, array("id" => $id));
         break;
 
     case "trimitere":
@@ -49,14 +50,16 @@ switch ($operatie) {
         $id2 = $_POST['cu'];
         $q = "SELECT * FROM mesaje "
                 . "WHERE ( id_expeditor=:id AND id_destinatar=:id2 ) "
-                . "OR ( id_expeditor=:id2 AND id_destinatar=:id ) AND auto_generat = 0";
+                . "OR ( id_expeditor=:id2 AND id_destinatar=:id ) "
+                . "AND auto_generat = 0 "
+                . "ORDER BY data ASC";
         $arg = array('id' => $id, 'id2' => $id2);
 
         $raspuns = interogare_vector_bd($q, $arg);
 
         $q = "UPDATE mesaje SET citit = 1 "
                 . "WHERE  id_expeditor=:id2 AND id_destinatar=:id  "
-                . "AND citit = 0";
+                . "AND citit != 1";
         //$raspuns['update'] = inserare_bd($q, $arg);
         inserare_bd($q, $arg);
         break;

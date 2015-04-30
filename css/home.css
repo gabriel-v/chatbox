@@ -108,6 +108,11 @@ textarea {
     font-weight: bold !important;
 }
 
+.list-item {
+    cursor: pointer;
+    margin: 10px;
+}
+
 .mesaj-trimis {
     text-align: right;
     padding-right: 10px;

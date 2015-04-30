@@ -103,12 +103,19 @@ function actualizare_utilizator (u) {
     if($('#' + p_id).length === 0) {
         $('<p/>', {
             id: p_id,
-            style: 'cursor: pointer;',
+            //style: 'cursor: pointer;',
             click: function(){ selecteaza(u); },
             text: u.nume,
-            class: "list-group-item"
+            class: "list-group-item list-item"
         }).appendTo($("div#list-wrap"));
     }
+    
+    if(u.citit === 0 || u.citit === '0') {
+        element_lista(u.id).addClass('mesaj-nou');
+    } else {
+        element_lista(u.id).removeClass('mesaj-nou');
+    }
+    
     if(u.stare === 'online') {
         element_lista(u.id).addClass('online').removeClass('offline');
     } else if(u.stare === 'offline') {
