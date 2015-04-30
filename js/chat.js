@@ -13,6 +13,8 @@ var scroll_blocat = true;
 
 var websocket = null;
 
+var conectat = false;
+
 function stare_sistem(stare, functional) {
     if(functional) {
         $('#casuta').prop('disabled', false);
@@ -32,6 +34,7 @@ function init_websocket() {
     websocket = new WebSocket("ws://" + window.location.hostname +":8090");
     
     websocket.onopen = function(data) {
+        conectat = true;
         trimite_ajax(
                 {
                     'operatie': 'sesiune_noua'
@@ -74,18 +77,21 @@ function init_websocket() {
         }
     };
     websocket.onclose = function(data) {
+        conectat = false;
         console.log("Conexiunea se inchide: " + data);
         
         stare_sistem('Conexiune inchisa.', false);
     };
     websocket.onerror = function(data) {
+        conectat = false;
         console.error("Eroare in websocket: " + data);
-        stare_sistem('Erori in conexiunea websocket!', false);
+        stare_sistem('Eroare!', false);
     };
     
 }
 
 function logout() {
+    conectat = false;
     websocket.close();
     window.location.href = 'autentificare.php';
 }
@@ -234,6 +240,9 @@ function incarca_mesaje() {
 
 function init() {
     stare_sistem('Pornire... ', false);
+    setInterval(function() {
+        if(!conectat) init_websocket();
+    }, 4000);
     init_websocket();
     lista_utilizatori();    
     $('#casuta').keydown(tasta_jos);
