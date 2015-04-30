@@ -24,7 +24,7 @@ $id = $_SESSION['ID'];
 <?php echo_comentariu(); ?>
 <html>
     <head> 
-<?php echo_head(); ?>
+        <?php echo_head(); ?>
         <link rel="stylesheet" href="css/home.css" type="text/css" />
         <script src="js/chat.js"></script>
         <script>
