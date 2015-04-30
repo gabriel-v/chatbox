@@ -10,6 +10,21 @@
  * 
  */
 
+/***
+ * Urmatorul error handler este folosit in serverul de Websocket pentru a 
+ * ne asigura ca in cazul in care apare o eroare legata de uzul indelungat al
+ * bazei de date, sau apare vreun index lipsa, putem sa inchidem cu succes procesul si sa 
+ * asteptam sa apara altul in urma lui. 
+ */
+function NoticeErrorHandler($errno, $errstr, $errfile, $errline) {
+    if ($errno == E_USER_NOTICE || $errno == E_USER_WARNING || $errno == E_USER_ERROR) {
+        die("Died!! Error: {$errstr} on {$errfile}:{$errline}");
+    }
+    return false; 
+}
+
+set_error_handler('NoticeErrorHandler');
+
 use Ratchet\Server\IoServer;
 use Ratchet\Http\HttpServer;
 use Ratchet\WebSocket\WsServer;
