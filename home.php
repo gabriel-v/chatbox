@@ -26,7 +26,7 @@ $id = $_SESSION['ID'];
     <head> 
 <?php echo_head(); ?>
         <link rel="stylesheet" href="css/home.css" type="text/css" />
-        <script src="js/functii.js"></script>
+        <script src="js/chat.js"></script>
         <script>
             $(function () {
                 init();
