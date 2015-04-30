@@ -13,7 +13,7 @@ class ChatListener implements MessageComponentInterface {
 
     public function __construct() {
         $this->clienti = new \SplObjectStorage;
-        echo 'ChatListener initializat!\n'.  \acum()."\n\n" ;
+        echo 'ChatListener initializat!'."\n".  \acum()."\n\n" ;
     }
     
     function trimite_mesaj($expeditor, $mesaj) {
