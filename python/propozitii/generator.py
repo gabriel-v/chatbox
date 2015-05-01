@@ -138,7 +138,7 @@ class GeneratorPropozitii:
         dir = os.path.dirname(os.path.abspath(__file__))
         fisier = dir + '/' + fisier
 
-        with open(fisier) as f:
+        with open(fisier, encoding='utf-8') as f:
             text = ' '.join(l.strip() for l in f)
 
         rx_definitie = re.compile('{[^{]*}')
