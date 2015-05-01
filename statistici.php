@@ -88,13 +88,13 @@ require_once("php/elemente.php");
                         <div class="row">
                             <div class="col-sm-6">
                                 <p>
-                                    În chatbox, o sesiune este perioada în care un utilizator interacționează cu sistemul. Sunt stocate 
-                                    date despre mobil de pe care acesta accesează sistemul și momentele în care el se 
-                                    autentifică și se deconectează. În tabela sesiuni se mai păstrează și date pentru 
+                                    În <b>chatbox</b>, o <code>sesiune</code> este perioada în care un utilizator interacționează cu sistemul. Sunt stocate 
+                                    date despre terminalul de pe care acesta accesează sistemul și momentele în care el se 
+                                    autentifică și se deconectează. În tabela <code>sesiuni</code> se mai păstrează și date pentru 
                                     verificarea autentificării, dar acest detaliu nu reprezintă interes în vizualizările ce urmează.
                                 </p>
                                 <p>
-                                    Acest grafic arată cât timp durează o sesiune obișnuită.
+                                    Acest grafic arată cât timp durează o <code>sesiune</code> obișnuită.
                                 </p>
                             </div>
                             <div class="col-sm-6"><pre id="durata-sesiune"></pre></div>
@@ -114,12 +114,13 @@ require_once("php/elemente.php");
                             Sesiuni / OS
                         </h2>
                         <p>
-                            Sistemul de operare este identificat de către chatbox la momentul autentificării utilizatorului.
-                            Fiecare sesiune stochează această informație. 
+                            <b>Sistemul de operare</b> este identificat de către 
+                            <b>chatbox</b> la momentul autentificării utilizatorului.
+                            Fiecare <code>sesiune</code> stochează această informație. 
                         </p><p>
                             Merită spus că un utilizator se poate autentifica simultan de pe mai multe dispozitive. 
-                            Așadar vor exista sesiuni simultane pentru același utilizator, 
-                            cu intrări diferite, atât pentru sistemul de operare, cât și pentru browser.
+                            Așadar vor exista <code>sesiuni</code> simultane pentru același <code>utilizator</code>, 
+                            cu intrări diferite, atât pentru <b>sistemul de operare</b>, cât și pentru <b>browser</b>.
                         </p>
                         <pre id="sesiuni-platforma"></pre>
                         <div class="row">
@@ -135,14 +136,14 @@ require_once("php/elemente.php");
                             Sesiuni / browser
                         </h2>
                         <p>
-                            Browserul este programul folosit pentru accesarea serviciilor web. 
-                            În acest caz, pentru a comunica folosind chatbox. 
+                            <b>Browser</b>-ul este programul folosit pentru accesarea serviciilor web. 
+                            În acest caz, pentru a comunica folosind <b>chatbox</b>. 
                         </p><p>
-                            Această informație este, de asemenea, specifică unei sesiuni. 
+                            Această informație este, de asemenea, specifică unei <code>sesiuni</code>. 
                             Poate fi folosită pentru a îmbunătăți experiența utilizatorului, prin 
-                            adaptarea sistemului la neajunsurile sau diferențele prezente în fiecare browser.
+                            adaptarea sistemului la neajunsurile sau diferențele prezente în fiecare <b>browser</b>.
                         </p><p>
-                            Un faimos exemplu este Internet Explorer, care nu afișează corespunzător multiple
+                            Un faimos exemplu este <b>Internet Explorer</b>, care nu afișează corespunzător multiple
                             elemente grafice. Acesta necesită directive speciale pentru a funcționa corespunzător.
                         </p>
                         <pre id="sesiuni-browser"></pre>
@@ -163,19 +164,19 @@ require_once("php/elemente.php");
                         <div class="row">
                             <div class="col-sm-6">
                                 <p>
-                                    Din aceleași motive este importantă cunoașterea ambelor elemente: browser și OS. 
-                                    Dacă este nevoie de repararea unei probleme care apare doar în Firefox pe Windows 8.1, 
+                                    Din aceleași motive este importantă cunoașterea ambelor elemente: <b>browser</b> și <b>OS</b>. 
+                                    Dacă este nevoie de repararea unei probleme care apare doar în <b>Firefox</b> pe <b>Windows 8.1</b>, 
                                     selecția se poate face ușor. 
                                 </p>
                                 <p>
-                                    Dar există alt motiv, la fel de important, pentru stocarea acestor informații: statistică. 
+                                    Dar există alt motiv, la fel de important, pentru stocarea acestor informații: <i>statistică</i>. 
                                     Să spunem că dorim să implementăm o funcționalitate în sistem. 
                                     Una care va face sistemul să nu mai funcționeze complet pe un anumit sistem.
                                 </p>
                                 <p>
-                                    Având informația de mai jos, se poate face o alegere pertinentă, dacă o categorie de utilizatori 
-                                    poate sau nu să fie neglijată când vine vorba de modificarea sistemului. 
-                                    O problemă cu Chrome / Windows 7 va avea un impact de 3 ori mai puternic decât una pe Firefox / Windows 8.
+                                    Având informația de mai jos, se poate face o alegere pertinentă, dacă o categorie de <code>utilizatori</code> 
+                                    poate sau nu să fie <i>neglijată</i> când vine vorba de modificarea sistemului. 
+                                    O problemă pe <b>Chrome / Windows 7</b> va avea un impact <i>de 3 ori mai puternic</i> decât una pe <b>Firefox / Windows 8</b>.
                                 </p>
                                 
                             </div>
@@ -196,21 +197,22 @@ require_once("php/elemente.php");
                             Mesaje expediate
                         </h2>
                         <p>
-                            Un mesaj conține doar datele strict necesare: 
+                            Un <code>mesaj</code> conține doar datele strict necesare: 
                             expeditorul, destinatarul, data, conținutul și 
                             faptul dacă a fost sau nu citit de către destinatar.
                         </p>
                         <p>
-                            Din câte se poate vedea, numărul de mesaje trimise in 4 
-                            luni poate varia extrem de mult de la un set de utilizatori la altul.
+                            Din câte se poate vedea, numărul de <code>mesaje</code> trimise in 4 
+                            luni poate varia extrem de mult de la un set de <code>utilizatori</code> la altul.
                             Acest fapt poate crea probleme de performanță a sistemului de baze de date, pentru ca 
-                            toate mesajele sunt stocate în aceeași tabelă pentru toți utilizatorii. După cum se poate vedea, 
+                            toate <code>mesajele</code> sunt stocate în aceeași tabelă pentru toți <code>utilizatorii</code>. 
+                            După cum se poate vedea, 
                             în momentul în care a crescut numărul de rânduri din tabelă la aproape 800,000
                             performanța a scăzut dramatic.  
                         </p>
                         <p>
                             Un alt factor care dăunează performanței este natura informației stocate.
-                            O structură de „coadă” va încetini setul de interogări pe o tabelă, 
+                            O structură de tip „<b>coadă</b>” va încetini setul de interogări pe o tabelă, 
                             precum este explicat 
                             <a href='https://blog.engineyard.com/2011/5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you/'>aici</a>.
                             Evident, mesajele noastre reprezintă o coadă cronologică de date, 
@@ -251,16 +253,17 @@ require_once("php/elemente.php");
                             Am simulat aici un sistem tânăr, abia scos pe piață. 
                             Cifrele sunt exagerate, desigur, dar ideea rămâne neschimbată. 
                             Când un serviciu este nou și devine popular, apare creștere precum cea din ianuarie.
-                            După o vreme (de obicei mult mai scurtă decât cele 4 luni afișate aici) interesul în produs începe să scadă. 
+                            După o vreme (de obicei <b>mult</b> mai scurtă decât cele 4 luni afișate aici) 
+                            interesul în produs începe să scadă. 
                         </p>
                         <p>
                             Îmbunătățirea, inovarea și schimbarea, chiar și dacă sunt doar la nivel de aparențe, sunt indispensabile.
                         </p>
                         <p>
                             Trebuie notat faptul că această interogare a durat puțin peste o secundă: de 20 de ori mai puțin decât celelalte!
-                            Acest fapt este datorat de prezența unui index pe coloana dată. 
-                            Cum se numără mesajele ce au fost trimise în fiecare lună, toată interogarea este 
-                            rezolvată din citirea index-ului, care este exact de 20 de ori mai mic decât întregimea tabelei.
+                            Acest fapt este datorat de prezența unui <b>index</b> pe coloana <code>dată</code>. 
+                            Cum se numără <code>mesajele</code> ce au fost trimise în fiecare lună, toată interogarea este 
+                            rezolvată din citirea index-ului, care este <i>exact</i> de 20 de ori mai mic decât întregimea tabelei.
                         </p>
                         <pre id="mesaje-luna"></pre>
                         <div class="row">
@@ -280,7 +283,7 @@ require_once("php/elemente.php");
                             numărului de mesaje ce trebuia trimis de fiecare utilizator.
                             Rezultatul este, după cum se observă, destul de haotic.
                             Pentru a obține un rezultat ce poate fi afișat pe grafic, 
-                            am limitat numărul de rezultate la utilizatorii cu mai puțin de 5000 mesaje.
+                            am limitat numărul de rezultate la <code>utilizatorii</code> cu mai puțin de 5000 <code>mesaje</code>.
                         </p>
                         <pre id="distributie-mesaje"></pre>
                         <div class="row">
