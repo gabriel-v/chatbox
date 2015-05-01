@@ -29,7 +29,9 @@ function NoticeErrorHandler($errno, $errstr, $errfile, $errline) {
             break;
         default:
             echo "\nAvem o eroare NECUNOSCUTA: {$errstr} in fisierul {$errfile}:{$errline}\n";
+            die("A murit! Error: {$errstr} on {$errfile}:{$errline}");
     }
+    
     
     return false; 
 }
