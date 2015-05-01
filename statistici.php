@@ -41,15 +41,13 @@ require_once("php/elemente.php");
                 <h2>Despre grafice si vizualizări</h2>
                 <p>
                     Vizualizarea datelor joacă un rol foarte important în înțelegerea lor. 
+                    Iar studiul sistemelor de baze de date este o sarcină grea ce necesită orice tip de ajutor. 
                 </p>
                 <p>
-                    Studiul sistemelor de baze de date, de asemenea, 
-                    este o sarcină extrem de grea ce necesită orice tip de ajutor. 
-                </p><p>
                     Sistemul de mai jos creează câte o vizualizare a datelor 
                     numerice rezultate dintr-o interogare SQL. 
                     Inovația acestui sistem constă în faptul că se poate alipi 
-                    unui sistem deja existent de baze de date într-un mod foarte simplu.
+                    unui sistem deja existent o vizualizare într-un mod foarte simplu.
                 </p>
                 <h2>Implementarea </h2>
                 <p>
