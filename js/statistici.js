@@ -110,7 +110,7 @@ $(function () {
           
     lineGraph('mesaje-luna', 'mesaje-luna', 'data_t', "<%=label%>: <%= value %> mesaje");
     
-    lineGraph('distributie-mesaje', 'distributie-mesaje', 'mesaje', "<%= value %> utilizatori<br> au expediat<br> <%=label%> - <%=parseInt(label)+500%> mesaje");
+    lineGraph('distributie-mesaje', 'distributie-mesaje', 'mesaje', "<%= value %> utilizatori: <%=label%> - <%=parseInt(label)+500%> mesaje");
     
 //    var data_per_luna = {
 //        labels: ["Ianuarie", "Februarie", "Martie", "Aprilie"],
@@ -138,5 +138,12 @@ $(function () {
 //        legendTemplate : "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].fillColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
 //    });
 
-
+/* <ul class=\"<%=name.toLowerCase()%>-legend\">
+ * <% for (var i=0; i<datasets.length; i++){%>
+ *      <li>
+ *          <span style=\"background-color:<%=datasets[i].strokeColor%>\"></span>
+ *          <%if(datasets[i].label){%><%=datasets[i].label%><%}%>
+ *      </li>
+ * <%}%>
+ * </ul>"*/
 });

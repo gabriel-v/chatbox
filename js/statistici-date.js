@@ -263,7 +263,7 @@ var date_statistici =
                 "data_t": "2015-04"
             }
         ],
-        "timp": 1.05
+        "timp": 2.05
     },
     "durata-sesiune": {
         "query-real": "SELECT ROUND(TIME_TO_SEC(TIMEDIFF(sfarsit, inceput))\/(60 * 10), -1) AS \"minute\", \n\tROUND(COUNT(*) * 60 \/ ROUND(TIME_TO_SEC(TIMEDIFF(sfarsit, inceput))\/(60 * 10), -1)) AS \"numar\"\nFROM sesiuni_autogen\nGROUP BY minute\nORDER BY minute ASC",

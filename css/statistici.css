@@ -19,7 +19,7 @@ canvas {
     padding-left:22px;
     
 }
-div.well > h2 {
+h2, h3 {
     text-align: center;
 }
 
@@ -28,6 +28,12 @@ pre {
     overflow-x: auto;
 }
 p {
-    font-size: large;
+    font-size: medium;
     text-indent: 50px;
+}
+li {
+    font-size: medium;
+}
+ul {
+    margin-left: 30px;
 }
