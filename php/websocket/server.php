@@ -17,9 +17,20 @@
  * asteptam sa apara altul in urma lui. 
  */
 function NoticeErrorHandler($errno, $errstr, $errfile, $errline) {
-    if ($errno == E_USER_NOTICE || $errno == E_USER_WARNING || $errno == E_USER_ERROR) {
-        die("Died!! Error: {$errstr} on {$errfile}:{$errline}");
+    switch($errno){
+        CASE E_USER_NOTICE:
+            echo "\nAvem o eroare NOTICE: {$errstr} in fisierul {$errfile}:{$errline}\n";
+            break;
+        CASE E_USER_WARNING:
+            echo "\nAvem o eroare WARNING: {$errstr} in fisierul {$errfile}:{$errline}\n";
+            break;
+        CASE E_USER_ERROR:
+            die("A murit! Error: {$errstr} on {$errfile}:{$errline}");
+            break;
+        default:
+            echo "\nAvem o eroare NECUNOSCUTA: {$errstr} in fisierul {$errfile}:{$errline}\n";
     }
+    
     return false; 
 }
 
