@@ -1,0 +1,26 @@
+/* * * 
+ * chatbox
+ * 
+ * Copyright (c) Gabriel Vîjială: 2014, 2015 
+ * 
+ * Acest proiect a fost asamblat pentru Atestatul Profesional 
+ * la terminarea liceului, pentru gradul de Programator Ajutor.
+ * 
+ */
+
+canvas { 
+    height: 300px;
+    max-height: 450px;
+    width:  400px;
+    //background-color:lightblue;
+    margin: 15px;
+    padding-right:35px;
+    
+}
+div.well > h2 {
+    text-align: center;
+}
+p {
+    font-size: large;
+    text-indent: 50px;
+}
