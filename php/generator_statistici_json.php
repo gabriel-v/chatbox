@@ -164,6 +164,26 @@ GROUP BY minute
 ORDER BY minute ASC
 END;
 
+$date['distributie-mesaje']['query'] = <<<'END'
+SELECT COUNT(*) as "numar", 
+    ROUND(
+        numar_mesaje / 5, -2
+    ) * 5 as "mesaje" 
+FROM (
+    SELECT 
+        COUNT(*) 
+            AS "numar_mesaje",
+        nume  
+    FROM mesaje_autogen m 
+    JOIN utilizatori_autogen u
+    ON m.id_expeditor = u.id 
+    GROUP BY u.nume
+    ) distributie_individuala
+WHERE numar_mesaje < 8000 
+GROUP BY  mesaje
+ORDER BY mesaje ASC
+END;
+
 require_once('bd_functii.php');
 
 function genereaza_date() {
@@ -186,4 +206,14 @@ function genereaza_date() {
     echo json_encode($date, JSON_PRETTY_PRINT);
     echo "</pre>\n";
 }
+
+$q = $date['distributie-mesaje']['query'];
+
+//echo "\nINCERCAM QUERY PENTRU \n$q\n\n";
+$msc = microtime(true);
+//$date['distributie-mesaje']['rezultat'] = interogare_vector_bd($q);
+$msc2 = microtime(true) - $msc;
+$date['distributie-mesaje']['timp'] = (int)($msc2 * 1000)/1000 + " secunde ";
+
+echo json_encode($date, JSON_PRETTY_PRINT);
 

@@ -11,14 +11,20 @@
 canvas { 
     height: 300px;
     max-height: 450px;
-    width:  400px;
+    //width:  400px;
+    //width: 90%;
     //background-color:lightblue;
-    margin: 15px;
-    padding-right:35px;
+    //margin: 15px;
+    padding-right:22px;
+    padding-left:22px;
     
 }
 div.well > h2 {
     text-align: center;
+}
+
+pre {
+    font-size: small;
 }
 p {
     font-size: large;

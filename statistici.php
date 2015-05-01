@@ -52,8 +52,7 @@ require_once("php/elemente.php");
                             <div class="col-sm-6"><pre id="durata-sesiune"></pre></div>
                         </div>
                         <div class="row">
-                            <div class="col-sm-12"><canvas  id="durata-sesiune"></canvas></div>
-                            
+                            <canvas  id="durata-sesiune"></canvas>
                         </div>  
                     </div>
 
@@ -131,7 +130,7 @@ require_once("php/elemente.php");
                                 <pre id="utilizatori-mesaje-max"></pre>
                                 <!--</div>-->
                                 <div class="row">
-                                    <canvas  id="utilizatori-mesaje-max"></canvas>
+                                    <canvas style="padding-left:40px;"  id="utilizatori-mesaje-max"></canvas>
                                 </div>
 
                             </div>
@@ -150,18 +149,33 @@ require_once("php/elemente.php");
             </div>
 
             <div class="row">
-                <div class="col-sm-12">
+                <div class="col-sm-6">
                     <div class="well">
                         <h2>
-                            Sesiuni si mesaje, per luna
+                            Mesaje per luna
                         </h2>
                         <p>
                             DESCRIERE
                         </p>
-                        <div class="col-sm-6"><pre id="sesiuni-luna"></pre></div>
-                        <div class="col-sm-6"><pre id="mesaje-luna"></pre></div>
+                        <pre id="mesaje-luna"></pre>
                         <div class="row">
-                            <canvas  id="sesiuni-mesaje-luna"></canvas>
+                            <canvas  id="mesaje-luna"></canvas>
+                        </div> 
+                    </div>
+
+                </div>
+
+                <div class="col-sm-6">
+                    <div class="well">
+                        <h2>
+                            Distributia mesajelor
+                        </h2>
+                        <p>
+                            DESCRIERE
+                        </p>
+                        <pre id="distributie-mesaje"></pre>
+                        <div class="row">
+                            <canvas  id="distributie-mesaje"></canvas>
                         </div> 
                     </div>
 

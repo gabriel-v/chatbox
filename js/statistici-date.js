@@ -88,23 +88,23 @@ var date_statistici =
         "rezultat": [
             {
                 "numar": "1123",
-                "sistem": "Chrome, Windows 7"
+                "sistem": "Chrome, Win 7"
             },
             {
                 "numar": "853",
-                "sistem": "Firefox, Windows 7"
+                "sistem": "Firefox, Win 7"
             },
             {
                 "numar": "732",
-                "sistem": "Chrome, Windows 8.1"
+                "sistem": "Chrome, Win 8.1"
             },
             {
                 "numar": "527",
-                "sistem": "Chrome, Windows 8"
+                "sistem": "Chrome, Win 8"
             },
             {
                 "numar": "511",
-                "sistem": "Firefox, Windows 8.1"
+                "sistem": "Firefox, Win 8.1"
             },
             {
                 "numar": "438",
@@ -112,11 +112,11 @@ var date_statistici =
             },
             {
                 "numar": "402",
-                "sistem": "Internet Explorer, Windows 7"
+                "sistem": "IE, Win 7"
             },
             {
                 "numar": "376",
-                "sistem": "Firefox, Windows 8"
+                "sistem": "Firefox, Win 8"
             },
             {
                 "numar": "339",
@@ -124,7 +124,7 @@ var date_statistici =
             },
             {
                 "numar": "323",
-                "sistem": "Chrome, Mac OS X"
+                "sistem": "Safari, Mac OS X"
             }
         ],
         "timp": 0.112
@@ -180,7 +180,7 @@ var date_statistici =
         "rezultat": [
             {
                 "numar": "9",
-                "nume": "Alexandra Bartolomeu"
+                "nume": "Alexandra Piu"
             },
             {
                 "numar": "9",
@@ -212,7 +212,7 @@ var date_statistici =
             },
             {
                 "numar": "71",
-                "nume": "Alberta D\u0103sc\u0103lescu"
+                "nume": "Alberta Popa"
             },
             {
                 "numar": "73",
@@ -311,5 +311,79 @@ var date_statistici =
             }
         ],
         "timp": 0.022
+    },
+    "distributie-mesaje": {
+        "query": "SELECT COUNT(*) AS \"numar\", \n    ROUND(\n        numar_mesaje \/ 5, -2\n    ) * 5 AS \"mesaje\" \nFROM (\n    SELECT \n        COUNT(*) \n            AS \"numar_mesaje\",\n        nume  \n    FROM mesaje_autogen m \n    JOIN utilizatori_autogen u\n    ON m.id_expeditor = u.id \n    GROUP BY u.nume\n    ) distributie_individuala\nWHERE numar_mesaje < 8000 \nGROUP BY  mesaje\nORDER BY mesaje ASC",
+        "rezultat": [
+            {
+                "numar": "24",
+                "mesaje": "0"
+            },
+            {
+                "numar": "28",
+                "mesaje": "500"
+            },
+            {
+                "numar": "30",
+                "mesaje": "1000"
+            },
+            {
+                "numar": "17",
+                "mesaje": "1500"
+            },
+            {
+                "numar": "18",
+                "mesaje": "2000"
+            },
+            {
+                "numar": "8",
+                "mesaje": "2500"
+            },
+            {
+                "numar": "10",
+                "mesaje": "3000"
+            },
+            {
+                "numar": "7",
+                "mesaje": "3500"
+            },
+            {
+                "numar": "2",
+                "mesaje": "4000"
+            },
+            {
+                "numar": "8",
+                "mesaje": "4500"
+            },
+            {
+                "numar": "5",
+                "mesaje": "5000"
+            },
+            {
+                "numar": "5",
+                "mesaje": "5500"
+            },
+            {
+                "numar": "2",
+                "mesaje": "6000"
+            },
+            {
+                "numar": "5",
+                "mesaje": "6500"
+            },
+            {
+                "numar": "2",
+                "mesaje": "7000"
+            },
+            {
+                "numar": "5",
+                "mesaje": "7500"
+            },
+            {
+                "numar": "1",
+                "mesaje": "8000"
+            }
+        ],
+        "timp": 21.451
     }
 };
