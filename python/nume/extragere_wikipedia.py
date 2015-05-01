@@ -39,7 +39,7 @@ def extrage_nume(fisier_html, fisier_tinta):
             for nume in re.findall(rx_li_a_title, linie):
                 lista.append(nume)
 
-    with open(fisier_tinta, 'w') as f:
+    with open(fisier_tinta, 'w', encoding='utf-8') as f:
         f.write('\n'.join(lista))
 
     print("Salvat " + str(len(lista)) + " elemente in " + fisier_tinta)
@@ -66,7 +66,7 @@ def genereaza_lista_prenume():
     if not os.path.isfile(fisier_prenume):
         salveaza_prenume()
 
-    with open(fisier_prenume) as fx:
+    with open(fisier_prenume, encoding='utf-8') as fx:
         prenume = [p.strip() for p in fx.readlines()]
 
     return prenume
@@ -86,7 +86,7 @@ def genereaza_lista_nume():
 
     nume = []
     for fisier in lista_fisiere:
-        with open(fisier) as fx:
+        with open(fisier, encoding='utf-8') as fx:
             nume.extend([n.strip() for n in fx.readlines()])
 
     # print("Gasit ", len(nume), " nume diferite")
