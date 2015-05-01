@@ -33,7 +33,7 @@ require_once("php/elemente.php");
                 <h1 class="text-center">797,455 de mesaje <br/> <small> generate automat </small></h1>
                 <p> Pentru vizualizarea de statistici am construit un generator <br/>
                     de conținut despre care puteți afla mai multe 
-                    <a class="" href="generator.php">aici</a>.
+                    <a target="blank" href="generator.php">aici</a>.
                 </p>
             </div>
 
@@ -57,7 +57,7 @@ require_once("php/elemente.php");
                     <li>Rezultatele sunt stocate în altă bază de date, pentru uz ulterior. </li>
                     <li>Aici se păstrează și timpul necesar unei interogări.</li>
                     <li>Rezultatul este întors programului de JavaScript, unde este interpretat și afișat.</li>
-                    <li>Graficele sunt afișate folosind librăria <a href="http://www.chartjs.org/">chart.js</a>.</li>
+                    <li>Graficele sunt afișate folosind librăria <a target="blank" href="http://www.chartjs.org/">chart.js</a>.</li>
                 </ul>
                 <p>
 
@@ -72,7 +72,7 @@ require_once("php/elemente.php");
                 </p>
                 <p>
                     Datele folosite pentru vizualizare sunt generate folosind un 
-                    set de algoritmi ce pot fi găsiți <a href="generator.php">aici</a>.
+                    set de algoritmi ce pot fi găsiți <a target="blank" href="generator.php">aici</a>.
                 </p>
             </div>
 
@@ -212,7 +212,7 @@ require_once("php/elemente.php");
                             Un alt factor care dăunează performanței este natura informației stocate.
                             O structură de tip „<b>coadă</b>” va încetini setul de interogări pe o tabelă, 
                             precum este explicat 
-                            <a href='https://blog.engineyard.com/2011/5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you/'>aici</a>.
+                            <a target="blank" href='https://blog.engineyard.com/2011/5-subtle-ways-youre-using-mysql-as-a-queue-and-why-itll-bite-you/'>aici</a>.
                             Evident, mesajele noastre reprezintă o coadă cronologică de date, 
                             ce trebuie sortate și verificate dacă au fost citite de destinatar.
                         </p>
