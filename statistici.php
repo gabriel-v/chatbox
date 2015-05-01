@@ -60,7 +60,7 @@ require_once("php/elemente.php");
             </div>
 
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-md-6">
                     <div class="well">
                         <h2>
                             Sesiuni / OS
@@ -76,7 +76,7 @@ require_once("php/elemente.php");
 
                 </div>
 
-                <div class="col-sm-6">
+                <div class="col-md-6">
                     <div class="well">
                         <h2>
                             Sesiuni / browser
@@ -149,7 +149,7 @@ require_once("php/elemente.php");
             </div>
 
             <div class="row">
-                <div class="col-sm-6">
+                <div class="col-md-6">
                     <div class="well">
                         <h2>
                             Mesaje per luna
@@ -165,7 +165,7 @@ require_once("php/elemente.php");
 
                 </div>
 
-                <div class="col-sm-6">
+                <div class="col-md-6">
                     <div class="well">
                         <h2>
                             Distributia mesajelor

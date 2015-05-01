@@ -25,6 +25,7 @@ div.well > h2 {
 
 pre {
     font-size: small;
+    overflow-x: auto;
 }
 p {
     font-size: large;
