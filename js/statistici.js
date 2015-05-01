@@ -11,7 +11,7 @@
 $(function () {
     
     for (var key in date_statistici) {
-        $("pre#" + key).text("-- durata interogare: " + date_statistici[key].timp + " secunde\n" +  date_statistici[key].query);
+        $("pre#" + key).text("-- durata query: " + date_statistici[key].timp + " secunde\n" +  date_statistici[key].query);
     }
 
     function extrage(coloana, nume_label) {
@@ -110,7 +110,7 @@ $(function () {
           
     lineGraph('mesaje-luna', 'mesaje-luna', 'data_t', "<%=label%>: <%= value %> mesaje");
     
-    lineGraph('distributie-mesaje', 'distributie-mesaje', 'mesaje', "<%= value %> utilizatori au expediat <%=label%> - <%=parseInt(label)+500%> mesaje");
+    lineGraph('distributie-mesaje', 'distributie-mesaje', 'mesaje', "<%= value %> utilizatori<br> au expediat<br> <%=label%> - <%=parseInt(label)+500%> mesaje");
     
 //    var data_per_luna = {
 //        labels: ["Ianuarie", "Februarie", "Martie", "Aprilie"],

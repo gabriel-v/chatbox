@@ -244,7 +244,7 @@ var date_statistici =
         "timp": 0.035
     },
     "mesaje-luna": {
-        "query": "SELECT COUNT(*) AS \"numar\",\n       DATE_FORMAT(`data`, '%Y-%m') AS \"data_t\"\nFROM mesaje_autogen\nWHERE DATE_FORMAT(`data`, '%Y-%m')\n      IN ('2015-01', '2015-02',\n          '2015-03', '2015-04')\nGROUP BY data_t\nORDER BY data_t ASC",
+        "query": "SELECT COUNT(*) AS \"numar\",\n       DATE_FORMAT(`data`, '%Y-%m')\n           AS \"data_t\"\nFROM mesaje_autogen\nWHERE DATE_FORMAT(`data`, '%Y-%m')\n      IN ('2015-01', '2015-02',\n          '2015-03', '2015-04')\nGROUP BY data_t\nORDER BY data_t ASC",
         "rezultat": [
             {
                 "numar": "74241",
@@ -313,7 +313,7 @@ var date_statistici =
         "timp": 0.022
     },
     "distributie-mesaje": {
-        "query": "SELECT COUNT(*) AS \"numar\", \n    ROUND(\n        numar_mesaje \/ 5, -2\n    ) * 5 AS \"mesaje\" \nFROM (\n    SELECT \n        COUNT(*) \n            AS \"numar_mesaje\",\n        nume  \n    FROM mesaje_autogen m \n    JOIN utilizatori_autogen u\n    ON m.id_expeditor = u.id \n    GROUP BY u.nume\n    ) distributie_individuala\nWHERE numar_mesaje < 8000 \nGROUP BY  mesaje\nORDER BY mesaje ASC",
+        "query": "SELECT COUNT(*) AS \"numar\", \n    ROUND(\n        numar_mesaje \/ 5, -2\n    ) * 5 AS \"mesaje\" \nFROM (\n    SELECT \n        COUNT(*) \n            AS \"numar_mesaje\",\n        nume  \n    FROM mesaje_autogen m \n    JOIN utilizatori_autogen u\n    ON m.id_expeditor = u.id \n    GROUP BY u.nume\n    ) distributie_individuala\nWHERE numar_mesaje < 5000 \nGROUP BY  mesaje\nORDER BY mesaje ASC",
         "rezultat": [
             {
                 "numar": "24",
