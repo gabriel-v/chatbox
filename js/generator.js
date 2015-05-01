@@ -84,7 +84,7 @@ $(function () {
         descarca($('#' + x));
         setInterval(function(){
             maybeUpdate($('#' + x));
-        }, Math.floor(1000 * (3 + 2 * Math.random())));
+        }, Math.floor(1000 * (2 + 1 * Math.random())));
     });
     
     
