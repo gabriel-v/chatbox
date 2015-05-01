@@ -35,12 +35,12 @@ function echo_navbar($where='nowhere') {?>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-            <a class="navbar-brand" href="index.php"><strong>chatbox</strong></a>
+            <a class="navbar-brand" style="font-size: x-large" href="index.php"><strong>chatbox</strong></a>
         </div>
         <center>
             
             <div class="collapse navbar-collapse" id="navbar-main">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" style="font-size: large">
                     <li <?php if($where === 'home') echo 'class="active"';?>>
                         <a href="index.php">Chat</a>
                     </li>
