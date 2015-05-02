@@ -1,13 +1,40 @@
+/* * * 
+ * chatbox
+ * 
+ * Copyright (c) Gabriel Vîjială: 2014, 2015 
+ * 
+ * Acest proiect a fost asamblat pentru Atestatul Profesional 
+ * la terminarea liceului, pentru gradul de Programator Ajutor.
+ * 
+ */
 var selectat = null; 
 var utilizator = null;
 var scroll_blocat = true;
 
 var websocket = null;
 
+var conectat = false;
+
+function stare_sistem(stare, functional) {
+    if(functional) {
+        $('#casuta').prop('disabled', false);
+        //$('#stare-sistem').css('color','#22ff22');
+        $('#stare-sistem').removeClass('label-danger');
+        $('#stare-sistem').addClass('label-success');
+        
+    } else {
+        $('#casuta').prop('disabled', true);
+        $('#stare-sistem').removeClass('label-success');
+        $('#stare-sistem').addClass('label-danger');
+    }
+    $('#stare-sistem').text(stare);
+}
+
 function init_websocket() {
-    websocket = new WebSocket("ws://" + window.location.hostname +":8080");
+    websocket = new WebSocket("ws://" + window.location.hostname +":8090");
     
     websocket.onopen = function(data) {
+        conectat = true;
         trimite_ajax(
                 {
                     'operatie': 'sesiune_noua'
@@ -23,7 +50,7 @@ function init_websocket() {
                     websocket.send(JSON.stringify(date_init));
                     
                 });
-        $('#casuta').prop('disabled', false);
+        stare_sistem("Conexiune stabilită.", true);
         console.log("Conexiune realizata cu succes: " + JSON.stringify(data));
     };
     websocket.onmessage = function(raspuns) {
@@ -50,16 +77,21 @@ function init_websocket() {
         }
     };
     websocket.onclose = function(data) {
+        conectat = false;
         console.log("Conexiunea se inchide: " + data);
-        $('#casuta').prop('disabled', true);
+        
+        stare_sistem('Conexiune inchisa.', false);
     };
     websocket.onerror = function(data) {
+        conectat = false;
         console.error("Eroare in websocket: " + data);
+        stare_sistem('Eroare!', false);
     };
     
 }
 
 function logout() {
+    conectat = false;
     websocket.close();
     window.location.href = 'autentificare.php';
 }
@@ -86,10 +118,19 @@ function actualizare_utilizator (u) {
     if($('#' + p_id).length === 0) {
         $('<p/>', {
             id: p_id,
+            //style: 'cursor: pointer;',
             click: function(){ selecteaza(u); },
-            text: u.nume
+            text: u.nume,
+            class: "list-group-item list-item"
         }).appendTo($("div#list-wrap"));
     }
+    
+    if(u.citit === 0 || u.citit === '0') {
+        element_lista(u.id).addClass('mesaj-nou');
+    } else {
+        element_lista(u.id).removeClass('mesaj-nou');
+    }
+    
     if(u.stare === 'online') {
         element_lista(u.id).addClass('online').removeClass('offline');
     } else if(u.stare === 'offline') {
@@ -113,9 +154,9 @@ function selecteaza(u) {
     $('#chat-titlu').text(u.nume);
     //var p = element_lista(u.id);
     if(selectat) 
-        element_lista(selectat.id).removeClass('selectat');
+        element_lista(selectat.id).removeClass('selectat active');
     selectat = u;
-    element_lista(selectat.id).addClass('selectat').removeClass('mesaj-nou');
+    element_lista(selectat.id).addClass('selectat active').removeClass('mesaj-nou');
     $('#casuta').val('');
     incarca_mesaje();
 }
@@ -163,13 +204,18 @@ function trimite(mesaj) {
 }
 
 function adauga_mesaj(text_mesaj, tip_mesaj) {
-    $('<p/>', {
-        text: text_mesaj,
+    var panel = $('<div/>', {
+        class: 'panel',
         id: 'mesaj',
         class: (tip_mesaj === 'primit' ? 'mesaj-primit': 'mesaj-trimis')
-    }).appendTo($('#zona-mesaje'));
-    //$('#zona-mesaje').scrollHeight = $('#zona-mesaje').scrollTop;
-    $("#zona-mesaje").animate({ scrollTop: $('#zona-mesaje')[0].scrollHeight}, 150);
+    });
+    var p = $('<p/>', {
+        text: text_mesaj
+    });
+    p.appendTo(panel);
+    panel.appendTo($('#zona-mesaje'));
+    
+    $("#zona-mesaje").animate({ scrollTop: $('#zona-mesaje')[0].scrollHeight}, 15);
 }
 
 function incarca_mesaje() {
@@ -193,7 +239,10 @@ function incarca_mesaje() {
 }
 
 function init() {
-    $('#casuta').prop('disabled', true);
+    stare_sistem('Pornire... ', false);
+    setInterval(function() {
+        if(!conectat) init_websocket();
+    }, 4000);
     init_websocket();
     lista_utilizatori();    
     $('#casuta').keydown(tasta_jos);

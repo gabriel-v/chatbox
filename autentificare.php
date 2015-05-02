@@ -1,59 +1,79 @@
 <?php
-  session_start();
-  unset($_SESSION['NUME']);
-  unset($_SESSION['ID']);
+/* * * 
+ * chatbox
+ * 
+ * Copyright (c) Gabriel Vîjială: 2014, 2015 
+ * 
+ * Acest proiect a fost asamblat pentru Atestatul Profesional 
+ * la terminarea liceului, pentru gradul de Programator Ajutor.
+ * 
+ */
+
+session_start();
+unset($_SESSION['NUME']);
+unset($_SESSION['ID']);
+include 'php/elemente.php'
 ?>
 <!DOCTYPE html>
-<head> 
-  <title> CHATBOX </title>
-  <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
-</head>
+<?php echo_comentariu(); ?>
+<html> 
+    <head>
+<?php echo_head(); ?>
+        <link rel="stylesheet" href="css/login.css">
+    </head>
 
-<form name="form_login" method="post" action="php/verifica_aut.php">
-  <table width="500" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#eeeeee">
-    <tr>
-      <td colspan="3"><h2 text-align="center">Autentificare</h2></td>
-    </tr>
-    <tr> 
-      <td colspan="3">
-        <?php 
-          if(isset($_SESSION['ERORI']) &&
-          is_array($_SESSION['ERORI']) && 
-          count($_SESSION['ERORI']) > 0) {
-            echo '<ul class="eroare">';
-              foreach($_SESSION['ERORI'] as $eroare) {
-                echo "<li> $eroare </li>\n";
-              }
-              echo "</ul>\n";
-            unset($_SESSION['ERORI']);
-          }
-        ?>
-      </td>
-    </tr>
-    <tr>
-      <td width="130">Nume</td>
-      <td width="6">:</td>
-      <td width="394">
-        <input name="nume" autocomplete="off" type="text" id="nume">
-      </td>
-    </tr>
-    <tr>
-      <td>Parolă</td>
-      <td>:</td>
-      <td>
-        <input name="parola" type="password" id="parola">
-      </td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-      <td>
-        <input type="submit" name="" value="Intră">
-      </td>
-    </tr>
-    <tr> 
-      <td colspan="3" align="center">
-        <a href="inregistrare.php"> Nu ai cont? </a>
-      </td>
-    </table>
-  </form>
+    <body>
+<?php echo_navbar(); ?>
+
+
+        <!-- http://getbootstrap.com/examples/signin/ -->
+        <div class="container">
+            <div class="row">
+
+
+                <form class="form-signin" role="login" 
+                      action="php/verifica_aut.php" method="post">
+<?php if (isset($_SESSION['ERORI'])) { ?>
+
+                        <!-- inspirat din http://devgirl.org/2012/08/06/styling-your-app-with-twitter-bootstrap/ -->
+                        <!--<div class="alert alert-block alert-error">
+                            <a class="close" data-dismiss="alert" href="#">X</a>
+                            <h4 class="alert-heading">Autentificare esuata!</h4>
+        
+                        </div> !-->
+
+                        <div class="alert alert-danger" role="alert">
+                            <span class="glyphicon glyphicon-exclamation-sign text-center" aria-hidden="true"></span>
+                            <span class="sr-only text-center">Eroare:</span>
+                            <ul class="eroare">
+    <?php
+    foreach ($_SESSION['ERORI'] as $eroare) {
+        echo "<li> $eroare </li>\n";
+    }
+    unset($_SESSION['ERORI']);
+    ?>
+                            </ul>
+                        </div>
+<?php } ?>
+                    <h2 class="form-signin-heading center-block text-center">Autentificare</h2>
+                    <label for="inputEmail" class="sr-only">Nume</label>
+                    <input type="text" name="nume" id="nume" class="form-control" 
+                           placeholder="Nume" required autofocus>
+                    <label for="inputPassword" class="sr-only">Parola</label>
+                    <input type="password" name="parola" id="parola" class="form-control" 
+                           placeholder="Parola" required>
+                    <button class="btn btn-lg btn-primary btn-block" 
+                            type="submit">Intră</button>
+                </form>
+            </div>
+            <div class="row">
+                <center>
+                    <a href="inregistrare.php" class="btn btn-default btn-lg">
+                        Nu ai cont? 
+                    </a>
+                </center>                
+            </div>
+
+        </div>
+    </body>
+</html>

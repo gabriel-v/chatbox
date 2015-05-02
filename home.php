@@ -1,62 +1,67 @@
 <?php
-  session_start();
-  require_once("php/bd_functii.php");
-  require_once("php/functii.php");
+/* * * 
+ * chatbox
+ * 
+ * Copyright (c) Gabriel Vîjială: 2014, 2015 
+ * 
+ * Acest proiect a fost asamblat pentru Atestatul Profesional 
+ * la terminarea liceului, pentru gradul de Programator Ajutor.
+ * 
+ */
 
-  if(!isset($_SESSION['NUME']) || !isset($_SESSION['ID'])) {
+session_start();
+require_once("php/bd_functii.php");
+require_once("php/functii.php");
+require_once("php/elemente.php");
+
+if (!isset($_SESSION['NUME']) || !isset($_SESSION['ID'])) {
     redirect("autentificare.php");
-  }
-  $nume = $_SESSION['NUME'];
-  $id = $_SESSION['ID'];
+}
+$nume = $_SESSION['NUME'];
+$id = $_SESSION['ID'];
 ?>
 <!DOCTYPE html>
+<?php echo_comentariu(); ?>
 <html>
-  <head> 
-    <title> CHATBOX </title>
-    <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/>
-    <link rel="stylesheet" href="style.css" type="text/css" /> 
+    <head> 
+        <?php echo_head(); ?>
+        <link rel="stylesheet" href="css/home.css" type="text/css" />
+        <script src="js/chat.js"></script>
+        <script>
+            $(function () {
+                init();
+            });
+        </script>
+    </head>
+    <body>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/functii.js"></script>
+        <div id="page-wrap">
 
-    <script>
-      $(function(){
-          init();
-          
-      });
-    </script>
-  </head>
-  <body>
+<?php echo_navbar('home'); ?>
 
-    <div id="page-wrap">
+            <div class="container container-fluid">
+                <div class="row"> 
+                    <div class="row-same-height row-full-height">
+                        <div class="col-sm-8 col-xs-12 col-full-height">            
+                            <div id="chat-wrap" class="content">
+                                <h2 id="chat-titlu">&lt;=====&gt;</h2>
+                                <div id="zona-mesaje"></div>
+                                <form id="zona-trimitere">
+                                    <textarea id="casuta" rows="1" maxlength="2000"> 
+                                    </textarea>
+                                </form>
+                            </div> 
+                        </div>
 
-      <header>
-      <h2> CHATBOX - SQL + PHP + JS </h2>
-      <input type='button' value='LOGOUT' onclick="logout()" />
-      <p>
-      <?php 
-        echo "Salut, $nume! #ID = $id.  <br />";
-        echo "IP-ul serverului: {$_SERVER['SERVER_ADDR']}.";
-        echo "IP-ul tau:        {$_SERVER['REMOTE_ADDR']} <br />";
-      ?>
-      </p>
-      </header>
-
-      <div id="chat-wrap">
-        <h2 id="chat-titlu"></h2>
-        <div id="zona-mesaje"></div>
-        <form id="zona-trimitere">
-          <textarea id="casuta" rows="1" maxlength="2000"> </textarea>
-        </form>
-      </div>
-
-      <div id="list-wrap"></div>
-
-      <footer> 
-      <h4> de Gabriel VIJIALA </h4>
-      </footer>
-
-    </div>
-
-  </body>
+                        <div class="col-sm-4 col-xs-12 sidebar-outer col-full-height"> 
+                            <div class="sidebar">
+                                <div id="list-wrap" class="list-group">
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+        </div>
+    </body>
 </html>

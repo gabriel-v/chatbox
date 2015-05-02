@@ -1,7 +1,16 @@
+/* * * 
+ * chatbox
+ * 
+ * Copyright (c) Gabriel Vîjială: 2014, 2015 
+ * 
+ * Acest proiect a fost asamblat pentru Atestatul Profesional 
+ * la terminarea liceului, pentru gradul de Programator Ajutor.
+ * 
+ */
 p {
     font-size: 16px; 
 }
-footer, header {
+/*footer, header {
     background-color: #333;
     color: white;
     text-align: center;
@@ -18,51 +27,58 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
-}
+}*/
 
 body {
     margin: 0px; 
 }
+footer {
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 40px;
+    background-color: #F5F5F5; 
+}
 
 #page-wrap {
-    height: 91vh;
-    width: 98vw;
+/*    height: 91vh;
+    width: 98vw;*/
 }
 
 #chat-wrap {
-    float: left;
-    width: 62%;
-    height: 65%;
-    border: 2px solid black;
-    margin: 1%;
+    margin-bottom: 15px;
+   height: calc(98vh - 100px);
+   border: 2px solid black;
+    //margin: 1%;
 }
 
-#list-wrap {
-    float: right; 
-    height: 65%;
-    width: 32%;
+
+#list-wrap {    
+    height: calc(98vh - 100px);
+    //min-height: calc(90vh - 100px);
+    overflow-y: auto;
     border: 2px solid black;
-    margin: 1%;
+    //margin: 1%;
     text-align: center;
 }
 
 #chat-titlu {
-    height: 8%;
-    margin: 1%;
+/*    height: 8%;
+    margin: 1%;*/
     text-align: center;
     color: black;
 }
 
 #zona-mesaje {
-    height: 74%;
-    margin: 1%;
+    height: calc(100% - 126px);
+    margin: 2%;
     border: 1px solid black;
-    overflow-y: auto;
+    overflow-y: scroll;
 }
 
 #zona-trimitere {
-    position: relative;
-    height: 14%;
+/*    position: relative;
+    height: 14%;*/
 }
 
 textarea { 
@@ -71,19 +87,19 @@ textarea {
 }
 
 #casuta {
-    position: absolute;
+/*    position: absolute;
     bottom: 0;
     left: 0;
 
     height: 14%;
-    width: 90%;
-    padding: 1%;
+*/    width: 90%;/*
+    padding: 1%;*/
 
     text-align: center;
-    margin: 3%;
+    margin-left: 5%;
     border: 2px solid black;
     font-size: 16px;
-    height: 21px;
+    height: 32px;
 }
 
 .selectat {
@@ -101,16 +117,23 @@ textarea {
     font-weight: bold !important;
 }
 
+.list-item {
+    cursor: pointer;
+    margin: 10px;
+}
+
 .mesaj-trimis {
     text-align: right;
     padding-right: 10px;
     color: darkblue;
+   // background-color: #F5F5FF
 }
 
 .mesaj-primit {
     text-align: left; 
     padding-left: 10px;
     color: darkgreen;
+   // background-color: #F5FFF5;
 }
 /* unvisited link */
 a:link {
