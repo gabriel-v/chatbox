@@ -1,0 +1,25 @@
+\select@language {romanian}
+\contentsline {section}{\numberline {1}Introducere}{1}
+\contentsline {section}{\numberline {2}Resurse logice}{2}
+\contentsline {subsection}{\numberline {2.1}Sistemul MySQL}{2}
+\contentsline {subsection}{\numberline {2.2}Limbajul PHP}{2}
+\contentsline {subsubsection}{\numberline {2.2.1}Libraria PDO}{2}
+\contentsline {subsubsection}{\numberline {2.2.2}Libraria Ratchet}{2}
+\contentsline {subsection}{\numberline {2.3}Limbajul JavaScript}{3}
+\contentsline {subsubsection}{\numberline {2.3.1}Libraria jQuery}{3}
+\contentsline {subsubsection}{\numberline {2.3.2}Libraria chart.js}{3}
+\contentsline {subsection}{\numberline {2.4}Limbajul Python}{3}
+\contentsline {subsection}{\numberline {2.5}Despre serverul Linux}{3}
+\contentsline {subsubsection}{\numberline {2.5.1}Sistemul de operare: Debian 8}{3}
+\contentsline {subsubsection}{\numberline {2.5.2}Serverul HTTP: Apache 2}{4}
+\contentsline {subsubsection}{\numberline {2.5.3}Sistemul de daemon: daemontools}{4}
+\contentsline {section}{\numberline {3}Descrierea proiectului}{5}
+\contentsline {subsection}{\numberline {3.1}Baza de date}{5}
+\contentsline {subsection}{\numberline {3.2}Sistemul de autentificare}{5}
+\contentsline {subsection}{\numberline {3.3}Sistemul de mesagerie}{5}
+\contentsline {subsubsection}{\numberline {3.3.1}Interfata}{5}
+\contentsline {subsubsection}{\numberline {3.3.2}Serverul de websockets}{5}
+\contentsline {subsection}{\numberline {3.4}Generarea si vizualizarea datelor}{5}
+\contentsline {subsubsection}{\numberline {3.4.1}Generatorul de date}{5}
+\contentsline {subsubsection}{\numberline {3.4.2}Vizualizarea datelor prin grafice}{5}
+\contentsline {section}{\numberline {4}Bibliografie}{6}

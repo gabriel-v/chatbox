@@ -1,0 +1,194 @@
+\documentclass[14pt,a4paper]{extarticle}
+\usepackage[utf8x]{inputenc}
+\usepackage[romanian]{babel}
+\usepackage{lmodern}
+\usepackage[pdftex]{graphicx}
+\usepackage[super,comma]{natbib}
+\usepackage{indentfirst}
+\usepackage{paralist}
+  \let\itemize\compactitem
+  \let\enditemize\endcompactitem
+  \let\enumerate\compactenum
+  \let\endenumerate\endcompactenum
+  \let\description\compactdesc
+  \let\enddescription\endcompactdesc
+  \pltopsep=\medskipamount
+  \plitemsep=1pt
+  \plparsep=1pt
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\renewcommand*\contentsname{Cuprins}
+
+\begin{document}
+
+\input{./pagina-titlu.tex}
+
+\newpage
+\section{Introducere}
+
+\newpage
+\section{Resurse logice}
+Resursele logice sunt componentele software ale calculatorului, care au functii de administrare a resurselor si a datelor.
+
+In cazul proiectului \textbf{chatbox}, acestea reprezinta mijlocul prin care
+pagina web este programata, monitorizata si administrata.
+
+\subsection{Sistemul MySQL}
+MySQL\cite{mysql} este cel mai folosit SGBD open-source, 
+la ora actuala. Produs initial de compania suedeza MySQL AB 
+și distribuit sub Licența Publică Generală GNU\cite{free}, 
+in prezent MySQL este dezvoltat
+de Corporatia Oracle.
+
+Ca instrument de management pentru bazele de date MySQL
+este folosita o aplicatie PHP numita phpMyAdmin.
+
+\subsection{Limbajul PHP}
+Limbajul de programare PHP\citep{php} este folosit pe scară largă 
+în dezvoltarea paginilor și aplicațiilor web.
+
+Se folosește în principal înglobat în codul HTML, dar poate fi 
+utilizat si pentru programarea aplicatiilor CLI (linie de comanda).
+
+PHP este disponibil sub Licenṭa PHP ṣi Free Software Foundation 
+îl consideră a fi un software liber\citep{free}.
+\subsubsection{Libraria PDO}
+PHP Data Objects\citep{pdo} este o componenta PHP ce permite accesarea unor SGBD din
+programe PHP. \textbf{chatbox} foloseste in mod exclusiv componenta PDO pentru 
+accesarea bazei de date. 
+\subsubsection{Libraria Ratchet}
+Websocket\citep{websocket} este un protocol ce furnizeaza o conexiune duplex prin o legatura TCP. Tehnologia Websocket a fost dezvoltata odata cu initiativa de 
+inovare HTML5. 
+
+Folosind tehnologia Websocket, se pot trimite date in timp real intre 
+client si server. \textbf{chatbox} foloseste pentru transmiterea instantanee
+a mesajelor acest protocol.
+
+Ratchet\citep{ratchet} este o librarie ce permite utilizarea protocolului 
+Websocket, in limbajul PHP.
+\subsection{Limbajul JavaScript}
+\subsubsection{Libraria jQuery}
+\subsubsection{Libraria chart.js}
+\subsection{Limbajul Python}
+
+\subsection{Despre serverul Linux}
+Codul proiectului \textbf{chatbox} calculator personal
+ \textit{HP Compaq 6005 Pro}
+care serveste, printre altele, drept server web. 
+
+Pentru a dispune de o adresa permanenta a acestui server, 
+am folosit serviciile de DNS dinamic ale firmei NoIP\cite{noip}.
+
+Sistemul are urmatoarele caracteristici:
+\begin{itemize}
+  \item Procesor: AMD Athlon II X2 2.8GHz
+  \item Memorie: 2GB RAM DDR3
+  \item Hard Drive: 2TB Samsung
+  \item Placa retea: 100Mbps
+\end{itemize}
+
+\subsubsection{Sistemul de operare: Debian 8}
+Debian\cite{debian} este un sistem de operare compus din software liber\cite{free}, și o distribuție populară și foarte influentă între distribuțiile GNU/Linux.
+
+Versiunea 8 a sistemului de operare este cunoscuta in prezent sub 
+numele de \textit{testing}. Pachetele de software pentru versiunea 
+\textit{testing} sunt, dupa cum sugereaza si numele, in curs de testare.
+Totusi, sunt destul de stabile pentru modul in care 
+utilizez acest sistem.
+\subsubsection{Serverul HTTP: Apache 2}
+Apache este un server HTTP open-source. Acesta reprezinta standardul in 
+industria de web hosting, fiind cel mai folosit server HTTP, fiind folosit de 
+53.34\% din site-urile web\cite{apache53}.
+\subsubsection{Sistemul de daemon: daemontools}
+Daemontools\cite{daemon} este o colectie de unelte software folosite pentru 
+controlul si monitorizarea serviciilor UNIX. 
+
+Daemontools este folosit de \textbf{chatbox} pentru a monitoriza serverul 
+de \textit{websockets} si a-l reporni in eventualitatea unei erori.
+\newpage
+\section{Descrierea proiectului}
+
+\subsection{Baza de date}
+
+\subsection{Sistemul de autentificare}
+
+\subsection{Sistemul de mesagerie}
+
+\subsubsection{Interfata}
+
+\subsubsection{Serverul de websockets}
+
+\subsection{Generarea si vizualizarea datelor}
+
+\subsubsection{Generatorul de date}
+
+\subsubsection{Vizualizarea datelor prin grafice}
+
+\newpage
+\section{Bibliografie}
+\begingroup
+\renewcommand{\section}[2]{}%
+\begin{thebibliography}{99}
+
+\bibitem{mysql} 
+	MySQL \\
+	http://www.mysql.com/about/
+
+\bibitem{php}
+	PHP Hypertext Processor\\
+	http://php.net/manual/en/intro-whatis.php
+
+\bibitem{pdo}
+	PDO: PHP Data Objects\\
+	http://php.net/manual/en/intro.pdo.php
+	
+\bibitem{websocket}
+	Websocket\\
+	https://www.websocket.org/
+	
+\bibitem{ratchet}
+	Ratchet: a Websockets Library\\
+	http://socketo.me/
+	
+\bibitem{javascript}
+	Objects in Javascript\\
+	http://www.w3.org/community/webed/wiki/Objects\_in\_JavaScript
+	
+\bibitem{jquery}
+	jQuery: The Write Less, Do More, JavaScript Library\\
+	https://jquery.com/
+
+\bibitem{chartjs}
+	Chart.js: Open source HTML5 Charts \\
+	http://www.chartjs.org/
+	
+\bibitem{python}
+	Python \\
+	https://www.python.org/about/
+	
+\bibitem{noip}
+	No-IP: Dynamic DNS company \\
+	http://www.noip.com/
+	
+\bibitem{debian}
+	Debian GNU/Linux \\
+	https://www.debian.org/intro/about
+
+\bibitem{free}
+	Software liber / Free Software \\
+	https://www.fsf.org/about/what-is-free-software
+	
+\bibitem{apache53}
+	June 2013 Web Server Survey\\
+http://news.netcraft.com/archives/2013/06/06/june-2013-web-server-survey-3.html
+	
+\bibitem{daemon}
+	daemontools\\
+	http://cr.yp.to/daemontools.html
+
+\end{thebibliography}
+\endgroup
+\newpage
+\tableofcontents
+
+\end{document}
