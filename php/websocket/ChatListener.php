@@ -21,7 +21,7 @@ require dirname(dirname(__FILE__)) . '/functii.php';
 class ChatListener implements MessageComponentInterface {
 
     protected $clienti;
-    protected $legaturi = array(0 => null); // resID => array(nume=> .. , id => .. )
+    protected $legaturi = array(0 => null); 
 
     public function __construct() {
         $this->clienti = new \SplObjectStorage;
@@ -53,7 +53,6 @@ class ChatListener implements MessageComponentInterface {
         $date_utilizator = interogare_bd($q, $cheie);
 
         if (!$date_utilizator) {
-            // cheia nu este autentificata
             deconectare_baza_date();
             return;
         }
@@ -61,12 +60,11 @@ class ChatListener implements MessageComponentInterface {
 
         $this->legaturi[$utilizator->resourceId] = $date_utilizator;
 
-        //TODO baze de date: generare sesiune
-
         $transmisie = array(
             'id' => $id,
             'operatie' => 'stare_utilizator',
-            'stare' => 'online');
+            'stare' => 'online',
+            'nume' => $date_utilizator['nume']);
         $transmisie_text = json_encode($transmisie);
         foreach ($this->clienti as $client) {
             if ($utilizator !== $client) {
@@ -104,7 +102,6 @@ class ChatListener implements MessageComponentInterface {
     }
 
     public function onOpen(ConnectionInterface $conexiune) {
-        // Store the new connection to send messages to later
         $this->clienti->attach($conexiune);
 
         echo "Conexiune noua! resourceID: " . $conexiune->resourceId . "\n";
@@ -139,10 +136,8 @@ class ChatListener implements MessageComponentInterface {
     }
 
     public function onClose(ConnectionInterface $conexiune) {
-        // The connection is closed, remove it, as we can no longer send it messages
         $this->clienti->detach($conexiune);
 
-        //TODO: baza de date - offline
         $id = $this->legaturi[$conexiune->resourceId]['id'];
         $nume = $this->legaturi[$conexiune->resourceId]['nume'];
         $cheie = $this->legaturi[$conexiune->resourceId]['cheie'];
