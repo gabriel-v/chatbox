@@ -5,14 +5,17 @@
 \contentsline {subsection}{\numberline {2.2}Limbajul PHP}{2}
 \contentsline {subsubsection}{\numberline {2.2.1}Libraria PDO}{2}
 \contentsline {subsubsection}{\numberline {2.2.2}Libraria Ratchet}{2}
-\contentsline {subsection}{\numberline {2.3}Limbajul JavaScript}{3}
-\contentsline {subsubsection}{\numberline {2.3.1}Libraria jQuery}{3}
-\contentsline {subsubsection}{\numberline {2.3.2}Libraria chart.js}{3}
+\contentsline {subsection}{\numberline {2.3}Limbajul JavaScript}{2}
+\contentsline {subsubsection}{\numberline {2.3.1}Tehnica AJAX}{3}
+\contentsline {subsubsection}{\numberline {2.3.2}Libraria jQuery}{3}
+\contentsline {subsubsection}{\numberline {2.3.3}Libraria chart.js}{3}
+\contentsline {subsubsection}{\numberline {2.3.4}Libraria Bootstrap}{3}
 \contentsline {subsection}{\numberline {2.4}Limbajul Python}{3}
-\contentsline {subsection}{\numberline {2.5}Despre serverul Linux}{3}
-\contentsline {subsubsection}{\numberline {2.5.1}Sistemul de operare: Debian 8}{3}
-\contentsline {subsubsection}{\numberline {2.5.2}Serverul HTTP: Apache 2}{4}
-\contentsline {subsubsection}{\numberline {2.5.3}Sistemul de daemon: daemontools}{4}
+\contentsline {subsection}{\numberline {2.5}Despre serverul Linux}{4}
+\contentsline {subsubsection}{\numberline {2.5.1}Sistemul de operare Debian 8}{4}
+\contentsline {subsubsection}{\numberline {2.5.2}Serverul HTTP Apache 2}{4}
+\contentsline {subsubsection}{\numberline {2.5.3}Sistemul de monitorizare daemontools}{4}
+\contentsline {subsection}{\numberline {2.6}Procesorul \LaTeX }{4}
 \contentsline {section}{\numberline {3}Descrierea proiectului}{5}
 \contentsline {subsection}{\numberline {3.1}Baza de date}{5}
 \contentsline {subsection}{\numberline {3.2}Sistemul de autentificare}{5}
