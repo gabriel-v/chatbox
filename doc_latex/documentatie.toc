@@ -22,8 +22,8 @@
 \contentsline {subsection}{\numberline {3.3}Sistemul de autentificare}{7}
 \contentsline {subsection}{\numberline {3.4}Sistemul de mesagerie}{7}
 \contentsline {subsubsection}{\numberline {3.4.1}Interfata}{7}
-\contentsline {subsubsection}{\numberline {3.4.2}Serverul de websockets}{7}
-\contentsline {subsection}{\numberline {3.5}Generarea si vizualizarea datelor}{7}
-\contentsline {subsubsection}{\numberline {3.5.1}Generatorul de date}{7}
-\contentsline {subsubsection}{\numberline {3.5.2}Vizualizarea datelor prin grafice}{7}
-\contentsline {section}{\numberline {4}Bibliografie}{8}
+\contentsline {subsubsection}{\numberline {3.4.2}Serverul de websockets}{8}
+\contentsline {subsection}{\numberline {3.5}Generarea si vizualizarea datelor}{8}
+\contentsline {subsubsection}{\numberline {3.5.1}Generatorul de date}{8}
+\contentsline {subsubsection}{\numberline {3.5.2}Vizualizarea datelor prin grafice}{8}
+\contentsline {section}{\numberline {4}Bibliografie}{9}

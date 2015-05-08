@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2015.4.24)  8 MAY 2015 22:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2015.4.24)  8 MAY 2015 23:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -476,18 +476,25 @@ LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 218
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
+LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 249.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5] <diagrame/chat_sequence.png, id=36, 1013.7875pt x 1415.2875pt>
+[5] <diagrame/chat_sequence.png, id=37, 1013.7875pt x 1415.2875pt>
 File: diagrame/chat_sequence.png Graphic file (type png)
 
 <use diagrame/chat_sequence.png>
-Package pdftex.def Info: diagrame/chat_sequence.png used on input line 269.
-(pdftex.def)             Requested size: 420.15709pt x 586.55167pt.
+Package pdftex.def Info: diagrame/chat_sequence.png used on input line 266.
+(pdftex.def)             Requested size: 429.00543pt x 598.9028pt.
+
+Overfull \hbox (2.21408pt too wide) in paragraph at lines 266--268
+ [][] 
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -496,14 +503,49 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [6 <./diagrame/chat_sequence.png (PNG copy)>]
+<img/inreg.png, id=42, 378.41376pt x 332.24126pt>
+File: img/inreg.png Graphic file (type png)
+ <use img/inreg.png>
+Package pdftex.def Info: img/inreg.png used on input line 279.
+(pdftex.def)             Requested size: 162.03339pt x 142.26378pt.
+
+<img/auth.png, id=43, 358.33875pt x 300.12125pt>
+File: img/auth.png Graphic file (type png)
+ <use img/auth.png>
+Package pdftex.def Info: img/auth.png used on input line 285.
+(pdftex.def)             Requested size: 169.86273pt x 142.26378pt.
+
+<img/fail1.png, id=44, 248.93pt x 104.39pt>
+File: img/fail1.png Graphic file (type png)
+ <use img/fail1.png>
+Package pdftex.def Info: img/fail1.png used on input line 302.
+(pdftex.def)             Requested size: 169.631pt x 71.13188pt.
+
+Overfull \hbox (20.25142pt too wide) in paragraph at lines 302--303
+[][] 
+ []
+
+<img/fail2.png, id=45, 349.305pt x 171.64125pt>
+File: img/fail2.png Graphic file (type png)
+ <use img/fail2.png>
+Package pdftex.def Info: img/fail2.png used on input line 308.
+(pdftex.def)             Requested size: 231.61333pt x 113.81102pt.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[7]
-Underfull \hbox (badness 10000) in paragraph at lines 360--362
+[7 <./img/inreg.png> <./img/auth.png> <./img/fail1.png> <./img/fail2.png>]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8]
+Underfull \hbox (badness 10000) in paragraph at lines 401--403
 \OT1/lmr/m/n/12 http://news.netcraft.com/archives/2013/06/06/june-2013-web-serv
 er-survey-
  []
@@ -514,14 +556,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8]
+[9]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9] (./documentatie.toc)
+[10] (./documentatie.toc)
 \tf@toc=\write3
 \openout3 = `documentatie.toc'.
 
@@ -532,17 +574,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10] (./documentatie.aux)
+[11] (./documentatie.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 8052 strings out of 493109
- 110549 string characters out of 6140856
- 183453 words of memory out of 5000000
- 11370 multiletter control sequences out of 15000+600000
- 72369 words of font info for 51 fonts, out of 8000000 for 9000
+ 8075 strings out of 493109
+ 110904 string characters out of 6140856
+ 184453 words of memory out of 5000000
+ 11388 multiletter control sequences out of 15000+600000
+ 72679 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,15n,43p,451b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fo
@@ -555,12 +597,12 @@ e1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb><
 /usr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fon
 ts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri12
 .pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-
-dist/fonts/type1/public/lm/lmtt12.pfb></usr/share/texmf-dist/fonts/type1/public
-/lm/lmtt8.pfb>
-Output written on documentatie.pdf (11 pages, 552246 bytes).
+dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public
+/lm/lmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
+Output written on documentatie.pdf (12 pages, 602653 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 107 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

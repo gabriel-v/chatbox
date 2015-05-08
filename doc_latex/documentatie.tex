@@ -206,7 +206,7 @@ cu ajutorul limbajului de programare ~ \TeX.
 \newpage
 \section{Descrierea proiectului}
 \textbf{Chatbox} a fost conceput ca un mijloc de a invata atat despre programarea
-Web in general, cat si despre sistemele de transmitere de date, in timp real.
+Web in general, cat si despre sistemele de transmitere de date in timp real.
 
 \subsection{Baza de date}
 Sistemul \textbf{Chatbox} stocheaza in baza de date toate detaliile interactionarii
@@ -222,7 +222,7 @@ Structura tabelelor este urmatoarea:
 \centering
 \texttt{%
 	\begin{tabular}{| l | l | l | p{5.5cm} |} \hline
-	Tabel & Nume 			& Tip		  		& Observatii\\ \hline
+	\textbf{Tabel} & \textbf{Nume} 			& \textbf{Tip}		  		& \textbf{Observatii}\\ \hline
 	\multirow{6}{*}{utilizatori}
 	&id           	& bigint(20) &  PK: identificator numeric\\
 	&nume         	& tinytext            & numele utilizatorului\\	
@@ -252,9 +252,6 @@ Structura tabelelor este urmatoarea:
 \vspace{-20px}
 \end{figure}
 
-
-
-
 \subsection{Diagrama de secvență}
 Unified Modeling Language (prescurtat UML) este un limbaj standard pentru descrierea de modele și specificații pentru software\cite{uml}.
 
@@ -273,19 +270,63 @@ serverul Websocket.
 \end{figure}
 
 \subsection{Sistemul de autentificare}
+Pentru a folosi serviciul de mesagerie, un utilizator trebuie sa fie inregistrat si autentificat. Inregistrarea este libera; singurele date necesare sunt numele de utilizator
+si o parola.
+
+\begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[height=5cm]{img/inreg.png}
+                \caption{Interfata de inregistrare}
+               % \label{fig:gull}
+        \end{subfigure}%
+        ~ \qquad 
+        \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[height=5cm]{img/auth.png}
+                \caption{Interfata de autentificare}
+                %\label{fig:tiger}
+        \end{subfigure}
+        \caption{Formulare de inregistrare si autentificare}%\label{fig:animals}
+\end{figure}
+
+ 
+
+In cazul in care apar erori in procesul crearii contului sau in procesul autentificarii,
+utilizatorul va primi o instiintare pe fundal rosu care explica situatia.
+
+Aceste verificari se fac pe server, in cate un script PHP, pentru verificarea autentificarii, respectiv a inregistrarii. 
+
+\begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.35\textwidth}
+                \includegraphics[height=2.5cm]{img/fail1.png}
+                \caption{la autentificare}
+               % \label{fig:gull}
+        \end{subfigure}%
+        ~ \qquad 
+        \begin{subfigure}[b]{0.55\textwidth}
+                \includegraphics[height=4cm]{img/fail2.png}
+                \caption{la inregistrare}
+                %\label{fig:tiger}
+        \end{subfigure}
+        \caption{Posibile erori dupa completarea eronata a formularelor}%\label{fig:animals}
+\end{figure}
+
 
 \subsection{Sistemul de mesagerie}
+DE FACUT
 
 \subsubsection{Interfata}
+DE FACUT
 
 \subsubsection{Serverul de websockets}
-
+DE FACUT
 \subsection{Generarea si vizualizarea datelor}
-
+DE FACUT
 \subsubsection{Generatorul de date}
-
+DE FACUT
 \subsubsection{Vizualizarea datelor prin grafice}
-
+DE FACUT
 \newpage
 \section{Bibliografie}
 \begingroup

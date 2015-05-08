@@ -221,7 +221,7 @@ Structura tabelelor este urmatoarea:
 \begin{figure}[h]
 \centering
 \texttt{%
-	\begin{tabular}{| l | l | l | p{6cm} |} \hline
+	\begin{tabular}{| l | l | l | p{5.5cm} |} \hline
 	Tabel & Nume 			& Tip		  		& Observatii\\ \hline
 	\multirow{6}{*}{utilizatori}
 	&id           	& bigint(20) &  PK: identificator numeric\\
@@ -252,10 +252,7 @@ Structura tabelelor este urmatoarea:
 \vspace{-20px}
 \end{figure}
 
-
-
-
-\subsection{Diagramă de secvență}
+\subsection{Diagrama de secvență}
 Unified Modeling Language (prescurtat UML) este un limbaj standard pentru descrierea de modele și specificații pentru software\cite{uml}.
 
 Urmatoarea diagrama descrie interactiunile dintre cele patru componente 
@@ -273,6 +270,48 @@ serverul Websocket.
 \end{figure}
 
 \subsection{Sistemul de autentificare}
+Pentru a folosi serviciul de mesagerie, un utilizator trebuie sa fie inregistrat si autentificat. Inregistrarea este libera; singurele date necesare sunt numele de utilizator
+si o parola.
+
+\begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[height=5cm]{img/inreg.png}
+                \caption{Interfata de inregistrare}
+               % \label{fig:gull}
+        \end{subfigure}%
+        ~ \qquad 
+        \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[height=5cm]{img/auth.png}
+                \caption{Interfata de autentificare}
+                %\label{fig:tiger}
+        \end{subfigure}
+        \caption{Formulare de inregistrare si autentificare}%\label{fig:animals}
+\end{figure}
+
+ 
+
+In cazul in care apar erori in procesul crearii contului sau in procesul autentificarii,
+utilizatorul va primi o instiintare pe fundal rosu care explica situatia.
+
+Aceste verificari se fac pe server, in cate un script PHP, pentru verificarea autentificarii, respectiv a inregistrarii. 
+
+\begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[height=3cm]{img/fail1.png}
+                \caption{la autentificare}
+               % \label{fig:gull}
+        \end{subfigure}%
+        ~ \qquad 
+        \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[height=3cm]{img/fail2.png}
+                \caption{la inregistrare}
+                %\label{fig:tiger}
+        \end{subfigure}
+        \caption{Posibile erori dupa completarea formularelor}%\label{fig:animals}
+\end{figure}
+
 
 \subsection{Sistemul de mesagerie}
 
