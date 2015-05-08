@@ -7,6 +7,7 @@
         top=4cm,
         bottom=4cm
 ] {geometry}
+\usepackage{wrapfig}
 \usepackage{multirow}
 \usepackage[utf8x]{inputenc}
 \usepackage[romanian]{babel}
@@ -33,7 +34,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{\textbf{chatbox}: serviciu de mesagerie}
-\rhead{\textsc{Atestat la Informatica}}
+\rhead{\textsc{Atestat la Informatică}}
 \rfoot{\thepage}
 \lfoot{v03}
 
@@ -45,19 +46,32 @@
 
 \newpage
 \section{Introducere}
-\textbf{Chatbox} este un serviciu de mesagerie Web.
+
+
+\hspace{-26px}
+\begin{tabular}{l l l l}
+\texttt{chat} & --  \textit{s.f.} & conversație informală &\\
+\texttt{to box} & --  \textit{v. tranz.} & a inchide, a separa (într-o cutie)&\\
+& & & (Dicționar Englez-Român)\\ %\hline
+\end{tabular}
+
+\vfill
+{\large \textbf{Chatbox} este un serviciu de mesagerie Web.}
 
 \begin{figure}[h]
-\centering
-\includegraphics[width=150mm]{img/over.jpg}
-\caption{Interfata modulului de mesagerie \label{overflow}}
+	\centering
+	\includegraphics[width=150mm]{img/over.jpg}
+	\vspace{-15px}
+	\caption{Interfața modulului de mesagerie}
+	\vspace{-15px}
+	\label{fig:overview}
 \end{figure}
 
 \vspace{3mm}
-Inspiratie pentru acest proiect sunt serviciile de mesagerie instantanee 
+Inspirație pentru acest proiect sunt serviciile de „mesagerie instantanee”
 precum \textit{Y!Messenger}, \textit{Google Talk} sau 
-\textit{Facebook Messenger}, pentru a numi cateva.
-\vfill
+\textit{Facebook Messenger}, pentru a numi câteva.
+%\vfill
 
 \begin{figure}[h!]
         \centering
@@ -72,129 +86,129 @@ precum \textit{Y!Messenger}, \textit{Google Talk} sau
                 \caption{Yahoo! Messenger}
                 %\label{fig:tiger}
         \end{subfigure}
-        \caption{Servicii de mesagerie digitala}%\label{fig:animals}
+        \caption{Servicii de mesagerie digitală}%\label{fig:animals}
 \end{figure}
 
 
 
-In prezent, \textbf{Chatbox} poate fi accesat la adresa
+În prezent, \textbf{Chatbox} poate fi accesat la adresa
 \textbf{penultim.ddns.net/chatbox}.
 
 
 
 \newpage
 \section{Resurse logice}
-Resursele logice sunt componentele software ale calculatorului, care au functii de administrare a resurselor si a datelor.
+\textit{Resursele logice} sunt componentele software ale calculatorului care au funcții de administrare a resurselor și a datelor.
 
-In cazul proiectului \textbf{Chatbox}, acestea reprezinta mijlocul prin care
-pagina web este programata, monitorizata si administrata.
+În cazul proiectului \textbf{Chatbox}, acestea reprezintă mijlocul prin care
+pagina Web este programată, monitorizată și administrată.
 
 \subsection{Sistemul MySQL}
 MySQL\cite{mysql} este cel mai folosit SGBD\citep{sgbd} open-source, 
-la ora actuala. Produs initial de compania suedeza MySQL AB 
+la ora actuală. Produs inițial de compania suedeză MySQL AB 
 și distribuit sub Licența Publică Generală GNU\cite{free}, 
 in prezent MySQL este dezvoltat
-de Corporatia Oracle.
+de Corporația Oracle.
 
 Ca instrument de management pentru bazele de date MySQL
-este folosita o aplicatie PHP numita phpMyAdmin.
+este folosită o aplicație PHP numită phpMyAdmin.
 
 \subsection{Limbajul PHP}
 Limbajul de programare PHP\citep{php} este folosit pe scară largă 
 în dezvoltarea paginilor și aplicațiilor web.
 
 Se folosește în principal înglobat în codul HTML, dar poate fi 
-utilizat si pentru programarea aplicatiilor CLI (linie de comanda).
+utilizat și pentru programarea aplicațiilor CLI (linie de comandă).
 
 PHP este disponibil sub Licenṭa PHP ṣi Free Software Foundation 
 îl consideră a fi un software liber\citep{free}.
 
-\subsubsection{Libraria PDO}
-PHP Data Objects\citep{pdo} este o componenta PHP ce permite accesarea unor SGBD din
-programe PHP. \textbf{Chatbox} foloseste in mod exclusiv componenta PDO pentru 
+\subsubsection{Librăria PDO}
+PHP Data Objects\citep{pdo} este o componentă PHP ce permite accesarea unor SGBD din
+programe PHP. \textbf{Chatbox} folosește  în mod exclusiv componenta PDO pentru 
 accesarea bazei de date. 
 
-\subsubsection{Libraria Ratchet}
-Websocket\citep{websocket} este un protocol ce furnizeaza o conexiune duplex prin o legatura TCP. Tehnologia Websocket a fost dezvoltata odata cu initiativa de 
+\subsubsection{Librăria Ratchet}
+Websocket\citep{websocket} este un protocol ce furnizează o conexiune full-duplex prin o legatură TCP. Tehnologia Websocket a fost dezvoltată odata cu inițiativa de 
 inovare HTML5. 
 
-Folosind tehnologia Websocket, se pot trimite date in timp real intre 
-client si server. \textbf{Chatbox} foloseste acest protocol pentru
-transmiterea instantanee a mesajelor si a datelor.
+Folosind tehnologia Websocket, se pot trimite date în timp real între 
+client și server. \textbf{Chatbox} foloseste acest protocol pentru
+transmiterea instantanee a mesajelor și a datelor.
 
-Ratchet\citep{ratchet} este o librarie ce permite utilizarea protocolului 
-Websocket, in limbajul PHP.
+Ratchet\citep{ratchet} este o librărie ce permite utilizarea protocolului 
+Websocket în limbajul PHP.
 
 \subsection{Limbajul JavaScript}
-JavaScript (sau ECMAScript) este un limbaj de programare orientat pe obiecte\citep{javascript}, ce ruleaza in browserele utilizatorilor. 
+JavaScript (sau ECMAScript) este un limbaj de programare orientat pe obiecte\citep{javascript}, ce rulează  în browserele utilizatorilor. 
 
-Limbajul este binecunoscut pentru folosirea sa în construirea siturilor web. În ciuda numelui și a unor similarități în sintaxă, între JavaScript și limbajul Java nu există nicio legătură.
+Limbajul este binecunoscut pentru folosirea sa în construirea paginilor Web. În ciuda numelui și a unor similarități în sintaxă, între \textit{JavaScript} și limbajul \textit{Java} nu există nicio legătură.
 
 \subsubsection{Tehnica AJAX}
-O tehnică de construire a paginilor web tot mai întâlnită în ultimul timp este AJAX, abreviere de la „Asynchronous JavaScript and XML”. Această tehnică constă în executarea de cereri HTTP în fundal, fără a reîncărca toată pagina web, și actualizarea numai anumitor porțiuni ale paginii.
+O tehnică de construire a paginilor web tot mai întâlnită în ultimul timp este AJAX, abreviere de la „Asynchronous JavaScript and XML”. Această tehnică constă în executarea de cereri HTTP în fundal, fără a reîncărca toată pagina Web, și actualizarea numai anumitor porțiuni ale paginii.
 
-\textbf{Chatbox} foloseste tehnica AJAX pentru a incarca o multitudine de
+\textbf{Chatbox} folosește tehnica AJAX pentru a încărca o multitudine de
 elemente, precum mesajele text primite sau lista de utilizatori activi. 
 
-\subsubsection{Libraria jQuery}
-jQuery\citep{jquery} este o platformă de dezvoltare JavaScript, concepută pentru a ușura și îmbunătăți procese precum traversarea arborelui DOM\citep{dom} în HTML, managementul evenimentelor, animații și cereri tip AJAX.
+\subsubsection{Librăria jQuery}
+jQuery\citep{jquery} este o platformă de dezvoltare JavaScript, concepută pentru a ușura și îmbunătăți procese precum traversarea arborelui DOM\citep{dom} în HTML, managementul evenimentelor, animații și cereri de tip AJAX.
 
-\subsubsection{Libraria chart.js}
-Chart.js\cite{chartjs} este o librarie JavaScript ce permite afisarea 
-unor grafice in mod dinamic. Graficele sunt redimensionate, la nevoie, dupa 
+\subsubsection{Librăria chart.js}
+Chart.js\cite{chartjs} este o librărie JavaScript ce permite afișarea 
+unor grafice în mod dinamic. Graficele sunt redimensionate, la nevoie, după 
 marimea ecranului clientului. 
 
-Proiectul \textbf{Chatbox} foloseste chart.js pentru afisarea rezultatelor
-numerice a unor interogari SQL si pentru vizualizarea de statistici.
+Proiectul \textbf{Chatbox} foloseste chart.js pentru afișarea rezultatelor
+numerice a unor interogări SQL și pentru vizualizarea de statistici.
 
-\subsubsection{Libraria Bootstrap}
-Bootstrap este cel mai popular framework de HTML, CSS, si JS dedicat dezvoltarii proiectelor Web. 
+\subsubsection{Librăria Bootstrap}
+Bootstrap este cel mai popular framework de HTML, CSS, și JavaScript dedicat dezvoltării proiectelor Web. 
 
-Bootstrap permite aranjarea elementelor grafice intr-un mod potrivit marimii ecranului vizitatorului. Astfel, site-ul va fi afisat satisfacator atat pe calculatoare Desktop, cat si pe tablete si telefoane.
+Bootstrap permite aranjarea elementelor grafice într-un mod potrivit mărimii ecranului vizitatorului. Astfel, site-ul va fi afișat satisfăcător atât pe calculatoare Desktop, cat și pe tablete și telefoane.
 
 \subsection{Limbajul Python}
 Python este un limbaj de programare dinamic multi-paradigmă\cite{python}, creat în 1989 de programatorul olandez Guido van Rossum\cite{pythonWiki}.
 
 Python pune accentul pe curățenia și simplitatea codului, iar sintaxa sa le permite dezvoltatorilor să exprime unele idei programatice într-o manieră cât mai clară și mai concisă.
 
-Generatorul de date folosit de \textbf{Chatbox} este implementat in Python 3.
+Generatorul de date folosit de \textbf{Chatbox} este implementat  în Python 3.
 
 \subsection{Despre serverul Linux}
-Codul proiectului \textbf{Chatbox} este rulat pe un calculator personal
+Codul proiectului \textbf{Chatbox} rulează pe un calculator personal
  \textit{HP Compaq 6005 Pro}
-care serveste, printre altele, drept server web. 
+care servește, printre altele, drept server Web. 
 Sistemul are urmatoarele caracteristici:
 \begin{itemize}
   \item Procesor: AMD Athlon II X2 2.8GHz
   \item Memorie: 2GB RAM DDR3
   \item Hard Drive: 2TB, Samsung
-  \item Placa de retea: 100Mbps
+  \item Placă de rețea: 100Mbps
   \item Sistem de operare: Debian 8
 \end{itemize}
 
-Pentru a dispune de o adresa permanenta a acestui server, 
-am folosit serviciile de DNS dinamic ale firmei NoIP\cite{noip}.
+Pentru a dispune de o adresă permanentă a acestui server, 
+am folosit serviciile de DNS dinamic ale companiei NoIP\cite{noip}.
 
 \subsubsection{Sistemul de operare Debian 8}
 Debian\cite{debian} este un sistem de operare compus din software liber\cite{free}, și o distribuție populară și foarte influentă între distribuțiile GNU/Linux.
 
-Versiunea 8 a sistemului de operare este cunoscuta in prezent sub 
+Versiunea 8 a sistemului de operare este cunoscută în prezent sub 
 numele de \textit{testing}. Pachetele de software pentru versiunea 
-\textit{testing} sunt, dupa cum sugereaza si numele, in curs de testare.
-Totusi, sunt destul de stabile pentru modul in care 
+\textit{testing} sunt, după cum sugerează și numele, în curs de testare.
+Totusi, sunt suficient de stabile pentru modul  în care 
 este utilizat acest sistem.
 
 \subsubsection{Serverul HTTP Apache 2}
-Apache este un server HTTP open-source. Acesta reprezinta standardul in 
-industria de web hosting, fiind cel mai folosit server HTTP, fiind folosit de 
-53.34\% din site-urile web\cite{apache53}.
+Apache este un server HTTP open-source. Acesta reprezintă standardul în 
+industria de Web Hosting, fiind cel mai folosit server HTTP, susținând 
+53.34\% din site-urile Web\cite{apache53}.
 
 \subsubsection{Sistemul de monitorizare daemontools}
-Daemontools\cite{daemon} este o colectie de unelte software folosite pentru 
-controlul si monitorizarea serviciilor UNIX. 
+Daemontools\cite{daemon} este o colecție de unelte software folosite pentru 
+controlul și monitorizarea serviciilor UNIX. 
 
 Daemontools este folosit de \textbf{Chatbox} pentru a monitoriza serverul 
-de \textit{websockets} si a-l reporni in eventualitatea unei erori.
+de \textit{websockets} și a-l reporni  în eventualitatea unei erori.
 
 \subsection{Procesorul \LaTeX}
 Acest document a fost compus folosind sistemul ~ \LaTeX ~ care permite prepararea
@@ -205,29 +219,29 @@ cu ajutorul limbajului de programare ~ \TeX.
 
 \newpage
 \section{Descrierea proiectului}
-\textbf{Chatbox} a fost conceput ca un mijloc de a invata atat despre programarea
-Web in general, cat si despre sistemele de transmitere de date in timp real.
+\textbf{Chatbox} a fost conceput ca un mijloc de a învăța atât despre programarea
+Web în general, cât și despre sistemele de transmitere de date în timp real.
 
 \subsection{Baza de date}
-Sistemul \textbf{Chatbox} stocheaza in baza de date toate detaliile interactionarii
-utilizatorilor cu acesta. Informatiile sunt atat functionale 
-(continutul trimise), cat si statistici (ce sistem de operare a fost folosit pentru
+Sistemul \textbf{Chatbox} stochează  în baza de date toate detaliile interacționării
+utilizatorilor cu acesta. Informatiile sunt atât funcționale 
+(conținutul mesajelor trimise), cât și statistici (ce sistem de operare a fost folosit pentru
 autentificarea unui utilizator).
 
-Schema bazei de date MySQL este compusa din 3 tabele: 
-\texttt{utilizatori}, \texttt{sesiuni} si \texttt{mesaje}.
+%Schema bazei de date MySQL este compusă din 3 tabele: 
+%\texttt{utilizatori}, \texttt{sesiuni} și \texttt{mesaje}.
 
-Structura tabelelor este urmatoarea:
+Structura tabelelor este următoarea:
 \begin{figure}[h]
 \centering
 \texttt{%
 	\begin{tabular}{| l | l | l | p{5.5cm} |} \hline
-	\textbf{Tabel} & \textbf{Nume} 			& \textbf{Tip}		  		& \textbf{Observatii}\\ \hline
+	\textbf{Tabel} & \textbf{Nume} 			& \textbf{Tip}		  		& \textbf{Observații}\\ \hline
 	\multirow{6}{*}{utilizatori}
 	&id           	& bigint(20) &  PK: identificator numeric\\
 	&nume         	& tinytext            & numele utilizatorului\\	
 	&hash         	& varchar(512)        & hash-ul parolei\cite{passwordhash}\\
-	&data\_ire		& datetime            & data inregistrarii\\
+	&data\_ire		& datetime            & data înregistrării\\
 	&activ         	& tinyint(1)          & 1 - activ, 0 - inactiv\\ \hline
 	\multirow{8}{*}{sesiuni}
 	& id\_sesiune    & bigint(20) & PK\\
@@ -242,7 +256,7 @@ Structura tabelelor este urmatoarea:
 & id\_mesaj      & bigint(20) & PK \\
 & id\_expeditor  & bigint(20)          & FK \\
 & id\_destinatar & bigint(20)          & FK \\
-& text          & text                & continutul mesajului \\
+& text          & text                & conținutul mesajului \\
 & data          & datetime            & momentul expedierii \\
 & citit         & tinyint(1)          & 1 - citit, 0 - necitit\\ \hline
 	\end{tabular}
@@ -255,46 +269,46 @@ Structura tabelelor este urmatoarea:
 \subsection{Diagrama de secvență}
 Unified Modeling Language (prescurtat UML) este un limbaj standard pentru descrierea de modele și specificații pentru software\cite{uml}.
 
-Urmatoarea diagrama descrie interactiunile dintre cele patru componente 
-de baza ale sistemului: browserul utilizatorului, serverul Web, baza de date si
+Urmatoarea diagramă descrie interacțiunile dintre cele patru componente 
+de bază ale sistemului: browserul utilizatorului, serverul Web, baza de date și 
 serverul Websocket.
 
 %\includepdf[pagecommand={\pagestyle{fancy}},scale=0.75]{diagrame/chat_sequence.pdf}
 \newpage
-\begin{figure}[!ht]
-\centering
-\includegraphics[height=0.97\textheight]{diagrame/chat_sequence.png}
-\vspace{-20pt} 
-\caption{Diagrama de secvență pentru modulul de mesagerie \label{overflow}}
-\vspace{-20pt} 
+	\begin{figure}[!ht]
+	\centering
+	\includegraphics[height=0.97\textheight]{diagrame/chat_sequence.png}
+	\vspace{-20pt} 
+	\caption{Diagrama de secvență pentru modulul de mesagerie \label{overflow}}
+	\vspace{-20pt} 
 \end{figure}
 
 \subsection{Sistemul de autentificare}
-Pentru a folosi serviciul de mesagerie, un utilizator trebuie sa fie inregistrat si autentificat. Inregistrarea este libera; singurele date necesare sunt numele de utilizator
-si o parola.
+Pentru a folosi serviciul de mesagerie, un utilizator trebuie să fie înregistrat și autentificat. Înregistrarea este libera; singurele date necesare sunt numele de utilizator
+și o parolă.
 
 \begin{figure}[h!]
         \centering
         \begin{subfigure}[b]{0.45\textwidth}
                 \includegraphics[height=5cm]{img/inreg.png}
-                \caption{Interfata de inregistrare}
+                \caption{Interfața de înregistrare}
                % \label{fig:gull}
         \end{subfigure}%
         ~ \qquad 
         \begin{subfigure}[b]{0.45\textwidth}
                 \includegraphics[height=5cm]{img/auth.png}
-                \caption{Interfata de autentificare}
+                \caption{Interfața de autentificare}
                 %\label{fig:tiger}
         \end{subfigure}
-        \caption{Formulare de inregistrare si autentificare}%\label{fig:animals}
+        \caption{Formulare de înregistrare și autentificare}%\label{fig:animals}
 \end{figure}
 
  
 
-In cazul in care apar erori in procesul crearii contului sau in procesul autentificarii,
-utilizatorul va primi o instiintare pe fundal rosu care explica situatia.
+În cazul  în care apar erori în procesul creării contului sau în procesul autentificării,
+utilizatorul va primi o înștiințare pe fundal roșu care explică situația.
 
-Aceste verificari se fac pe server, in cate un script PHP, pentru verificarea autentificarii, respectiv a inregistrarii. 
+Aceste verificări se fac pe server,  în cate un script PHP, pentru verificarea autentificării, respectiv a inregistrării. 
 
 \begin{figure}[h!]
         \centering
@@ -306,22 +320,71 @@ Aceste verificari se fac pe server, in cate un script PHP, pentru verificarea au
         ~ \qquad 
         \begin{subfigure}[b]{0.55\textwidth}
                 \includegraphics[height=4cm]{img/fail2.png}
-                \caption{la inregistrare}
+                \caption{la înregistrare}
                 %\label{fig:tiger}
         \end{subfigure}
-        \caption{Posibile erori dupa completarea eronata a formularelor}%\label{fig:animals}
+        \caption{Posibile erori după completarea eronată a formularelor}%\label{fig:animals}
 \end{figure}
 
+DE FACUT: ++COD
+\newpage
+\subsection{Interfață grafica și design}
+Pentru construirea interfeței grafice și a design-ului am folosit librăria Bootstrap\cite{bootstrap} și adiții din partea site-ului Bootswatch\cite{bootswatch}.
+
+\textbf{Chatbox} abordează un stil minimalist, folosind doar culori elementare: 
+albastru pentru interfață și meniu, roșu pentru erori. Culorile sunt alese folosind 
+pachetul Yeti\cite{yeti} din colecția Bootswatch.
+
+\subsubsection{Funcția de remodelare}
+
+\begin{wrapfigure}{r}{0.23\textwidth} %this figure will be at the right
+    \centering
+    \vspace{-20px}
+    \includegraphics[width=0.23\textwidth]{img/chat_mobil.jpg}
+	\caption{Interfața modulului de mesagerie, pe un terminal mobil}
+	\label{fig:mobil}
+\end{wrapfigure}
+
+Bootstrap are la centrul său conceptul de „responsive web design\cite{rwd}”, adică modelarea componentelor
+vizuale pentru a „răspunde” cât mai bine la tipul de terminal folosit. Astfel, site-ul va avea altă structură dacă este afișat pe un Desktop PC, decât dacă este afișat pe un ecran de telefon.
+
+Pentru exemplificare, comparați modul de afișare al modulului de mesagerie, între 
+raspunsul site-ului pentru un Desktop PC [pagina \pageref{fig:overview}, Figura \ref{fig:overview}] și un ecran de telefon mobil [Figura \ref{fig:mobil}].
+
+\subsubsection{Bara de navigație}
+Bara albastră din partea de sus a ecranului este prezentă în fiecare pagină  
+a site-ului \textbf{Chatbox} și se numește \textit{bară de navigație}. Aceasta 
+este folosită ca meniu pentru site, aici fiind afișate toate secțiunile de interes
+pe care utilizatorii le pot vizita. 
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{img/meniu_mare.jpg}
+	\vspace{-15px}
+	\caption{Bara de navigație, afișată pe un sistem Destktop PC.}
+\end{figure}
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.45\textwidth]{img/meniu_mobil.jpg}
+	%\vspace{-15px}
+	\caption{Bara de navigație, afișată pe un terminal mobil.}
+	\label{fig:nav-mobil}
+\end{figure}
+
+Pentru ecrane de rezoluție mică, precum cele de telefon sau tabletă, 
+bara de navigație își schimbă forma și poate fi extinsă sau micșorată la nevoie, 
+folosind butonul din dreapta-sus [Figura \ref{fig:nav-mobil}].
 
 \subsection{Sistemul de mesagerie}
-DE FACUT
+
 
 \subsubsection{Interfata}
 DE FACUT
 
 \subsubsection{Serverul de websockets}
 DE FACUT
-\subsection{Generarea si vizualizarea datelor}
+\subsection{Generarea și vizualizarea datelor}
 DE FACUT
 \subsubsection{Generatorul de date}
 DE FACUT
@@ -358,7 +421,7 @@ DE FACUT
 	http://socketo.me/
 	
 \bibitem{javascript}
-	Objects in Javascript\\
+	Objects  in Javascript\\
 	http://www.w3.org/community/webed/wiki/Objects\_in\_JavaScript
 	
 \bibitem{jquery}
@@ -399,7 +462,7 @@ DE FACUT
 	
 \bibitem{apache53}
 	June 2013 Web Server Survey\\
-http://news.netcraft.com/archives/2013/06/06/june-2013-web-server-survey-3.html
+	\small{http://news.netcraft.com/archives/2013/06/06/june-2013-web-server-survey-3.html}
 	
 \bibitem{daemon}
 	daemontools\\
@@ -412,6 +475,19 @@ http://news.netcraft.com/archives/2013/06/06/june-2013-web-server-survey-3.html
 \bibitem{uml}
 	Unified Modeling Language\\
 	http://www.uml.org/
+	
+\bibitem{bootswatch}
+	Bootswatch: Free themes for Bootstrap\\
+	https://bootswatch.com/
+	
+\bibitem{yeti}
+	Bootswatch Yeti Theme: A friendly foundation\\
+	https://bootswatch.com/yeti/
+	
+\bibitem{rwd}
+	Responsive Web Design\\
+	http://alistapart.com/article/responsive-web-design\\
+	http://en.wikipedia.org/wiki/Responsive\_web\_design	
 	
 
 \end{thebibliography}

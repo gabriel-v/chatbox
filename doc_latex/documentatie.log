@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2015.4.24)  8 MAY 2015 23:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2015.4.24)  9 MAY 2015 01:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -54,13 +54,21 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen110
 \Gm@dimlist=\toks15
 )
+(/usr/share/texmf-dist/tex/latex/wrapfig/wrapfig.sty
+\wrapoverhang=\dimen111
+\WF@size=\dimen112
+\c@WF@wrappedlines=\count90
+\WF@box=\box26
+\WF@everypar=\toks16
+Package: wrapfig 2003/01/31  v 3.6
+)
 (/usr/share/texmf-dist/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen111
+\bigstrutjot=\dimen113
 )
 (/usr/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2014/04/30 v1.2b Input encoding file
-\inpenc@prehook=\toks16
-\inpenc@posthook=\toks17
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
 
 (/usr/share/texmf-dist/tex/latex/ucs/utf8x.def
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
@@ -71,10 +79,10 @@ Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 (/usr/share/texmf-dist/tex/latex/ucs/data/uni-global.def
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
-\uc@secondtry=\count90
-\uc@combtoks=\toks18
-\uc@combtoksb=\toks19
-\uc@temptokena=\toks20
+\uc@secondtry=\count91
+\uc@combtoks=\toks19
+\uc@combtoksb=\toks20
+\uc@temptokena=\toks21
 )
 (/usr/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2014/09/25 3.9l The Babel package
@@ -84,8 +92,8 @@ Language: romanian 2005/03/31 v1.2l Romanian support from the babel system
 
 (/usr/share/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2014/09/25 3.9l Babel common definitions
-\babel@savecnt=\count91
-\U@D=\dimen112
+\babel@savecnt=\count92
+\U@D=\dimen114
 )))
 (/usr/share/texmf-dist/tex/latex/lm/lmodern.sty
 Package: lmodern 2009/10/30 v1.6 Latin Modern Fonts
@@ -145,10 +153,10 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count92
+\Gread@gobject=\count93
 ))
-\Gin@req@height=\dimen113
-\Gin@req@width=\dimen114
+\Gin@req@height=\dimen115
+\Gin@req@width=\dimen116
 )
 (/usr/share/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
@@ -156,27 +164,28 @@ Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
 (/usr/share/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 57.
-\captionmargin=\dimen115
-\captionmargin@=\dimen116
-\captionwidth=\dimen117
-\caption@tempdima=\dimen118
-\caption@indent=\dimen119
-\caption@parindent=\dimen120
-\caption@hangindent=\dimen121
+\captionmargin=\dimen117
+\captionmargin@=\dimen118
+\captionwidth=\dimen119
+\caption@tempdima=\dimen120
+\caption@indent=\dimen121
+\caption@parindent=\dimen122
+\caption@hangindent=\dimen123
 )
-\c@ContinuedFloat=\count93
+\c@ContinuedFloat=\count94
+Package caption Info: wrapfig package is loaded.
 )
 (/usr/share/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
-\c@subfigure=\count94
-\c@subtable=\count95
+\c@subfigure=\count95
+\c@subtable=\count96
 )
 (/usr/share/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip43
 \bibsep=\skip44
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count96
+\c@NAT@ctr=\count97
 )
 (/usr/share/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
@@ -189,15 +198,15 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 (/usr/share/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count97
-\calc@Bcount=\count98
-\calc@Adimen=\dimen122
-\calc@Bdimen=\dimen123
+\calc@Acount=\count98
+\calc@Bcount=\count99
+\calc@Adimen=\dimen124
+\calc@Bdimen=\dimen125
 \calc@Askip=\skip45
 \calc@Bskip=\skip46
 LaTeX Info: Redefining \setlength on input line 75.
 LaTeX Info: Redefining \addtolength on input line 76.
-\calc@Ccount=\count99
+\calc@Ccount=\count100
 \calc@Cskip=\skip47
 )
 (/usr/share/texmf-dist/tex/latex/eso-pic/eso-pic.sty
@@ -226,10 +235,10 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 (/usr/share/texmf-dist/tex/latex/pdfpages/pppdftex.def
 File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
 )
-\AM@pagebox=\box26
-\AM@toc@title=\toks21
-\c@AM@survey=\count100
-\AM@templatesizebox=\box27
+\AM@pagebox=\box27
+\AM@toc@title=\toks22
+\c@AM@survey=\count101
+\AM@templatesizebox=\box28
 )
 (/usr/share/texmf-dist/tex/latex/paralist/paralist.sty
 Package: paralist 2013/06/09 v2.4 Extended list environments
@@ -237,7 +246,7 @@ Package: paralist 2013/06/09 v2.4 Extended list environments
 \plpartopsep=\skip49
 \plitemsep=\skip50
 \plparsep=\skip51
-\pl@lab=\toks22
+\pl@lab=\toks23
 )
 (/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip52
@@ -249,27 +258,24 @@ Package: paralist 2013/06/09 v2.4 Extended list environments
 \f@ncyO@erf=\skip58
 \f@ncyO@olf=\skip59
 \f@ncyO@orf=\skip60
-) (./documentatie.aux
-
-LaTeX Warning: Label `overflow' multiply defined.
-
-)
+) (./documentatie.aux)
 \openout1 = `documentatie.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 42.
- (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
+LaTeX Font Info:    ... okay on input line 43.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 43.
+
+(/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 *geometry* driver: auto-detecting
@@ -311,17 +317,17 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count101
-\scratchdimen=\dimen124
-\scratchbox=\box28
-\nofMPsegments=\count102
-\nofMParguments=\count103
-\everyMPshowfont=\toks23
-\MPscratchCnt=\count104
-\MPscratchDim=\dimen125
-\MPnumerator=\count105
-\makeMPintoPDFobject=\count106
-\everyMPtoPDFconversion=\toks24
+\scratchcounter=\count102
+\scratchdimen=\dimen126
+\scratchbox=\box29
+\nofMPsegments=\count103
+\nofMParguments=\count104
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count105
+\MPscratchDim=\dimen127
+\MPnumerator=\count106
+\makeMPintoPDFobject=\count107
+\everyMPtoPDFconversion=\toks25
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -368,27 +374,73 @@ e
 ))
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box29
+\AtBeginShipoutBox=\box30
 
-(./pagina-titlu.tex [1
+(./pagina-titlu.tex (/usr/share/texmf-dist/tex/latex/ucs/data/uni-2.def
+File: uni-2.def 2013/05/13 UCS: Unicode data U+0200..U+02FF
+)
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 4.
+
+(/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 4.
+
+(/usr/share/texmf-dist/tex/latex/lm/omslmsy.fd
+File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 4.
+
+(/usr/share/texmf-dist/tex/latex/lm/omxlmex.fd
+File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <20.74> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <14.4> on input line 4.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <12> on input line 4.
+
+(/usr/share/texmf-dist/tex/latex/ucs/data/uni-32.def
+File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
+)
+(/usr/share/texmf-dist/tex/latex/ucs/data/uni-1.def
+File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
+)
+(/usr/share/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <8> on input line 52.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 52.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 53.
+
+ (/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
+File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+Overfull \hbox (7.6438pt too wide) in paragraph at lines 51--57
+[]  [] 
+ []
+
 <img/over.jpg, id=10, 1240.635pt x 645.41125pt>
 File: img/over.jpg Graphic file (type jpg)
  <use img/over.jpg>
-Package pdftex.def Info: img/over.jpg used on input line 52.
+Package pdftex.def Info: img/over.jpg used on input line 63.
 (pdftex.def)             Requested size: 426.79134pt x 222.027pt.
 
 <img/fb_mess.jpg, id=11, 622.325pt x 466.74374pt>
 File: img/fb_mess.jpg Graphic file (type jpg)
  <use img/fb_mess.jpg>
-Package pdftex.def Info: img/fb_mess.jpg used on input line 65.
+Package pdftex.def Info: img/fb_mess.jpg used on input line 79.
 (pdftex.def)             Requested size: 189.68065pt x 142.26378pt.
 
 <img/yahoo_mess.jpg, id=12, 373.395pt x 373.395pt>
 File: img/yahoo_mess.jpg Graphic file (type jpg)
  <use img/yahoo_mess.jpg>
-Package pdftex.def Info: img/yahoo_mess.jpg used on input line 71.
+Package pdftex.def Info: img/yahoo_mess.jpg used on input line 85.
 (pdftex.def)             Requested size: 142.26192pt x 142.26378pt.
 
 
@@ -398,39 +450,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [1 <./img/over.jpg> <./img/fb_mess.jpg> <./img/yahoo_mess.jpg>]
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 93.
-
-(/usr/share/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 93.
-
-
-(/usr/share/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 93.
-
-
-(/usr/share/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 93.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 93.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 93.
-
-(/usr/share/texmf-dist/tex/latex/ucs/data/uni-2.def
-File: uni-2.def 2013/05/13 UCS: Unicode data U+0200..U+02FF
-)
-(/usr/share/texmf-dist/tex/latex/ucs/data/uni-1.def
-File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
-)
-(/usr/share/texmf-dist/tex/latex/ucs/data/uni-0.def
-File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
-)
 (/usr/share/texmf-dist/tex/latex/ucs/data/uni-30.def
 File: uni-30.def 2013/05/13 UCS: Unicode data U+1E00..U+1EFF
 )
@@ -440,9 +459,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[2] (/usr/share/texmf-dist/tex/latex/ucs/data/uni-32.def
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
+[2]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -450,19 +467,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 168.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 182.
 
  (/usr/share/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 168.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 182.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <14.4> on input line 199.
+(Font)              <10> on input line 213.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 199.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 199.
+(Font)              <7> on input line 213.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -471,13 +486,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [4]
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 218
-.
- (/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
 LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 249.
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 263.
+LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <6> not available
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 263.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -485,14 +497,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[5] <diagrame/chat_sequence.png, id=37, 1013.7875pt x 1415.2875pt>
+[5] <diagrame/chat_sequence.png, id=38, 1013.7875pt x 1415.2875pt>
 File: diagrame/chat_sequence.png Graphic file (type png)
 
 <use diagrame/chat_sequence.png>
-Package pdftex.def Info: diagrame/chat_sequence.png used on input line 266.
+Package pdftex.def Info: diagrame/chat_sequence.png used on input line 280.
 (pdftex.def)             Requested size: 429.00543pt x 598.9028pt.
 
-Overfull \hbox (2.21408pt too wide) in paragraph at lines 266--268
+Overfull \hbox (2.21408pt too wide) in paragraph at lines 280--282
  [][] 
  []
 
@@ -503,32 +515,34 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [6 <./diagrame/chat_sequence.png (PNG copy)>]
-<img/inreg.png, id=42, 378.41376pt x 332.24126pt>
+<img/inreg.png, id=43, 378.41376pt x 332.24126pt>
 File: img/inreg.png Graphic file (type png)
  <use img/inreg.png>
-Package pdftex.def Info: img/inreg.png used on input line 279.
+Package pdftex.def Info: img/inreg.png used on input line 293.
 (pdftex.def)             Requested size: 162.03339pt x 142.26378pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 294.
 
-<img/auth.png, id=43, 358.33875pt x 300.12125pt>
+<img/auth.png, id=44, 358.33875pt x 300.12125pt>
 File: img/auth.png Graphic file (type png)
  <use img/auth.png>
-Package pdftex.def Info: img/auth.png used on input line 285.
+Package pdftex.def Info: img/auth.png used on input line 299.
 (pdftex.def)             Requested size: 169.86273pt x 142.26378pt.
 
-<img/fail1.png, id=44, 248.93pt x 104.39pt>
+<img/fail1.png, id=45, 248.93pt x 104.39pt>
 File: img/fail1.png Graphic file (type png)
  <use img/fail1.png>
-Package pdftex.def Info: img/fail1.png used on input line 302.
+Package pdftex.def Info: img/fail1.png used on input line 316.
 (pdftex.def)             Requested size: 169.631pt x 71.13188pt.
 
-Overfull \hbox (20.25142pt too wide) in paragraph at lines 302--303
+Overfull \hbox (20.25142pt too wide) in paragraph at lines 316--317
 [][] 
  []
 
-<img/fail2.png, id=45, 349.305pt x 171.64125pt>
+<img/fail2.png, id=46, 349.305pt x 171.64125pt>
 File: img/fail2.png Graphic file (type png)
  <use img/fail2.png>
-Package pdftex.def Info: img/fail2.png used on input line 308.
+Package pdftex.def Info: img/fail2.png used on input line 322.
 (pdftex.def)             Requested size: 231.61333pt x 113.81102pt.
 
 
@@ -538,18 +552,32 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7 <./img/inreg.png> <./img/auth.png> <./img/fail1.png> <./img/fail2.png>]
+<img/chat_mobil.jpg, id=50, 429.605pt x 622.325pt>
+File: img/chat_mobil.jpg Graphic file (type jpg)
+ <use img/chat_mobil.jpg>
+Package pdftex.def Info: img/chat_mobil.jpg used on input line 343.
+(pdftex.def)             Requested size: 98.16019pt x 142.19164pt.
+
+<img/meniu_mare.jpg, id=51, 764.8575pt x 40.15pt>
+File: img/meniu_mare.jpg Graphic file (type jpg)
+ <use img/meniu_mare.jpg>
+Package pdftex.def Info: img/meniu_mare.jpg used on input line 362.
+(pdftex.def)             Requested size: 426.79135pt x 22.40358pt.
+
+<img/meniu_mobil.jpg, id=52, 492.84125pt x 226.8475pt>
+File: img/meniu_mobil.jpg Graphic file (type jpg)
+
+<use img/meniu_mobil.jpg>
+Package pdftex.def Info: img/meniu_mobil.jpg used on input line 369.
+(pdftex.def)             Requested size: 192.0548pt x 88.40092pt.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8]
-Underfull \hbox (badness 10000) in paragraph at lines 401--403
-\OT1/lmr/m/n/12 http://news.netcraft.com/archives/2013/06/06/june-2013-web-serv
-er-survey-
- []
-
+[8 <./img/chat_mobil.jpg> <./img/meniu_mare.jpg> <./img/meniu_mobil.jpg>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -563,7 +591,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10] (./documentatie.toc)
+[10]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[11] (./documentatie.toc)
 \tf@toc=\write3
 \openout3 = `documentatie.toc'.
 
@@ -574,35 +609,34 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[11] (./documentatie.aux)
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+[12] (./documentatie.aux) ) 
 Here is how much of TeX's memory you used:
- 8075 strings out of 493109
- 110904 string characters out of 6140856
- 184453 words of memory out of 5000000
- 11388 multiletter control sequences out of 15000+600000
- 72679 words of font info for 52 fonts, out of 8000000 for 9000
+ 8174 strings out of 493109
+ 112342 string characters out of 6140856
+ 186602 words of memory out of 5000000
+ 11478 multiletter control sequences out of 15000+600000
+ 84749 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,15n,43p,451b,478s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf-dist/fo
-nts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-maths
-y.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc}</usr/share/texmf-d
-ist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf-dist/fonts/type1/public/
-lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/shar
-e/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb><
-/usr/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fon
-ts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri12
-.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-
-dist/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public
-/lm/lmtt12.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
-Output written on documentatie.pdf (12 pages, 602653 bytes).
+ 38i,17n,43p,349b,721s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}
+{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf-dist/fo
+nts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rms
+c.enc}</usr/share/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf
+-dist/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf-dist/fonts/type1/publi
+c/lm/lmbx6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmbx7.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf-dist/fonts/ty
+pe1/public/lm/lmr10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr12.pfb>
+</usr/share/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf-dist/f
+onts/type1/public/lm/lmr6.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmr8
+.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf-
+dist/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf-dist/fonts/type1/public/
+lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/sha
+re/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/share/texmf-dist/fonts/typ
+e1/public/lm/lmtt8.pfb>
+Output written on documentatie.pdf (13 pages, 681469 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
+ 126 PDF objects out of 1000 (max. 8388607)
+ 83 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 56 words of extra memory for PDF output out of 10000 (max. 10000000)
 
