@@ -221,7 +221,7 @@ Structura tabelelor este urmatoarea:
 \begin{figure}[h]
 \centering
 \texttt{%
-	\begin{tabular}{| l | l | l | p{5.5cm} |} \hline
+	\begin{tabular}{| l | l | l | p{6cm} |} \hline
 	Tabel & Nume 			& Tip		  		& Observatii\\ \hline
 	\multirow{6}{*}{utilizatori}
 	&id           	& bigint(20) &  PK: identificator numeric\\
@@ -255,7 +255,7 @@ Structura tabelelor este urmatoarea:
 
 
 
-\subsection{Diagrama de secvență}
+\subsection{Diagramă de secvență}
 Unified Modeling Language (prescurtat UML) este un limbaj standard pentru descrierea de modele și specificații pentru software\cite{uml}.
 
 Urmatoarea diagrama descrie interactiunile dintre cele patru componente 

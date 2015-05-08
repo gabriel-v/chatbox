@@ -17,8 +17,8 @@
 \contentsline {subsubsection}{\numberline {2.5.3}Sistemul de monitorizare daemontools}{4}
 \contentsline {subsection}{\numberline {2.6}Procesorul \LaTeX }{4}
 \contentsline {section}{\numberline {3}Descrierea proiectului}{5}
-\contentsline {subsection}{\numberline {3.1}Diagram\IeC {\u a} de secven\IeC {{\textcommabelow t}}\IeC {\u a}}{5}
-\contentsline {subsection}{\numberline {3.2}Baza de date}{7}
+\contentsline {subsection}{\numberline {3.1}Baza de date}{5}
+\contentsline {subsection}{\numberline {3.2}Diagrama de secven\IeC {{\textcommabelow t}}\IeC {\u a}}{5}
 \contentsline {subsection}{\numberline {3.3}Sistemul de autentificare}{7}
 \contentsline {subsection}{\numberline {3.4}Sistemul de mesagerie}{7}
 \contentsline {subsubsection}{\numberline {3.4.1}Interfata}{7}
