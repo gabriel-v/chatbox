@@ -15,6 +15,7 @@
 \usepackage{subcaption}
 \usepackage[super,comma]{natbib}
 \usepackage{indentfirst}
+\usepackage{pdfpages}
 \usepackage{paralist}
   \let\itemize\compactitem
   \let\enditemize\endcompactitem
@@ -33,7 +34,7 @@
 \lhead{\textbf{chatbox}: serviciu de mesagerie}
 \rhead{\textsc{Atestat la Informatica}}
 \rfoot{\thepage}
-\lfoot{Document în curs de dezvoltare}
+\lfoot{v03}
 
 \renewcommand*\contentsname{Cuprins}
 
@@ -195,12 +196,35 @@ Daemontools este folosit de \textbf{Chatbox} pentru a monitoriza serverul
 de \textit{websockets} si a-l reporni in eventualitatea unei erori.
 
 \subsection{Procesorul \LaTeX}
-Acest document a fost compus folosind sistemul \LaTeX  care permite prepararea
+Acest document a fost compus folosind sistemul ~ \LaTeX ~ care permite prepararea
 acestuia pentru tipărire în format electronic,
 cu ajutorul limbajului de programare \TeX.
 
+
+
 \newpage
 \section{Descrierea proiectului}
+\textbf{Chatbox} a fost conceput ca un mijloc de a invata atat despre programarea
+Web in general, cat si despre sistemele de transmitere de date, in timp real.
+
+\subsection{Diagramă de secvență}
+Unified Modeling Language (prescurtat UML) este un limbaj standard pentru descrierea de modele și specificații pentru software\cite{uml}.
+
+Urmatoarea diagrama descrie interactiunile dintre cele patru componente 
+de baza ale sistemului: browser-ul utilizatorului, serverul Web, baza de date si
+serverul Websocket.
+
+%\includepdf[pagecommand={\pagestyle{fancy}},scale=0.75]{diagrame/chat_sequence.pdf}
+\newpage
+\begin{figure}[!ht]
+\centering
+\includegraphics[height=0.97\textheight]{diagrame/chat_sequence.png}
+\vspace{-20pt} 
+\caption{Diagrama de secvență pentru modulul de mesagerie \label{overflow}}
+\vspace{-20pt} 
+\end{figure}
+ 
+
 
 \subsection{Baza de date}
 
@@ -241,11 +265,11 @@ cu ajutorul limbajului de programare \TeX.
 	http://php.net/manual/en/intro.pdo.php
 	
 \bibitem{websocket}
-	Websocket\\
+	Websocket Protocol\\
 	https://www.websocket.org/
 	
 \bibitem{ratchet}
-	Ratchet: a Websockets Library\\
+	Ratchet: a Websocket Library\\
 	http://socketo.me/
 	
 \bibitem{javascript}
@@ -257,7 +281,7 @@ cu ajutorul limbajului de programare \TeX.
 	https://jquery.com/
 	
 \bibitem{dom}
-	Document Object Model
+	Document Object Model\\
 	http://www.w3.org/DOM/
 
 \bibitem{chartjs}
@@ -295,6 +319,10 @@ http://news.netcraft.com/archives/2013/06/06/june-2013-web-server-survey-3.html
 \bibitem{daemon}
 	daemontools\\
 	http://cr.yp.to/daemontools.html
+	
+\bibitem{uml}
+	Unified Modeling Language\\
+	http://www.uml.org/
 
 \end{thebibliography}
 \endgroup
