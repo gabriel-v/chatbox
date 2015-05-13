@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2015.4.24)  9 MAY 2015 01:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2015.4.24)  13 MAY 2015 14:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -240,13 +240,44 @@ File: pppdftex.def 2013/08/25 v0.4v Pdfpages driver for pdfTeX (AM)
 \c@AM@survey=\count101
 \AM@templatesizebox=\box28
 )
+(/usr/share/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count102
+\lst@gtempboxa=\box29
+\lst@token=\toks23
+\lst@length=\count103
+\lst@currlwidth=\dimen126
+\lst@column=\count104
+\lst@pos=\count105
+\lst@lostspace=\dimen127
+\lst@width=\dimen128
+\lst@newlines=\count106
+\lst@lineno=\count107
+\lst@maxwidth=\dimen129
+
+(/usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2014/09/06 1.5e (Carsten Heinz)
+\c@lstnumber=\count108
+\lst@skipnumbers=\count109
+\lst@framebox=\box30
+)
+(/usr/share/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2014/09/06 1.5e listings configuration
+))
+Package: listings 2014/09/06 1.5e (Carsten Heinz)
+
+(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2014/09/06 1.5e listings language file
+)
+(/usr/share/texmf-dist/tex/latex/listings/lstlang2.sty
+File: lstlang2.sty 2014/09/06 1.5e listings language file
+)
 (/usr/share/texmf-dist/tex/latex/paralist/paralist.sty
 Package: paralist 2013/06/09 v2.4 Extended list environments
 \pltopsep=\skip48
 \plpartopsep=\skip49
 \plitemsep=\skip50
 \plparsep=\skip51
-\pl@lab=\toks23
+\pl@lab=\toks24
 )
 (/usr/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip52
@@ -261,19 +292,19 @@ Package: paralist 2013/06/09 v2.4 Extended list environments
 ) (./documentatie.aux)
 \openout1 = `documentatie.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 43.
-LaTeX Font Info:    ... okay on input line 43.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 43.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 69.
+LaTeX Font Info:    ... okay on input line 69.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 69.
 
 (/usr/share/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -317,17 +348,17 @@ File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
 (/usr/share/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count102
-\scratchdimen=\dimen126
-\scratchbox=\box29
-\nofMPsegments=\count103
-\nofMParguments=\count104
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count105
-\MPscratchDim=\dimen127
-\MPnumerator=\count106
-\makeMPintoPDFobject=\count107
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count110
+\scratchdimen=\dimen130
+\scratchbox=\box31
+\nofMPsegments=\count111
+\nofMParguments=\count112
+\everyMPshowfont=\toks25
+\MPscratchCnt=\count113
+\MPscratchDim=\dimen131
+\MPnumerator=\count114
+\makeMPintoPDFobject=\count115
+\everyMPtoPDFconversion=\toks26
 ) (/usr/share/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
@@ -373,8 +404,10 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\AtBeginShipoutBox=\box30
+\AtBeginShipoutBox=\box32
+\c@lstlisting=\count116
 
 (./pagina-titlu.tex (/usr/share/texmf-dist/tex/latex/ucs/data/uni-2.def
 File: uni-2.def 2013/05/13 UCS: Unicode data U+0200..U+02FF
@@ -413,34 +446,34 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}])
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 52.
+(Font)              <8> on input line 78.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 52.
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 53.
+(Font)              <6> on input line 78.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 79.
 
  (/usr/share/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (7.6438pt too wide) in paragraph at lines 51--57
+Overfull \hbox (1.44653pt too wide) in paragraph at lines 77--83
 []  [] 
  []
 
 <img/over.jpg, id=10, 1240.635pt x 645.41125pt>
 File: img/over.jpg Graphic file (type jpg)
  <use img/over.jpg>
-Package pdftex.def Info: img/over.jpg used on input line 63.
+Package pdftex.def Info: img/over.jpg used on input line 89.
 (pdftex.def)             Requested size: 426.79134pt x 222.027pt.
 
 <img/fb_mess.jpg, id=11, 622.325pt x 466.74374pt>
 File: img/fb_mess.jpg Graphic file (type jpg)
  <use img/fb_mess.jpg>
-Package pdftex.def Info: img/fb_mess.jpg used on input line 79.
+Package pdftex.def Info: img/fb_mess.jpg used on input line 105.
 (pdftex.def)             Requested size: 189.68065pt x 142.26378pt.
 
 <img/yahoo_mess.jpg, id=12, 373.395pt x 373.395pt>
 File: img/yahoo_mess.jpg Graphic file (type jpg)
  <use img/yahoo_mess.jpg>
-Package pdftex.def Info: img/yahoo_mess.jpg used on input line 85.
+Package pdftex.def Info: img/yahoo_mess.jpg used on input line 111.
 (pdftex.def)             Requested size: 142.26192pt x 142.26378pt.
 
 
@@ -467,17 +500,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [3]
-LaTeX Font Info:    Try loading font information for OMS+lmr on input line 182.
+LaTeX Font Info:    Try loading font information for OMS+lmr on input line 208.
 
  (/usr/share/texmf-dist/tex/latex/lm/omslmr.fd
 File: omslmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OMS/lmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 182.
+(Font)              Font shape `OMS/lmsy/m/n' tried instead on input line 208.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 213.
+(Font)              <10> on input line 239.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 213.
+(Font)              <7> on input line 239.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -487,9 +520,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [4]
 LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 263.
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 289.
 LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <6> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 263.
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 289.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -501,10 +534,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: diagrame/chat_sequence.png Graphic file (type png)
 
 <use diagrame/chat_sequence.png>
-Package pdftex.def Info: diagrame/chat_sequence.png used on input line 280.
+Package pdftex.def Info: diagrame/chat_sequence.png used on input line 306.
 (pdftex.def)             Requested size: 429.00543pt x 598.9028pt.
 
-Overfull \hbox (2.21408pt too wide) in paragraph at lines 280--282
+Overfull \hbox (2.21408pt too wide) in paragraph at lines 306--308
  [][] 
  []
 
@@ -518,32 +551,32 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 <img/inreg.png, id=43, 378.41376pt x 332.24126pt>
 File: img/inreg.png Graphic file (type png)
  <use img/inreg.png>
-Package pdftex.def Info: img/inreg.png used on input line 293.
+Package pdftex.def Info: img/inreg.png used on input line 319.
 (pdftex.def)             Requested size: 162.03339pt x 142.26378pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 294.
+(Font)              <10.95> on input line 320.
 
 <img/auth.png, id=44, 358.33875pt x 300.12125pt>
 File: img/auth.png Graphic file (type png)
  <use img/auth.png>
-Package pdftex.def Info: img/auth.png used on input line 299.
+Package pdftex.def Info: img/auth.png used on input line 325.
 (pdftex.def)             Requested size: 169.86273pt x 142.26378pt.
 
 <img/fail1.png, id=45, 248.93pt x 104.39pt>
 File: img/fail1.png Graphic file (type png)
  <use img/fail1.png>
-Package pdftex.def Info: img/fail1.png used on input line 316.
+Package pdftex.def Info: img/fail1.png used on input line 342.
 (pdftex.def)             Requested size: 169.631pt x 71.13188pt.
 
-Overfull \hbox (20.25142pt too wide) in paragraph at lines 316--317
+Overfull \hbox (20.25142pt too wide) in paragraph at lines 342--343
 [][] 
  []
 
 <img/fail2.png, id=46, 349.305pt x 171.64125pt>
 File: img/fail2.png Graphic file (type png)
  <use img/fail2.png>
-Package pdftex.def Info: img/fail2.png used on input line 322.
-(pdftex.def)             Requested size: 231.61333pt x 113.81102pt.
+Package pdftex.def Info: img/fail2.png used on input line 348.
+(pdftex.def)             Requested size: 185.29066pt x 91.04872pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -552,23 +585,30 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [7 <./img/inreg.png> <./img/auth.png> <./img/fail1.png> <./img/fail2.png>]
-<img/chat_mobil.jpg, id=50, 429.605pt x 622.325pt>
-File: img/chat_mobil.jpg Graphic file (type jpg)
- <use img/chat_mobil.jpg>
-Package pdftex.def Info: img/chat_mobil.jpg used on input line 343.
-(pdftex.def)             Requested size: 98.16019pt x 142.19164pt.
 
-<img/meniu_mare.jpg, id=51, 764.8575pt x 40.15pt>
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[8] <img/chat_mobil.jpg, id=53, 429.605pt x 622.325pt>
+File: img/chat_mobil.jpg Graphic file (type jpg)
+
+<use img/chat_mobil.jpg>
+Package pdftex.def Info: img/chat_mobil.jpg used on input line 427.
+(pdftex.def)             Requested size: 98.16019pt x 142.19164pt.
+ <img/meniu_mare.jpg, id=54, 764.8575pt x 40.15pt>
 File: img/meniu_mare.jpg Graphic file (type jpg)
- <use img/meniu_mare.jpg>
-Package pdftex.def Info: img/meniu_mare.jpg used on input line 362.
+
+<use img/meniu_mare.jpg>
+Package pdftex.def Info: img/meniu_mare.jpg used on input line 446.
 (pdftex.def)             Requested size: 426.79135pt x 22.40358pt.
 
-<img/meniu_mobil.jpg, id=52, 492.84125pt x 226.8475pt>
+<img/meniu_mobil.jpg, id=55, 492.84125pt x 226.8475pt>
 File: img/meniu_mobil.jpg Graphic file (type jpg)
 
 <use img/meniu_mobil.jpg>
-Package pdftex.def Info: img/meniu_mobil.jpg used on input line 369.
+Package pdftex.def Info: img/meniu_mobil.jpg used on input line 453.
 (pdftex.def)             Requested size: 192.0548pt x 88.40092pt.
 
 
@@ -577,28 +617,101 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[8 <./img/chat_mobil.jpg> <./img/meniu_mare.jpg> <./img/meniu_mobil.jpg>]
+[9 <./img/chat_mobil.jpg> <./img/meniu_mare.jpg> <./img/meniu_mobil.jpg>]
+<img/zona.png, id=61, 497.86pt x 367.3725pt>
+File: img/zona.png Graphic file (type png)
+ <use img/zona.png>
+Package pdftex.def Info: img/zona.png used on input line 475.
+(pdftex.def)             Requested size: 173.51672pt x 128.0374pt.
+
+<img/lista.png, id=62, 341.275pt x 372.39125pt>
+File: img/lista.png Graphic file (type png)
+ <use img/lista.png>
+Package pdftex.def Info: img/lista.png used on input line 481.
+(pdftex.def)             Requested size: 117.33902pt x 128.0374pt.
+
+<img/lista_offline.jpg, id=63, 375.4025pt x 60.225pt>
+File: img/lista_offline.jpg Graphic file (type jpg)
+
+<use img/lista_offline.jpg>
+Package pdftex.def Info: img/lista_offline.jpg used on input line 494.
+(pdftex.def)             Requested size: 124.1467pt x 19.91684pt.
+
+Overfull \hbox (17.44887pt too wide) in paragraph at lines 494--495
+[][] 
+ []
+
+<img/lista_mesaj.jpg, id=64, 378.41376pt x 61.22874pt>
+File: img/lista_mesaj.jpg Graphic file (type jpg)
+
+<use img/lista_mesaj.jpg>
+Package pdftex.def Info: img/lista_mesaj.jpg used on input line 500.
+(pdftex.def)             Requested size: 123.09271pt x 19.91684pt.
+
+Overfull \hbox (16.39488pt too wide) in paragraph at lines 500--501
+[][] 
+ []
+
+<img/lista_online.jpg, id=65, 375.4025pt x 60.225pt>
+File: img/lista_online.jpg Graphic file (type jpg)
+
+<use img/lista_online.jpg>
+Package pdftex.def Info: img/lista_online.jpg used on input line 506.
+(pdftex.def)             Requested size: 124.1467pt x 19.91684pt.
+
+Overfull \hbox (17.44887pt too wide) in paragraph at lines 506--507
+[][] 
+ []
+
+<img/chat_butoane.jpg, id=66, 307.1475pt x 48.18pt>
+File: img/chat_butoane.jpg Graphic file (type jpg)
+ <use img/chat_butoane.jpg>
+Package pdftex.def Info: img/chat_butoane.jpg used on input line 528.
+(pdftex.def)             Requested size: 170.71393pt x 26.77916pt.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[9]
+[10 <./img/zona.png> <./img/lista.png> <./img/lista_offline.jpg> <./img/lista_m
+esaj.jpg> <./img/lista_online.jpg> <./img/chat_butoane.jpg>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[10]
+[11]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[11] (./documentatie.toc)
+[12]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[14]
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[15] (./documentatie.toc)
 \tf@toc=\write3
 \openout3 = `documentatie.toc'.
 
@@ -609,15 +722,15 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12] (./documentatie.aux) ) 
+[16] (./documentatie.aux) ) 
 Here is how much of TeX's memory you used:
- 8174 strings out of 493109
- 112342 string characters out of 6140856
- 186602 words of memory out of 5000000
- 11478 multiletter control sequences out of 15000+600000
+ 11902 strings out of 493109
+ 169990 string characters out of 6140856
+ 483847 words of memory out of 5000000
+ 15181 multiletter control sequences out of 15000+600000
  84749 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,17n,43p,349b,721s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,17n,43p,349b,3544s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}
 {/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/share/texmf-dist/fo
 nts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-rms
@@ -633,10 +746,10 @@ dist/fonts/type1/public/lm/lmri7.pfb></usr/share/texmf-dist/fonts/type1/public/
 lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtk10.pfb></usr/sha
 re/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/share/texmf-dist/fonts/typ
 e1/public/lm/lmtt8.pfb>
-Output written on documentatie.pdf (13 pages, 681469 bytes).
+Output written on documentatie.pdf (17 pages, 736645 bytes).
 PDF statistics:
- 126 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
+ 144 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 86 words of extra memory for PDF output out of 10000 (max. 10000000)
 

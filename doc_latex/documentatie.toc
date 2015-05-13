@@ -20,13 +20,13 @@
 \contentsline {subsection}{\numberline {3.1}Baza de date}{5}
 \contentsline {subsection}{\numberline {3.2}Diagrama de secven\IeC {{\textcommabelow t}}\IeC {\u a}}{5}
 \contentsline {subsection}{\numberline {3.3}Sistemul de autentificare}{7}
-\contentsline {subsection}{\numberline {3.4}Interfa\IeC {{\textcommabelow t}}\IeC {\u a} grafica \IeC {{\textcommabelow s}}i design}{8}
-\contentsline {subsubsection}{\numberline {3.4.1}Func\IeC {{\textcommabelow t}}ia de remodelare}{8}
-\contentsline {subsubsection}{\numberline {3.4.2}Bara de naviga\IeC {{\textcommabelow t}}ie}{8}
-\contentsline {subsection}{\numberline {3.5}Sistemul de mesagerie}{9}
-\contentsline {subsubsection}{\numberline {3.5.1}Interfata}{9}
-\contentsline {subsubsection}{\numberline {3.5.2}Serverul de websockets}{9}
-\contentsline {subsection}{\numberline {3.6}Generarea \IeC {{\textcommabelow s}}i vizualizarea datelor}{9}
-\contentsline {subsubsection}{\numberline {3.6.1}Generatorul de date}{9}
-\contentsline {subsubsection}{\numberline {3.6.2}Vizualizarea datelor prin grafice}{9}
-\contentsline {section}{\numberline {4}Bibliografie}{10}
+\contentsline {subsection}{\numberline {3.4}Interfa\IeC {{\textcommabelow t}}\IeC {\u a} grafic\IeC {\u a} \IeC {{\textcommabelow s}}i design}{9}
+\contentsline {subsubsection}{\numberline {3.4.1}Func\IeC {{\textcommabelow t}}ia de remodelare}{9}
+\contentsline {subsubsection}{\numberline {3.4.2}Bara de naviga\IeC {{\textcommabelow t}}ie}{9}
+\contentsline {subsection}{\numberline {3.5}Sistemul de mesagerie}{10}
+\contentsline {subsubsection}{\numberline {3.5.1}Interfa\IeC {{\textcommabelow t}}a specific\IeC {\u a}}{10}
+\contentsline {subsubsection}{\numberline {3.5.2}Serverul de websockets}{11}
+\contentsline {subsection}{\numberline {3.6}Generarea \IeC {{\textcommabelow s}}i vizualizarea datelor}{13}
+\contentsline {subsubsection}{\numberline {3.6.1}Generatorul de date}{13}
+\contentsline {subsubsection}{\numberline {3.6.2}Vizualizarea datelor prin grafice}{13}
+\contentsline {section}{\numberline {4}Bibliografie}{14}

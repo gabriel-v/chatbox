@@ -18,6 +18,32 @@
 \usepackage[super,comma]{natbib}
 \usepackage{indentfirst}
 \usepackage{pdfpages}
+
+
+\usepackage{listings,xcolor}
+
+\definecolor{dkgreen}{rgb}{0,.3,0}
+\definecolor{dkblue}{rgb}{0,0,.3}
+\definecolor{dkyellow}{cmyk}{0,0,.8,.75}
+\definecolor{dkred}{rgb}{.3,0,0}
+
+
+\lstset{
+  language        = php,
+  basicstyle      = \scriptsize\ttfamily,
+  keywordstyle    = \color{dkblue},
+  stringstyle     = \color{dkred},
+  identifierstyle = \color{black},
+  commentstyle    = \color{dkgreen},
+  showspaces	  = false,    
+  showstringspaces = false,
+  tabsize 		  = 4,
+  emph            =[1]{php},
+  emphstyle       =[1]\color{black},
+  emph            =[2]{if,and,or,else,public,function,\$this,class,implements,return,new},
+  emphstyle       =[2]\color{dkblue}
+}
+
 \usepackage{paralist}
   \let\itemize\compactitem
   \let\enditemize\endcompactitem
@@ -52,7 +78,7 @@
 \begin{tabular}{l l l l}
 \texttt{chat} & --  \textit{s.f.} & conversație informală &\\
 \texttt{to box} & --  \textit{v. tranz.} & a inchide, a separa (într-o cutie)&\\
-& & & (Dicționar Englez-Român)\\ %\hline
+& & & -- Dicționar englez-român\\ %\hline
 \end{tabular}
 
 \vfill
@@ -252,7 +278,7 @@ Structura tabelelor este următoarea:
 & adresa\_ip     & tinytext            & \\
 & browser       & tinytext            & browserul folosit\\
 & platforma     & tinytext            & SO folosit\\ \hline
-\multirow{8}{*}{sesiuni}
+\multirow{8}{*}{mesaje}
 & id\_mesaj      & bigint(20) & PK \\
 & id\_expeditor  & bigint(20)          & FK \\
 & id\_destinatar & bigint(20)          & FK \\
@@ -319,16 +345,74 @@ Aceste verificări se fac pe server,  în cate un script PHP, pentru verificarea
         \end{subfigure}%
         ~ \qquad 
         \begin{subfigure}[b]{0.55\textwidth}
-                \includegraphics[height=4cm]{img/fail2.png}
+                \includegraphics[height=3.2cm]{img/fail2.png}
                 \caption{la înregistrare}
                 %\label{fig:tiger}
         \end{subfigure}
         \caption{Posibile erori după completarea eronată a formularelor}%\label{fig:animals}
 \end{figure}
 
-DE FACUT: ++COD
+Paginile accesate pentru autentificare și înregistrare sunt \texttt{autentificare.php} și
+\texttt{inregistrare.php}. Verificarea fiecărui procedeu este efectuată în programele
+\texttt{php/verifica\_autentificare.php} și \texttt{php/verifica\_inregistrare.php}.
+
+\vfill
+
+Pentru exemplificare este atașată mai jos sursa fișierului responsabil de verificarea autentificării.
+
+\begin{lstlisting}
+<?php
+/* php/verifica_autentificare.php */
+require_once('functii.php');
+require_once("bd_functii.php");
+session_start();
+unset($_SESSION['ERORI']);
+
+$mesaje_erori = array();
+$avem_eroare = false;
+
+$nume = $_POST['nume'];
+$parola = $_POST['parola'];
+
+if ($nume == '') {
+    $avem_eroare = true;
+    $mesaje_erori[] = "Numele de utilizator lipseste. ";
+}
+if ($parola == '') {
+    $avem_eroare = true;
+    $mesaje_erori[] = "Parola lipseste. ";
+}
+if (preg_match('/\\W|_/', $nume)) {
+    $avem_eroare = true;
+    $mesaje_erori[] = "Numele de utilizator contine caractere interzise. ";
+}
+if ($avem_eroare == true) {
+    $_SESSION['ERORI'] = $mesaje_erori;
+    redirect("../autentificare.php");
+} else {
+    unset($_SESSION['ERORI']);
+}
+
+conectare_baza_date();
+$query = "SELECT * FROM utilizatori WHERE nume=?";
+$fetch = interogare_bd($query, $nume);
+$hash = $fetch['hash'];
+
+if (password_verify($parola, $hash)) {
+    // autentificare ok
+    $_SESSION['ID'] = $fetch['id'];
+    $_SESSION['NUME'] = $fetch['nume'];
+    redirect("../home.php");
+} else {
+    // autentificare esuata
+    $mesaje_erori[] = "Autentificare esuata";
+    $_SESSION['ERORI'] = $mesaje_erori;
+    redirect("../autentificare.php");
+}
+\end{lstlisting}
+
 \newpage
-\subsection{Interfață grafica și design}
+\subsection{Interfață grafică și design}
 Pentru construirea interfeței grafice și a design-ului am folosit librăria Bootstrap\cite{bootstrap} și adiții din partea site-ului Bootswatch\cite{bootswatch}.
 
 \textbf{Chatbox} abordează un stil minimalist, folosind doar culori elementare: 
@@ -377,13 +461,196 @@ bara de navigație își schimbă forma și poate fi extinsă sau micșorată la
 folosind butonul din dreapta-sus [Figura \ref{fig:nav-mobil}].
 
 \subsection{Sistemul de mesagerie}
+Funcționalitatea centrală a proiectului este sistemul de mesagerie în timp real. 
+Acesta permite trimiterea de mesaje text către orice alt utilizator al \textbf{Chatbox}.
+
+\subsubsection{Interfața specifică}
+Ca să se păstreze stilul minimalist, interfața are un design simplu și funcțional. 
+Ecranul este împărțit între o listă cu ceilalți utilizatori și o căsuță unde apar mesajele
+din conversația curentă. 
+
+\begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.45\textwidth}
+                \includegraphics[height=4.5cm]{img/zona.png}
+                \caption{Căsuța cu mesaje}
+               % \label{fig:gull}
+        \end{subfigure}%
+        ~ \qquad 
+        \begin{subfigure}[b]{0.35\textwidth}
+                \includegraphics[height=4.5cm]{img/lista.png}
+                \caption{Lista de utilizatori}
+                %\label{fig:tiger}
+        \end{subfigure}
+        \vspace{-7px}
+        \caption{Interfața sistemului de mesagerie}%\label{fig:animals}
+\end{figure}
+
+Se poate schimba utilizatorul curent prin selectarea unui altul, folosind un simplu \textit{click}. Utilizatorul activ este afișat în partea de sus a căsuței cu mesaje. 
+
+\begin{figure}[h!]
+        \centering
+        \begin{subfigure}[b]{0.25\textwidth}
+                \includegraphics[height=0.7cm]{img/lista_offline.jpg}
+                \caption{Utilizator offline}
+               % \label{fig:gull}
+        \end{subfigure}%
+        ~ \qquad 
+        \begin{subfigure}[b]{0.25\textwidth}
+                \includegraphics[height=0.7cm]{img/lista_mesaj.jpg}
+                \caption{Mesaj nou}
+               % \label{fig:gull}
+        \end{subfigure}%
+        ~ \qquad 
+        \begin{subfigure}[b]{0.25\textwidth}
+                \includegraphics[height=0.7cm]{img/lista_online.jpg}
+                \caption{Utilizator online}
+                %\label{fig:tiger}
+        \end{subfigure}
+        \vspace{-7px}
+        \caption{Elementele listei de utilizatori}%\label{fig:animals}
+\end{figure}
 
 
-\subsubsection{Interfata}
-DE FACUT
+Trimiterea unui mesaj se poate realiza prin tastarea acestuia în zona de trimitere și prin 
+apăsarea tastei \textit{enter}. Din acest motiv, am considerat că era inutil să se 
+adauge și un buton care împlinește același rol. Alegerea a fost inspirată din design-ul 
+chat-ului implementat de Facebook. 
+
+Mesajele se pot trimite doar dacă clientul este conectat la serverul de \textit{websocket}, 
+care are rolul de a primi și de a trimite mai departe conținutul mesajelor de la un 
+utilizator la altul, în timp real. \textbf{Chatbox} anunță utilizatorii dacă sunt conectați 
+printr-un element de afișaj.
+
+\begin{figure}[!h]
+	\centering
+	\vspace{-7px}
+	\includegraphics[width=0.4\textwidth]{img/chat_butoane.jpg}
+	\vspace{-7px}
+	\caption{Butoanele specifice interfeței de chat}
+\end{figure}
 
 \subsubsection{Serverul de websockets}
-DE FACUT
+După cum a fost explicat mai sus, protocolul este folosit pentru a transmite mesajele 
+de la expeditor la destinatar, într-un timp cât mai scurt.  Acest procedeu se realizează, 
+evident, doar dacă atât expeditorul cât și destinatarul sunt conectați la server. 
+
+Librăria \textit{Ratchet} este folosită pentru a implementa acest server, 
+ce rulează la adresa paginii \textbf{Chatbox}, pe portul \texttt{8091}.
+
+\begin{lstlisting}
+<?php
+/* php/websocket/ChatListener.php */
+
+class ChatListener implements MessageComponentInterface {
+	// Lista cu clienti activi
+    protected $clienti;
+    protected $legaturi = array(0 => null); 
+
+    public function __construct() {
+        $this->clienti = new \SplObjectStorage;
+        echo 'ChatListener initializat!\n';
+    }
+
+	// Trimite mesajul $mesaj de la expeditor.
+    function trimite_mesaj($expeditor, $mesaj) {
+        $trimis = false;
+        $mesaj['id_expeditor'] = $this->legaturi[$expeditor->resourceId]['id'];
+        foreach ($this->clienti as $client) {
+            if (/* ... */ ) {
+                $client->send(json_encode($mesaj));
+                $trimis = true;
+            }
+        }
+        return $trimis;
+    }
+
+	// Initializeaza o sesiune folosind cheia primita.
+    function initializeaza_sesiune($utilizator, $cheie) {
+        $transmisie = array(/* ... */);
+        $transmisie_text = json_encode($transmisie);
+        foreach ($this->clienti as $client) {
+            if ($utilizator !== $client) {
+                $client->send($transmisie_text);
+            }
+        }
+        $q = "UPDATE utilizatori SET activ = 1 WHERE id = ?";
+        inserare_bd($q, $id);   deconectare_baza_date();
+    }
+
+	// Inchide o sesiune si seteaza utilizatorul ca fiind inactiv.
+    function sfarseste_sesiune($conexiune, $id, $cheie) {
+        $transmisie = array(/* ... */);
+        $transmisie_text = json_encode($transmisie);
+        foreach ($this->clienti as $client) {
+            if ($conexiune !== $client) {
+                $client->send($transmisie_text);
+            }
+        }
+        inserare_bd("UPDATE utilizatori SET activ = 0 WHERE id = ?", $id);
+        inserare_bd("UPDATE sesiuni SET sfarsit = ? WHERE cheie_sesiune = ?", 
+        			 array(\acum(), $cheie));
+        deconectare_baza_date();
+    }
+
+	// Rulat in momentul in care un utilizator se 
+	// conecteaza la server. 
+    public function onOpen(ConnectionInterface $conexiune) {
+        $this->clienti->attach($conexiune);
+    }
+
+	// Rulat in momentul in care un utilizator trimite un mesaj
+	// catre server. Acest mesaj poate fi de doua tipuri
+	// (trimitere de mesaj text, sau operatiune). 
+    public function onMessage(ConnectionInterface $expeditor, $mesaj) {
+        $resId = $expeditor->resourceId;
+        $date = json_decode($mesaj, true);
+
+        switch ($date['operatie']) {
+            case 'trimitere':
+                $this->trimite_mesaj($expeditor, $date);
+                break;
+            case 'initializare':
+                $this->initializeaza_sesiune(
+                	$expeditor, $date['cheie']);
+                break;
+        }
+    }
+
+	// Rulat in momentul in care un utilizator se 
+	// deconecteaza de la server. 
+    public function onClose(ConnectionInterface $conexiune) {
+        $this->clienti->detach($conexiune);
+
+        $id = $this->legaturi[$conexiune->resourceId]['id'];
+        $nume = $this->legaturi[$conexiune->resourceId]['nume'];
+        $cheie = $this->legaturi[$conexiune->resourceId]['cheie'];
+
+        $this->sfarseste_sesiune($conexiune, $id, $cheie);
+        unset($this->legaturi[$conexiune->resourceId]);
+    }
+
+	// Rulat daca apar erori.
+    public function onError(ConnectionInterface $conexiune, \Exception $e) {
+        $conexiune->close();
+    }
+}
+?>
+
+<?php
+/* php/websocket/server.php */
+use Ratchet\Server\IoServer;
+use Ratchet\Http\HttpServer;
+use Ratchet\WebSocket\WsServer;
+use Chatbox\ChatListener;
+
+$server = IoServer::factory(new HttpServer(
+               new WsServer(new ChatListener())), 
+               8091);
+$server->run();
+\end{lstlisting}
+\newpage
+
 \subsection{Generarea și vizualizarea datelor}
 DE FACUT
 \subsubsection{Generatorul de date}
