@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2015.4.24)  13 MAY 2015 16:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014/Arch Linux) (preloaded format=pdflatex 2015.4.24)  13 MAY 2015 16:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -520,9 +520,9 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [4]
 LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 288.
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 290.
 LaTeX Font Info:    Font shape `OT1/lmtt/bx/n' in size <6> not available
-(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 288.
+(Font)              Font shape `OT1/lmtt/b/n' tried instead on input line 290.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -534,10 +534,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: diagrame/chat_sequence.png Graphic file (type png)
 
 <use diagrame/chat_sequence.png>
-Package pdftex.def Info: diagrame/chat_sequence.png used on input line 305.
+Package pdftex.def Info: diagrame/chat_sequence.png used on input line 307.
 (pdftex.def)             Requested size: 429.00543pt x 598.9028pt.
 
-Overfull \hbox (2.21408pt too wide) in paragraph at lines 305--307
+Overfull \hbox (2.21408pt too wide) in paragraph at lines 307--309
  [][] 
  []
 
@@ -551,31 +551,31 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 <img/inreg.png, id=42, 378.41376pt x 332.24126pt>
 File: img/inreg.png Graphic file (type png)
  <use img/inreg.png>
-Package pdftex.def Info: img/inreg.png used on input line 318.
+Package pdftex.def Info: img/inreg.png used on input line 320.
 (pdftex.def)             Requested size: 162.03339pt x 142.26378pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 319.
+(Font)              <10.95> on input line 321.
 
 <img/auth.png, id=43, 358.33875pt x 300.12125pt>
 File: img/auth.png Graphic file (type png)
  <use img/auth.png>
-Package pdftex.def Info: img/auth.png used on input line 324.
+Package pdftex.def Info: img/auth.png used on input line 326.
 (pdftex.def)             Requested size: 169.86273pt x 142.26378pt.
 
 <img/fail1.png, id=44, 248.93pt x 104.39pt>
 File: img/fail1.png Graphic file (type png)
  <use img/fail1.png>
-Package pdftex.def Info: img/fail1.png used on input line 341.
+Package pdftex.def Info: img/fail1.png used on input line 343.
 (pdftex.def)             Requested size: 169.631pt x 71.13188pt.
 
-Overfull \hbox (20.25142pt too wide) in paragraph at lines 341--342
+Overfull \hbox (20.25142pt too wide) in paragraph at lines 343--344
 [][] 
  []
 
 <img/fail2.png, id=45, 349.305pt x 171.64125pt>
 File: img/fail2.png Graphic file (type png)
  <use img/fail2.png>
-Package pdftex.def Info: img/fail2.png used on input line 347.
+Package pdftex.def Info: img/fail2.png used on input line 349.
 (pdftex.def)             Requested size: 185.29066pt x 91.04872pt.
 
 
@@ -595,20 +595,20 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: img/chat_mobil.jpg Graphic file (type jpg)
 
 <use img/chat_mobil.jpg>
-Package pdftex.def Info: img/chat_mobil.jpg used on input line 426.
+Package pdftex.def Info: img/chat_mobil.jpg used on input line 428.
 (pdftex.def)             Requested size: 98.16019pt x 142.19164pt.
  <img/meniu_mare.jpg, id=53, 764.8575pt x 40.15pt>
 File: img/meniu_mare.jpg Graphic file (type jpg)
 
 <use img/meniu_mare.jpg>
-Package pdftex.def Info: img/meniu_mare.jpg used on input line 445.
+Package pdftex.def Info: img/meniu_mare.jpg used on input line 447.
 (pdftex.def)             Requested size: 426.79135pt x 22.40358pt.
 
 <img/meniu_mobil.jpg, id=54, 492.84125pt x 226.8475pt>
 File: img/meniu_mobil.jpg Graphic file (type jpg)
 
 <use img/meniu_mobil.jpg>
-Package pdftex.def Info: img/meniu_mobil.jpg used on input line 452.
+Package pdftex.def Info: img/meniu_mobil.jpg used on input line 454.
 (pdftex.def)             Requested size: 192.0548pt x 88.40092pt.
 
 
@@ -621,23 +621,23 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 <img/zona.png, id=60, 497.86pt x 367.3725pt>
 File: img/zona.png Graphic file (type png)
  <use img/zona.png>
-Package pdftex.def Info: img/zona.png used on input line 473.
+Package pdftex.def Info: img/zona.png used on input line 475.
 (pdftex.def)             Requested size: 173.51672pt x 128.0374pt.
 
 <img/lista.png, id=61, 341.275pt x 372.39125pt>
 File: img/lista.png Graphic file (type png)
  <use img/lista.png>
-Package pdftex.def Info: img/lista.png used on input line 479.
+Package pdftex.def Info: img/lista.png used on input line 481.
 (pdftex.def)             Requested size: 117.33902pt x 128.0374pt.
 
 <img/lista_offline.jpg, id=62, 375.4025pt x 60.225pt>
 File: img/lista_offline.jpg Graphic file (type jpg)
 
 <use img/lista_offline.jpg>
-Package pdftex.def Info: img/lista_offline.jpg used on input line 492.
+Package pdftex.def Info: img/lista_offline.jpg used on input line 494.
 (pdftex.def)             Requested size: 124.1467pt x 19.91684pt.
 
-Overfull \hbox (17.44887pt too wide) in paragraph at lines 492--493
+Overfull \hbox (17.44887pt too wide) in paragraph at lines 494--495
 [][] 
  []
 
@@ -645,10 +645,10 @@ Overfull \hbox (17.44887pt too wide) in paragraph at lines 492--493
 File: img/lista_mesaj.jpg Graphic file (type jpg)
 
 <use img/lista_mesaj.jpg>
-Package pdftex.def Info: img/lista_mesaj.jpg used on input line 498.
+Package pdftex.def Info: img/lista_mesaj.jpg used on input line 500.
 (pdftex.def)             Requested size: 123.09271pt x 19.91684pt.
 
-Overfull \hbox (16.39488pt too wide) in paragraph at lines 498--499
+Overfull \hbox (16.39488pt too wide) in paragraph at lines 500--501
 [][] 
  []
 
@@ -656,17 +656,17 @@ Overfull \hbox (16.39488pt too wide) in paragraph at lines 498--499
 File: img/lista_online.jpg Graphic file (type jpg)
 
 <use img/lista_online.jpg>
-Package pdftex.def Info: img/lista_online.jpg used on input line 504.
+Package pdftex.def Info: img/lista_online.jpg used on input line 506.
 (pdftex.def)             Requested size: 124.1467pt x 19.91684pt.
 
-Overfull \hbox (17.44887pt too wide) in paragraph at lines 504--505
+Overfull \hbox (17.44887pt too wide) in paragraph at lines 506--507
 [][] 
  []
 
 <img/chat_butoane.jpg, id=65, 307.1475pt x 48.18pt>
 File: img/chat_butoane.jpg Graphic file (type jpg)
  <use img/chat_butoane.jpg>
-Package pdftex.def Info: img/chat_butoane.jpg used on input line 526.
+Package pdftex.def Info: img/chat_butoane.jpg used on input line 528.
 (pdftex.def)             Requested size: 170.71393pt x 26.77916pt.
 
 
@@ -690,60 +690,38 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[12] <img/stat.jpg, id=76, 493.845pt x 664.4825pt>
+[12] <img/gen_nume.jpg, id=76, 607.26875pt x 472.76625pt>
+File: img/gen_nume.jpg Graphic file (type jpg)
+
+<use img/gen_nume.jpg>
+Package pdftex.def Info: img/gen_nume.jpg used on input line 667.
+(pdftex.def)             Requested size: 256.07741pt x 199.3612pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 676--677
+
+ []
+
+
+Package Fancyhdr Warning: \headheight is too small (12.0pt): 
+ Make it at least 14.49998pt.
+ We now make it that large for the rest of the document.
+ This may cause the page layout to be inconsistent, however.
+
+[13 <./img/gen_nume.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 688--689
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 690--691
+
+ []
+
+<img/stat.jpg, id=80, 493.845pt x 664.4825pt>
 File: img/stat.jpg Graphic file (type jpg)
  <use img/stat.jpg>
-Package pdftex.def Info: img/stat.jpg used on input line 663.
-(pdftex.def)             Requested size: 213.39568pt x 287.12111pt.
-
-Overfull \hbox (12.80322pt too wide) in paragraph at lines 663--665
- [][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 668--669
-
- []
-
-
-Underfull \hbox (badness 1910) in paragraph at lines 670--671
-[]\OT1/lmr/m/n/12 Sistemul cre-eaz^^Ua c^ate o vi-zu-a-li-zare
- []
-
-
-Underfull \hbox (badness 7308) in paragraph at lines 670--671
-\OT1/lmr/m/n/12 a da-te-lor nu-me-rice re-zul-tate dintr-o
- []
-
-
-Underfull \hbox (badness 7486) in paragraph at lines 670--671
-\OT1/lmr/m/n/12 in-te-ro-gare SQL. Pro-ce-deul este ino-
- []
-
-
-Underfull \hbox (badness 5403) in paragraph at lines 670--671
-\OT1/lmr/m/n/12 va-tiv prin fap-tul c^^Ua se poate alipi
- []
-
-
-Underfull \hbox (badness 2173) in paragraph at lines 670--671
-\OT1/lmr/m/n/12 unei in-fras-truc-turi deja exis-tente pen-
- []
-
-
-Underfull \hbox (badness 4531) in paragraph at lines 670--671
-\OT1/lmr/m/n/12 tru a ge-nera gra-fice cu da-tele pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 670--671
-
- []
-
-
-Underfull \hbox (badness 1521) in paragraph at lines 672--674
-[][]\OT1/lmr/m/n/12 Intreaga ana-liz^^Ua a ba-ze-lor de date
- []
+Package pdftex.def Info: img/stat.jpg used on input line 696.
+(pdftex.def)             Requested size: 256.07741pt x 344.54938pt.
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -751,86 +729,21 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[13 <./img/stat.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 687--689
-[]\OT1/lmr/m/n/12 Syst^^Reme
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 687--689
-\OT1/lmr/m/n/12 de Ges-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 687--689
-\OT1/lmr/m/n/12 tion de
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 687--689
-\OT1/lmr/m/n/12 Base de
- []
-
-
-Overfull \hbox (149.40901pt too wide) in paragraph at lines 687--689
-\OT1/lmr/m/n/12 http://ro.wikipedia.org/wiki/Sistem[]de[]gestiune[]a[]bazelor[]
-de[]date 
- []
-
-
-Overfull \hbox (20.76242pt too wide) in paragraph at lines 695--697
-\OT1/lmr/m/n/12 http://php.net/manual/en/intro.pdo.php 
- []
-
-
-Overfull \hbox (152.49498pt too wide) in paragraph at lines 707--709
-\OT1/lmr/m/n/12 http://www.w3.org/community/webed/wiki/Objects[]in[]JavaScript 
-
- []
-
-
-Underfull \hbox (badness 7558) in paragraph at lines 719--721
-[]\OT1/lmr/m/n/12 Chart.js: Open so-urce HTML5
- []
-
+[14 <./img/stat.jpg>]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[14]
-Underfull \hbox (badness 10000) in paragraph at lines 743--745
-\OT1/lmr/m/n/12 https://www.fsf.org/about/what-is-
- []
-
-
-Overfull \hbox (61.81107pt too wide) in paragraph at lines 747--749
-\OT1/lmr/m/n/10.95 http://news.netcraft.com/archives/2013/06/06/june-
- []
-
-
-Overfull \hbox (30.75471pt too wide) in paragraph at lines 755--757
-\OT1/lmr/m/n/10.95 http://php.net/manual/en/function.password-
- []
-
-
-Overfull \hbox (4.11125pt too wide) in paragraph at lines 771--774
-\OT1/lmr/m/n/10.95 http://alistapart.com/article/responsive-
- []
-
-
-Overfull \hbox (60.144pt too wide) in paragraph at lines 771--774
-\OT1/lmr/m/n/10.95 http://en.wikipedia.org/wiki/Responsive[]web[]design 
- []
-
+[15]
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[15] (./documentatie.toc)
+[16] (./documentatie.toc)
 \tf@toc=\write3
 \openout3 = `documentatie.toc'.
 
@@ -841,12 +754,12 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[16] (./documentatie.aux) ) 
+[17] (./documentatie.aux) ) 
 Here is how much of TeX's memory you used:
- 11907 strings out of 493109
- 170065 string characters out of 6140856
+ 11912 strings out of 493109
+ 170160 string characters out of 6140856
  483847 words of memory out of 5000000
- 15185 multiletter control sequences out of 15000+600000
+ 15189 multiletter control sequences out of 15000+600000
  84749 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  38i,17n,43p,351b,3544s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -864,10 +777,10 @@ nts/type1/public/lm/lmr8.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmri1
 dist/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf-dist/fonts/type1/public
 /lm/lmtk10.pfb></usr/share/texmf-dist/fonts/type1/public/lm/lmtt12.pfb></usr/sh
 are/texmf-dist/fonts/type1/public/lm/lmtt8.pfb>
-Output written on documentatie.pdf (17 pages, 746004 bytes).
+Output written on documentatie.pdf (18 pages, 774118 bytes).
 PDF statistics:
- 141 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 145 PDF objects out of 1000 (max. 8388607)
+ 90 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 91 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
 

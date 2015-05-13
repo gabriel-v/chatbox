@@ -237,7 +237,7 @@ Daemontools este folosit de \textbf{Chatbox} pentru a monitoriza serverul
 de \textit{websockets} și a-l reporni  în eventualitatea unei erori.
 
 \subsection{Procesorul \LaTeX}
-Acest document a fost compus folosind sistemul ~ \LaTeX ~ care permite prepararea
+Acest document a fost compus folosind procesorul ~ \LaTeX ~ care permite pregătirea
 acestuia pentru tipărire în format electronic,
 cu ajutorul limbajului de programare ~ \TeX.
 
@@ -248,11 +248,12 @@ cu ajutorul limbajului de programare ~ \TeX.
 \textbf{Chatbox} a fost conceput ca un mijloc de a învăța atât despre programarea
 Web în general, cât și despre sistemele de transmitere de date în timp real.
 
+Codul complet este disponibil la adresa: \texttt{github.com/gabriel-v/chatbox}.
+
 \subsection{Baza de date}
 Sistemul \textbf{Chatbox} stochează  în baza de date toate detaliile interacționării
-utilizatorilor cu acesta. Informatiile sunt atât funcționale 
-(conținutul mesajelor trimise), cât și statistici (ce sistem de operare a fost folosit pentru
-autentificarea unui utilizator).
+utilizatorilor cu acesta. Informațiile sunt atât de conținut 
+(mesajele trimise), cât și metadate (\textit{exemplu}: ce sistem de operare a fost folosit de către un anumit utilizator).
 
 %Schema bazei de date MySQL este compusă din 3 tabele: 
 %\texttt{utilizatori}, \texttt{sesiuni} și \texttt{mesaje}.
@@ -310,7 +311,7 @@ serverul Websocket.
 \end{figure}
 
 \subsection{Sistemul de autentificare}
-Pentru a folosi serviciul de mesagerie, un utilizator trebuie să fie înregistrat și autentificat. Înregistrarea este libera; singurele date necesare sunt numele de utilizator
+Pentru a folosi serviciul de mesagerie, un utilizator trebuie să fie înregistrat și autentificat. Înregistrarea este liberă; singurele date necesare sunt numele de utilizator
 și o parolă.
 
 \begin{figure}[h!]
@@ -334,7 +335,7 @@ Pentru a folosi serviciul de mesagerie, un utilizator trebuie să fie înregistr
 În cazul  în care apar erori în procesul creării contului sau în procesul autentificării,
 utilizatorul va primi o înștiințare pe fundal roșu care explică situația.
 
-Aceste verificări se fac pe server,  în cate un script PHP, pentru verificarea autentificării, respectiv a inregistrării. 
+Aceste verificări se fac pe server,  în câte un script PHP, pentru verificarea autentificării, respectiv a înregistrării. 
 
 \begin{figure}[h!]
         \centering
@@ -358,7 +359,7 @@ Paginile accesate pentru autentificare și înregistrare sunt \texttt{autentific
 
 \vfill
 
-Pentru exemplificare este atașată mai jos sursa fișierului responsabil de verificarea autentificării.
+Pentru exemplificare este atașată mai jos sursa fișierului responsabil de verificarea autentificării:
 
 \begin{lstlisting}
 <?php
@@ -456,8 +457,7 @@ pe care utilizatorii le pot vizita.
 	\label{fig:nav-mobil}
 \end{figure}
 
-Pentru ecrane de rezoluție mică, precum cele de telefon sau tabletă, 
-bara de navigație își schimbă forma și poate fi extinsă sau micșorată la nevoie, 
+Pentru ecrane de rezoluție mică, precum cele de telefon sau tabletă, bara de navigație își schimbă forma și poate fi extinsă sau micșorată la nevoie, 
 folosind butonul din dreapta-sus [Figura \ref{fig:nav-mobil}].
 
 \subsection{Sistemul de mesagerie}
@@ -465,7 +465,7 @@ Funcționalitatea centrală a proiectului este sistemul de mesagerie în timp re
 Acesta permite trimiterea de mesaje text către orice alt utilizator al \textbf{Chatbox}.
 
 \subsubsection{Interfața specifică}
-Ca să se păstreze stilul minimalist, interfața are un design simplu și funcțional. 
+Ca să păstreze stilul minimalist, interfața are un design simplu și funcțional. 
 Ecranul este împărțit între o listă cu ceilalți utilizatori și o căsuță unde apar mesajele
 din conversația curentă. 
 
@@ -486,7 +486,7 @@ din conversația curentă.
         \caption{Interfața sistemului de mesagerie}%\label{fig:animals}
 \end{figure}
 
-Se poate schimba utilizatorul curent prin selectarea unui altul, folosind un simplu \textit{click}. Utilizatorul activ este afișat în partea de sus a căsuței cu mesaje. 
+Se poate selecta un alt utilizator, folosind un simplu \textit{click}. Utilizatorul activ este afișat în partea de sus a căsuței cu mesaje. 
 
 \begin{figure}[h!]
         \centering
@@ -656,26 +656,53 @@ Pentru a verifica corectitudinea și eficiența algoritmilor folosiți de \textb
 am realizat un sistem ce generează date și construiește grafice prin care ele sunt vizualizate. 
 
 \subsubsection{Generatorul de date}
-Generatorul de date este un subprogram !!!!!
+Generatorul de date combină două module cu un scop comun: fabricarea unui conținut 
+credibil, în proporții mari. 
+
+Prima componentă este un generator de nume. Datele sunt adunate din listele de pe  
+enciclopedia Wikipedia și folosite pentru a da un nume utilizatorilor ficționali.
+
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=0.6\textwidth]{img/gen_nume.jpg}
+	\caption{Generatorul de nume}
+\end{figure} 
+
+A doua componentă este generatorul de text, care generează fraze aleatoare ce 
+se încadrează într-o anumită definiție. Sunt generate poeme japoneze de tip „haiku” și titluri de tabloide românești.
+
+\vfill
+
+Folosind acest sistem, au fost generate 800.000 de mesaje și 300.000 de sesiuni, pentru 300 de utilizatori. 
+
+O demonstrație a acestor module este disponibilă la adresa: \\
+\center\texttt{\large penultim.ddns.net/chatbox/generator.php}.
+
+Codul complet pentru aceste generatoare poate fi găsit la adresa: \\
+\center\texttt{\large github.com/gabriel-v/GeneratorConversatii}.
+
+\newpage
 \subsubsection{Vizualizarea datelor prin grafice}
 
-\begin{wrapfigure}{R}{0.47\textwidth}
-	\centering
-	\vspace{-7px}
-	\includegraphics[width=0.50\textwidth]{img/stat.jpg}
-	\vspace{-7px}
-	\caption{Grafic rezultat dintr-o interogare SQL}
-\end{wrapfigure}
 
 Vizualizarea datelor joacă un rol foarte important în înțelegerea lor. \\[0.34cm]
 
 Sistemul creează câte o vizualizare a datelor numerice rezultate dintr-o interogare SQL. Procedeul este inovativ prin faptul că se poate alipi unei infrastructuri deja existente pentru a genera grafice cu datele prezente. \\[0.34cm]
 
-Întreaga analiză a bazelor de date poate fi găsită la adresa: \\[0.5cm]
-\texttt{penultim.ddns.net/\\chatbox/statistici.php}.
 
+\begin{figure}[!h]
+	\centering
+	\vspace{-7px}
+	\includegraphics[width=0.40\textwidth]{img/stat.jpg}
+	\vspace{-7px}
+	\caption{Grafic rezultat dintr-o interogare SQL}
+\end{figure}
+
+Întreaga analiză a bazelor de date poate fi găsită la adresa:\\
+\center\texttt{\large penultim.ddns.net/chatbox/statistici.php}.
 
 \newpage
+
 \section{Bibliografie}
 \begingroup
 \renewcommand{\section}[2]{}%
