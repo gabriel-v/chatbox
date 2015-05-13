@@ -155,7 +155,7 @@ programe PHP. \textbf{Chatbox} folosește  în mod exclusiv componenta PDO pentr
 accesarea bazei de date. 
 
 \subsubsection{Librăria Ratchet}
-Websocket\citep{websocket} este un protocol ce furnizează o conexiune full-duplex prin o legatură TCP. Tehnologia Websocket a fost dezvoltată odata cu inițiativa de 
+Websocket\citep{websocket} este un protocol ce furnizează o conexiune full-duplex prin o legatură TCP. Tehnologia Websocket a fost dezvoltată odată cu inițiativa de 
 inovare HTML5. 
 
 Folosind tehnologia Websocket, se pot trimite date în timp real între 
@@ -168,10 +168,10 @@ Websocket în limbajul PHP.
 \subsection{Limbajul JavaScript}
 JavaScript (sau ECMAScript) este un limbaj de programare orientat pe obiecte\citep{javascript} ce rulează  în browserele utilizatorilor. 
 
-Limbajul este binecunoscut pentru folosirea sa în construirea paginilor Web. În ciuda numelui și a unor similarități în sintaxă, între \textit{JavaScript} și limbajul \textit{Java} nu există nicio legătură.
+Limbajul este binecunoscut pentru folosirea sa în construirea paginilor Web. În ciuda numelui și a unor similarități în sintaxa codului, între \textit{JavaScript} și limbajul \textit{Java} nu există nicio legătură.
 
 \subsubsection{Tehnica AJAX}
-O tehnică de construire a paginilor web tot mai întâlnită în ultimul timp este AJAX, abreviere de la „Asynchronous JavaScript and XML”. Această tehnică constă în executarea de cereri HTTP în fundal, fără a reîncărca toată pagina Web, și actualizarea numai anumitor porțiuni ale paginii.
+O tehnică de construire a paginilor web tot mai întâlnită în ultimul timp este AJAX, abreviere de la „Asynchronous JavaScript and XML”. Această tehnică constă în executarea de cereri HTTP în fundal, fără a reîncărca toată pagina Web, și actualizarea numai a anumitor porțiuni ale paginii.
 
 \textbf{Chatbox} folosește tehnica AJAX pentru a încărca o multitudine de
 elemente, precum textul mesajelor primite sau lista de utilizatori activi. 
@@ -185,21 +185,21 @@ unor grafice în mod dinamic. Graficele sunt redimensionate, la nevoie, după
 mărimea ecranului clientului. 
 
 Proiectul \textbf{Chatbox} foloseste chart.js pentru afișarea rezultatelor
-numerice a unor interogări SQL și pentru vizualizarea de statistici.
+numerice ale unor interogări SQL și pentru vizualizarea de statistici.
 
 \subsubsection{Librăria Bootstrap}
-Bootstrap este cel mai popular framework de HTML, CSS, și JavaScript dedicat dezvoltării proiectelor Web. 
+Bootstrap este cel mai popular framework de HTML, CSS și JavaScript dedicat dezvoltării proiectelor Web. 
 
-Bootstrap permite aranjarea elementelor grafice într-un mod potrivit mărimii ecranului vizitatorului. Astfel, site-ul va fi afișat corect atât pe calculatoare Desktop, cat și pe tablete și telefoane.
+Bootstrap permite aranjarea elementelor grafice într-un mod potrivit mărimii ecranului vizitatorului. Astfel, site-ul va fi afișat corect atât pe calculatoare Desktop, cât și pe tablete sau telefoane.
 
 \subsection{Limbajul Python}
 Python este un limbaj de programare dinamic multi-paradigmă\cite{python}, creat în 1989 de către programatorul olandez Guido van Rossum\cite{pythonWiki}.
 
-Python pune accentul pe curățenia și simplitatea codului, iar sintaxa sa le permite dezvoltatorilor să exprime unele idei programatice într-o manieră cât mai clară și mai concisă.
+Python pune accent pe acuratețea și simplitatea codului, iar sintaxa sa le permite dezvoltatorilor să exprime idei programatice într-o manieră cât mai clară și mai concisă.
 
 Generatorul de date folosit de \textbf{Chatbox} este implementat în Python 3.
 
-\subsection{Despre serverul Linux}
+\subsection{Serverul Linux}
 Codul proiectului \textbf{Chatbox} rulează pe un calculator personal
  \textit{HP Compaq 6005 Pro}
 care servește, printre altele, drept server Web. 
@@ -216,12 +216,12 @@ Pentru a dispune de o adresă permanentă a acestui server,
 am folosit serviciile de DNS dinamic ale companiei NoIP\cite{noip}.
 
 \subsubsection{Sistemul de operare Debian 8}
-Debian\cite{debian} este un sistem de operare compus din software liber\cite{free}, și o distribuție populară și foarte influentă între distribuțiile GNU/Linux.
+Debian\cite{debian} este un sistem de operare compus din software liber\cite{free} și reprezintă totodată o distribuție populară și foarte influentă între distribuțiile GNU/Linux.
 
 Versiunea 8 a sistemului de operare este cunoscută în prezent sub 
 numele de \textit{testing}. Pachetele de software pentru versiunea 
 \textit{testing} sunt, după cum sugerează și numele, în curs de testare.
-Totusi, sunt suficient de stabile pentru modul  în care 
+Totuși, sunt suficient de stabile pentru modul  în care 
 este utilizat acest sistem.
 
 \subsubsection{Serverul HTTP Apache 2}
@@ -230,14 +230,14 @@ industria de Web Hosting, fiind cel mai folosit server HTTP, susținând
 53.34\% din site-urile Web\cite{apache53}.
 
 \subsubsection{Sistemul de monitorizare daemontools}
-Daemontools\cite{daemon} este o colecție de unelte software folosite pentru 
+Daemontools\cite{daemon} este o colecție de instrumente software folosite pentru 
 controlul și monitorizarea serviciilor UNIX. 
 
 Daemontools este folosit de \textbf{Chatbox} pentru a monitoriza serverul 
 de \textit{websockets} și a-l reporni  în eventualitatea unei erori.
 
 \subsection{Procesorul \LaTeX}
-Acest document a fost compus folosind sistemul ~ \LaTeX ~ care permite prepararea
+Acest document a fost compus folosind procesorul ~ \LaTeX ~ care permite pregătirea
 acestuia pentru tipărire în format electronic,
 cu ajutorul limbajului de programare ~ \TeX.
 
@@ -250,9 +250,8 @@ Web în general, cât și despre sistemele de transmitere de date în timp real.
 
 \subsection{Baza de date}
 Sistemul \textbf{Chatbox} stochează  în baza de date toate detaliile interacționării
-utilizatorilor cu acesta. Informatiile sunt atât funcționale 
-(conținutul mesajelor trimise), cât și statistici (ce sistem de operare a fost folosit pentru
-autentificarea unui utilizator).
+utilizatorilor cu acesta. Informațiile sunt atât de conținut 
+(mesajele trimise), cât și metadate (\textit{exemplu}: ce sistem de operare a fost folosit de către un anumit utilizator).
 
 %Schema bazei de date MySQL este compusă din 3 tabele: 
 %\texttt{utilizatori}, \texttt{sesiuni} și \texttt{mesaje}.
@@ -310,7 +309,7 @@ serverul Websocket.
 \end{figure}
 
 \subsection{Sistemul de autentificare}
-Pentru a folosi serviciul de mesagerie, un utilizator trebuie să fie înregistrat și autentificat. Înregistrarea este libera; singurele date necesare sunt numele de utilizator
+Pentru a folosi serviciul de mesagerie, un utilizator trebuie să fie înregistrat și autentificat. Înregistrarea este liberă; singurele date necesare sunt numele de utilizator
 și o parolă.
 
 \begin{figure}[h!]
@@ -334,7 +333,7 @@ Pentru a folosi serviciul de mesagerie, un utilizator trebuie să fie înregistr
 În cazul  în care apar erori în procesul creării contului sau în procesul autentificării,
 utilizatorul va primi o înștiințare pe fundal roșu care explică situația.
 
-Aceste verificări se fac pe server,  în cate un script PHP, pentru verificarea autentificării, respectiv a inregistrării. 
+Aceste verificări se fac pe server,  în câte un script PHP, pentru verificarea autentificării, respectiv a înregistrării. 
 
 \begin{figure}[h!]
         \centering
@@ -358,7 +357,7 @@ Paginile accesate pentru autentificare și înregistrare sunt \texttt{autentific
 
 \vfill
 
-Pentru exemplificare este atașată mai jos sursa fișierului responsabil de verificarea autentificării.
+Pentru exemplificare este atașată mai jos sursa fișierului responsabil de verificarea autentificării:
 
 \begin{lstlisting}
 <?php
@@ -456,8 +455,7 @@ pe care utilizatorii le pot vizita.
 	\label{fig:nav-mobil}
 \end{figure}
 
-Pentru ecrane de rezoluție mică, precum cele de telefon sau tabletă, 
-bara de navigație își schimbă forma și poate fi extinsă sau micșorată la nevoie, 
+Pentru ecrane de rezoluție mică, precum cele de telefon sau tabletă, bara de navigație își schimbă forma și poate fi extinsă sau micșorată la nevoie, 
 folosind butonul din dreapta-sus [Figura \ref{fig:nav-mobil}].
 
 \subsection{Sistemul de mesagerie}
@@ -465,7 +463,7 @@ Funcționalitatea centrală a proiectului este sistemul de mesagerie în timp re
 Acesta permite trimiterea de mesaje text către orice alt utilizator al \textbf{Chatbox}.
 
 \subsubsection{Interfața specifică}
-Ca să se păstreze stilul minimalist, interfața are un design simplu și funcțional. 
+Ca să păstreze stilul minimalist, interfața are un design simplu și funcțional. 
 Ecranul este împărțit între o listă cu ceilalți utilizatori și o căsuță unde apar mesajele
 din conversația curentă. 
 
@@ -486,7 +484,7 @@ din conversația curentă.
         \caption{Interfața sistemului de mesagerie}%\label{fig:animals}
 \end{figure}
 
-Se poate schimba utilizatorul curent prin selectarea unui altul, folosind un simplu \textit{click}. Utilizatorul activ este afișat în partea de sus a căsuței cu mesaje. 
+Se poate selecta un alt utilizator, folosind un simplu \textit{click}. Utilizatorul activ este afișat în partea de sus a căsuței cu mesaje. 
 
 \begin{figure}[h!]
         \centering

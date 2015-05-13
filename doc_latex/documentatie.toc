@@ -11,7 +11,7 @@
 \contentsline {subsubsection}{\numberline {2.3.3}Libr\IeC {\u a}ria chart.js}{3}
 \contentsline {subsubsection}{\numberline {2.3.4}Libr\IeC {\u a}ria Bootstrap}{3}
 \contentsline {subsection}{\numberline {2.4}Limbajul Python}{3}
-\contentsline {subsection}{\numberline {2.5}Despre serverul Linux}{4}
+\contentsline {subsection}{\numberline {2.5}Serverul Linux}{4}
 \contentsline {subsubsection}{\numberline {2.5.1}Sistemul de operare Debian 8}{4}
 \contentsline {subsubsection}{\numberline {2.5.2}Serverul HTTP Apache 2}{4}
 \contentsline {subsubsection}{\numberline {2.5.3}Sistemul de monitorizare daemontools}{4}
