@@ -673,13 +673,13 @@ se încadrează într-o anumită definiție. Sunt generate poeme japoneze de tip
 
 \vfill
 
-Folosind acest sistem, au fost generate 800.000 de mesaje și 300.000 de sesiuni, pentru 300 de utilizatori. 
+Folosind acest sistem, au fost generate 800.000 de mesaje și 300.000 de sesiuni, pentru 300 de utilizatori. \\[0.7cm]
 
 O demonstrație a acestor module este disponibilă la adresa: \\
-\center\texttt{\large penultim.ddns.net/chatbox/generator.php}.
+\texttt{penultim.ddns.net/chatbox/generator.php}.
 
 Codul complet pentru aceste generatoare poate fi găsit la adresa: \\
-\center\texttt{\large github.com/gabriel-v/GeneratorConversatii}.
+\texttt{github.com/gabriel-v/GeneratorConversatii}.
 
 \newpage
 \subsubsection{Vizualizarea datelor prin grafice}
@@ -693,13 +693,13 @@ Sistemul creează câte o vizualizare a datelor numerice rezultate dintr-o inter
 \begin{figure}[!h]
 	\centering
 	\vspace{-7px}
-	\includegraphics[width=0.40\textwidth]{img/stat.jpg}
+	\includegraphics[width=0.60\textwidth]{img/stat.jpg}
 	\vspace{-7px}
 	\caption{Grafic rezultat dintr-o interogare SQL}
 \end{figure}
 
 Întreaga analiză a bazelor de date poate fi găsită la adresa:\\
-\center\texttt{\large penultim.ddns.net/chatbox/statistici.php}.
+\texttt{penultim.ddns.net/chatbox/statistici.php}.
 
 \newpage
 
