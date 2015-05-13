@@ -94,9 +94,9 @@
 \end{figure}
 
 \vspace{3mm}
-Inspirație pentru acest proiect sunt serviciile de „mesagerie instantanee”
+Acest proiect a fost inspirat de serviciile de „mesagerie instantanee”
 precum \textit{Y!Messenger}, \textit{Google Talk} sau 
-\textit{Facebook Messenger}, pentru a numi câteva.
+\textit{Facebook Messenger}.
 %\vfill
 
 \begin{figure}[h!]
@@ -166,7 +166,7 @@ Ratchet\citep{ratchet} este o librărie ce permite utilizarea protocolului
 Websocket în limbajul PHP.
 
 \subsection{Limbajul JavaScript}
-JavaScript (sau ECMAScript) este un limbaj de programare orientat pe obiecte\citep{javascript}, ce rulează  în browserele utilizatorilor. 
+JavaScript (sau ECMAScript) este un limbaj de programare orientat pe obiecte\citep{javascript} ce rulează  în browserele utilizatorilor. 
 
 Limbajul este binecunoscut pentru folosirea sa în construirea paginilor Web. În ciuda numelui și a unor similarități în sintaxă, între \textit{JavaScript} și limbajul \textit{Java} nu există nicio legătură.
 
@@ -174,7 +174,7 @@ Limbajul este binecunoscut pentru folosirea sa în construirea paginilor Web. Î
 O tehnică de construire a paginilor web tot mai întâlnită în ultimul timp este AJAX, abreviere de la „Asynchronous JavaScript and XML”. Această tehnică constă în executarea de cereri HTTP în fundal, fără a reîncărca toată pagina Web, și actualizarea numai anumitor porțiuni ale paginii.
 
 \textbf{Chatbox} folosește tehnica AJAX pentru a încărca o multitudine de
-elemente, precum mesajele text primite sau lista de utilizatori activi. 
+elemente, precum textul mesajelor primite sau lista de utilizatori activi. 
 
 \subsubsection{Librăria jQuery}
 jQuery\citep{jquery} este o platformă de dezvoltare JavaScript, concepută pentru a ușura și îmbunătăți procese precum traversarea arborelui DOM\citep{dom} în HTML, managementul evenimentelor, animații și cereri de tip AJAX.
@@ -182,7 +182,7 @@ jQuery\citep{jquery} este o platformă de dezvoltare JavaScript, concepută pent
 \subsubsection{Librăria chart.js}
 Chart.js\cite{chartjs} este o librărie JavaScript ce permite afișarea 
 unor grafice în mod dinamic. Graficele sunt redimensionate, la nevoie, după 
-marimea ecranului clientului. 
+mărimea ecranului clientului. 
 
 Proiectul \textbf{Chatbox} foloseste chart.js pentru afișarea rezultatelor
 numerice a unor interogări SQL și pentru vizualizarea de statistici.
@@ -190,14 +190,14 @@ numerice a unor interogări SQL și pentru vizualizarea de statistici.
 \subsubsection{Librăria Bootstrap}
 Bootstrap este cel mai popular framework de HTML, CSS, și JavaScript dedicat dezvoltării proiectelor Web. 
 
-Bootstrap permite aranjarea elementelor grafice într-un mod potrivit mărimii ecranului vizitatorului. Astfel, site-ul va fi afișat satisfăcător atât pe calculatoare Desktop, cat și pe tablete și telefoane.
+Bootstrap permite aranjarea elementelor grafice într-un mod potrivit mărimii ecranului vizitatorului. Astfel, site-ul va fi afișat corect atât pe calculatoare Desktop, cat și pe tablete și telefoane.
 
 \subsection{Limbajul Python}
-Python este un limbaj de programare dinamic multi-paradigmă\cite{python}, creat în 1989 de programatorul olandez Guido van Rossum\cite{pythonWiki}.
+Python este un limbaj de programare dinamic multi-paradigmă\cite{python}, creat în 1989 de către programatorul olandez Guido van Rossum\cite{pythonWiki}.
 
 Python pune accentul pe curățenia și simplitatea codului, iar sintaxa sa le permite dezvoltatorilor să exprime unele idei programatice într-o manieră cât mai clară și mai concisă.
 
-Generatorul de date folosit de \textbf{Chatbox} este implementat  în Python 3.
+Generatorul de date folosit de \textbf{Chatbox} este implementat în Python 3.
 
 \subsection{Despre serverul Linux}
 Codul proiectului \textbf{Chatbox} rulează pe un calculator personal
@@ -433,7 +433,7 @@ Bootstrap are la centrul său conceptul de „responsive web design\cite{rwd}”
 vizuale pentru a „răspunde” cât mai bine la tipul de terminal folosit. Astfel, site-ul va avea altă structură dacă este afișat pe un Desktop PC, decât dacă este afișat pe un ecran de telefon.
 
 Pentru exemplificare, comparați modul de afișare al modulului de mesagerie, între 
-raspunsul site-ului pentru un Desktop PC [pagina \pageref{fig:overview}, Figura \ref{fig:overview}] și un ecran de telefon mobil [Figura \ref{fig:mobil}].
+raspunsul site-ului pentru un Desktop PC (pagina \pageref{fig:overview}, Figura \ref{fig:overview}) și un ecran de telefon mobil (Figura \ref{fig:mobil}).
 
 \subsubsection{Bara de navigație}
 Bara albastră din partea de sus a ecranului este prezentă în fiecare pagină  
@@ -652,11 +652,29 @@ $server->run();
 \newpage
 
 \subsection{Generarea și vizualizarea datelor}
-DE FACUT
+Pentru a verifica corectitudinea și eficiența algoritmilor folosiți de \textbf{Chatbox}, 
+am realizat un sistem ce generează date și construiește grafice prin care ele sunt vizualizate. 
+
 \subsubsection{Generatorul de date}
-DE FACUT
+Generatorul de date este un subprogram !!!!!
 \subsubsection{Vizualizarea datelor prin grafice}
-DE FACUT
+
+\begin{wrapfigure}{R}{0.47\textwidth}
+	\centering
+	\vspace{-7px}
+	\includegraphics[width=0.50\textwidth]{img/stat.jpg}
+	\vspace{-7px}
+	\caption{Grafic rezultat dintr-o interogare SQL}
+\end{wrapfigure}
+
+Vizualizarea datelor joacă un rol foarte important în înțelegerea lor. \\[0.34cm]
+
+Sistemul creează câte o vizualizare a datelor numerice rezultate dintr-o interogare SQL. Procedeul este inovativ prin faptul că se poate alipi unei infrastructuri deja existente pentru a genera grafice cu datele prezente. \\[0.34cm]
+
+Întreaga analiză a bazelor de date poate fi găsită la adresa: \\[0.5cm]
+\texttt{penultim.ddns.net/\\chatbox/statistici.php}.
+
+
 \newpage
 \section{Bibliografie}
 \begingroup
