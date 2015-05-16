@@ -2,6 +2,10 @@ chatbox
 =======
 Serviciu de mesagerie
 
+## [DOCUMENTAȚIE](doc_latex/documentatie.pdf)
+
+Documentația a fost creată în limbajul TEX folosind procesorul latex2pdf. 
+
 ### Motivație
 
 Proiectul a fost conceput 
@@ -35,4 +39,4 @@ ar fi Facebook sau Y! Messenger.
 * javascript + jQuery
 * websockets: [ratchet](http://socketo.me/)
 
-### [DOCUMENTAȚIE](doc_latex/documentatie.pdf)
+
