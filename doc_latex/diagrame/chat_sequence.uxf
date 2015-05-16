@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.2">
+  <help_text>// Uncomment the following line to change the fontsize and font:
+fontsize=16
+// fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+fontfamily=Serif
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use +/- or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>198</y>
+      <w>27</w>
+      <h>1026</h>
+    </coordinates>
+    <panel_attributes>lt=.
+group=5</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>288</x>
+      <y>162</y>
+      <w>126</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>BROWSER
+javascript
+group=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>198</y>
+      <w>27</w>
+      <h>1026</h>
+    </coordinates>
+    <panel_attributes>lt=.
+group=5</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>468</x>
+      <y>162</y>
+      <w>126</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>WEB SERVER
+apache 2 + php
+group=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>702</x>
+      <y>198</y>
+      <w>27</w>
+      <h>1035</h>
+    </coordinates>
+    <panel_attributes>lt=.
+group=5</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>648</x>
+      <y>162</y>
+      <w>126</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>BAZA DE DATE
+MySQL 
+group=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>891</x>
+      <y>198</y>
+      <w>27</w>
+      <h>1035</h>
+    </coordinates>
+    <panel_attributes>lt=.
+group=5</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>810</x>
+      <y>162</y>
+      <w>189</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>WEBSOCKET SERVER
+Ratchet
+group=5</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>234</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+formular 
+înregistrare
+group=4</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>243</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+verificarea
+îregistrării
+group=4</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>297</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+rezultatul
+înregistrării
+group=4</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>306</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+redirect home.php
+(sau afișează eroarea)
+group=4</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>432</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+redirect home.php
+(sau afișează o eroare)
+group=3</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>432</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+rezultatul 
+verificării
+group=3</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>378</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+verificarea 
+autentificării
+group=3</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>369</y>
+      <w>207</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+autentificare
+group=3</panel_attributes>
+    <additional_attributes>210.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>180</x>
+      <y>216</y>
+      <w>648</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>ÎNREGISTRARE
+group=4</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>180</x>
+      <y>360</y>
+      <w>648</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>AUTENTIFICARE
+group=3</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>702</x>
+      <y>990</y>
+      <w>144</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+execută
+interogarea
+group=6</panel_attributes>
+    <additional_attributes>10.0;40.0;30.0;50.0;50.0;40.0;50.0;20.0;30.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>702</x>
+      <y>252</y>
+      <w>117</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+verifică
+datele
+
+group=4</panel_attributes>
+    <additional_attributes>10.0;40.0;30.0;50.0;50.0;40.0;50.0;20.0;30.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>702</x>
+      <y>387</y>
+      <w>117</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+verifică
+datele
+
+group=3</panel_attributes>
+    <additional_attributes>10.0;40.0;30.0;50.0;50.0;40.0;50.0;20.0;30.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>522</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+adaugă sesiune
+(AJAX)
+group=2</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>612</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+returnează cheia
+(raspuns AJAX)
+group=2</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>567</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+salvează sesiunea
+
+group=2</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>522</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+generează datele 
+sesiunii
+
+group=2</panel_attributes>
+    <additional_attributes>10.0;40.0;30.0;50.0;50.0;40.0;50.0;20.0;30.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>702</x>
+      <y>567</y>
+      <w>207</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+- salvează sesiunea;
+- marchează 
+  utilizatorul
+  ca online
+group=2</panel_attributes>
+    <additional_attributes>10.0;50.0;30.0;60.0;50.0;50.0;50.0;30.0;30.0;20.0;10.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>603</y>
+      <w>207</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+confirmare
+group=2</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>648</y>
+      <w>576</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+conectare websocket
+(folosind cheia)
+group=2</panel_attributes>
+    <additional_attributes>10.0;20.0;620.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>666</x>
+      <y>684</y>
+      <w>63</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+group=2</panel_attributes>
+    <additional_attributes>50.0;40.0;30.0;50.0;10.0;40.0;10.0;20.0;30.0;10.0;50.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>702</x>
+      <y>675</y>
+      <w>216</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+verifică cheia
+sesiunii
+group=2</panel_attributes>
+    <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>702</x>
+      <y>711</y>
+      <w>216</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+confirmă
+identitatea
+group=2</panel_attributes>
+    <additional_attributes>10.0;20.0;220.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>891</x>
+      <y>720</y>
+      <w>144</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+adaugă
+utilizatorul 
+în listă
+group=2</panel_attributes>
+    <additional_attributes>10.0;40.0;30.0;50.0;50.0;40.0;50.0;20.0;30.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>846</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+trimite mesaj
+(AJAX)
+group=1</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>882</y>
+      <w>576</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+trimite mesaj
+(Websocket)
+group=1</panel_attributes>
+    <additional_attributes>10.0;20.0;620.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>855</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+salvează mesajul
+
+group=1</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>891</x>
+      <y>891</y>
+      <w>135</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+transmite
+mesajul
+group=1</panel_attributes>
+    <additional_attributes>10.0;40.0;30.0;50.0;50.0;40.0;50.0;20.0;30.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>891</x>
+      <y>765</y>
+      <w>162</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+anunță ceilalți 
+utilizatori 
+group=2</panel_attributes>
+    <additional_attributes>10.0;40.0;30.0;50.0;50.0;40.0;50.0;20.0;30.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>180</x>
+      <y>504</y>
+      <w>873</w>
+      <h>315</h>
+    </coordinates>
+    <panel_attributes>MESAGERIE 
+
+Imediat după 
+autentificare
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>180</x>
+      <y>837</y>
+      <w>855</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>MESAGERIE 
+
+Trimiterea 
+unui mesaj
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>972</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+solicită mesajele
+(AJAX)
+group=6</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>981</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+rulează 
+interogarea
+group=6</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>522</x>
+      <y>1017</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+returnează
+rezultatele
+group=6</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>1026</y>
+      <w>207</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+returnează rezulatele
+(raspuns AJAX)
+group=6</panel_attributes>
+    <additional_attributes>10.0;20.0;210.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>1053</y>
+      <w>180</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+afișează mesajul
+group=6</panel_attributes>
+    <additional_attributes>10.0;40.0;30.0;50.0;50.0;40.0;50.0;20.0;30.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>180</x>
+      <y>963</y>
+      <w>657</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>MESAGERIE
+
+Afișarea 
+mesajelor
+vechi
+group=6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>1125</y>
+      <w>576</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+primire mesaj 
+(Websocket)
+group=7</panel_attributes>
+    <additional_attributes>10.0;20.0;620.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>1143</y>
+      <w>180</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+afișează mesajul
+group=7</panel_attributes>
+    <additional_attributes>10.0;40.0;30.0;50.0;50.0;40.0;50.0;20.0;30.0;10.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>180</x>
+      <y>1125</y>
+      <w>747</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>MESAGERIE
+
+Primirea 
+unui mesaj
+in timp real
+group=7</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>459</x>
+      <y>27</y>
+      <w>360</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+&lt;&lt;operație asincronă&gt;&gt;
+</panel_attributes>
+    <additional_attributes>10.0;20.0;380.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>459</x>
+      <y>72</y>
+      <w>360</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+&lt;&lt;operație sincronizată&gt;&gt;
+(cu efect imediat)</panel_attributes>
+    <additional_attributes>10.0;20.0;380.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>891</x>
+      <y>0</y>
+      <w>54</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+timp</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;150.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLActor</id>
+    <coordinates>
+      <x>279</x>
+      <y>99</y>
+      <w>54</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -141,7 +141,7 @@ require_once("php/elemente.php");
                             Poate fi folosită pentru a îmbunătăți experiența utilizatorului, prin 
                             adaptarea sistemului la neajunsurile sau diferențele prezente în fiecare <b>browser</b>.
                         </p><p>
-                            Un faimos exemplu este <b>Internet Explorer</b>, care nu afișează corespunzător multiple
+                            Un faimos exemplu este <b>Internet Explorer</b>, care nu afișează corespunzător unele
                             elemente grafice. Acesta necesită directive speciale pentru a funcționa corespunzător.
                         </p>
                         <pre id="sesiuni-browser"></pre>

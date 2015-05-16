@@ -1,0 +1,33 @@
+\begin{titlepage}
+\begin{center}
+
+\textsc{\LARGE Colegiul Național \\[0.5cm] „Mihai Viteazul”}\\[1.5cm]
+
+\textsc{\Large Atestat la Informatică}\\[0.5cm]
+
+\HRule \\[0.4cm]
+{ \Huge \bfseries chatbox \\[0.4cm] }
+
+\HRule \\[1.5cm]
+
+\noindent
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Elev:}\\
+\textsc{Vîjială\\Tudor-Gabriel}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[b]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Profesor îndrumător:} \\
+\textsc{Stan\\ Mihaela-Veronica}
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+% Bottom of the page
+{\small 18 mai 2015}
+
+\end{center}
+\end{titlepage}

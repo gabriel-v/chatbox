@@ -1,0 +1,32 @@
+\select@language {romanian}
+\contentsline {section}{\numberline {1}Introducere}{1}
+\contentsline {section}{\numberline {2}Resurse logice}{2}
+\contentsline {subsection}{\numberline {2.1}Sistemul MySQL}{2}
+\contentsline {subsection}{\numberline {2.2}Limbajul PHP}{2}
+\contentsline {subsubsection}{\numberline {2.2.1}Libr\IeC {\u a}ria PDO}{2}
+\contentsline {subsubsection}{\numberline {2.2.2}Libr\IeC {\u a}ria Ratchet}{2}
+\contentsline {subsection}{\numberline {2.3}Limbajul JavaScript}{2}
+\contentsline {subsubsection}{\numberline {2.3.1}Tehnica AJAX}{3}
+\contentsline {subsubsection}{\numberline {2.3.2}Libr\IeC {\u a}ria jQuery}{3}
+\contentsline {subsubsection}{\numberline {2.3.3}Libr\IeC {\u a}ria chart.js}{3}
+\contentsline {subsubsection}{\numberline {2.3.4}Libr\IeC {\u a}ria Bootstrap}{3}
+\contentsline {subsection}{\numberline {2.4}Limbajul Python}{3}
+\contentsline {subsection}{\numberline {2.5}Serverul Linux}{4}
+\contentsline {subsubsection}{\numberline {2.5.1}Sistemul de operare Debian 8}{4}
+\contentsline {subsubsection}{\numberline {2.5.2}Serverul HTTP Apache 2}{4}
+\contentsline {subsubsection}{\numberline {2.5.3}Sistemul de monitorizare daemontools}{4}
+\contentsline {subsection}{\numberline {2.6}Procesorul \LaTeX }{4}
+\contentsline {section}{\numberline {3}Descrierea proiectului}{5}
+\contentsline {subsection}{\numberline {3.1}Baza de date}{5}
+\contentsline {subsection}{\numberline {3.2}Diagrama de secven\IeC {{\textcommabelow t}}\IeC {\u a}}{5}
+\contentsline {subsection}{\numberline {3.3}Sistemul de autentificare}{7}
+\contentsline {subsection}{\numberline {3.4}Interfa\IeC {{\textcommabelow t}}\IeC {\u a} grafic\IeC {\u a} \IeC {{\textcommabelow s}}i design}{9}
+\contentsline {subsubsection}{\numberline {3.4.1}Func\IeC {{\textcommabelow t}}ia de remodelare}{9}
+\contentsline {subsubsection}{\numberline {3.4.2}Bara de naviga\IeC {{\textcommabelow t}}ie}{9}
+\contentsline {subsection}{\numberline {3.5}Sistemul de mesagerie}{10}
+\contentsline {subsubsection}{\numberline {3.5.1}Interfa\IeC {{\textcommabelow t}}a specific\IeC {\u a}}{10}
+\contentsline {subsubsection}{\numberline {3.5.2}Serverul de websockets}{11}
+\contentsline {subsection}{\numberline {3.6}Generarea \IeC {{\textcommabelow s}}i vizualizarea datelor}{13}
+\contentsline {subsubsection}{\numberline {3.6.1}Generatorul de date}{13}
+\contentsline {subsubsection}{\numberline {3.6.2}Vizualizarea datelor prin grafice}{14}
+\contentsline {section}{\numberline {4}Bibliografie}{15}

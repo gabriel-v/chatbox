@@ -70,7 +70,7 @@ function init_websocket() {
              //   console.log("Adaugat mesaj: alta conversatie");
             }
         } else if (data.operatie === 'stare_utilizator') {
-            actualizare_utilizator({'id': data.id, 'stare': data.stare});
+            actualizare_utilizator({'id': data.id, 'stare': data.stare, 'nume': data.nume});
         } else {
             console.error("Eroare (websocket.onmessage): \n\
                 data.operatie nu este de tipul cunoscut");
