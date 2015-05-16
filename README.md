@@ -4,13 +4,17 @@ Serviciu de mesagerie
 
 ### Motivație
 
-Proiectul a fost conceput pentru atestatul de final de clasă a XII-a. Dupa cum 
-se poate vedea în grafice, am lucrat câte 2-3 zile o dată la 2 luni, 
+Proiectul a fost conceput 
+pentru Atestatul la Informatica
+de final de clasă a XII-a. Dupa cum 
+se poate vedea în graficele de pe github.com, 
+am lucrat câte 2-3 zile o dată la 2 luni, 
 începând din octombrie 2014.
 
 ### Funcționalitate
 
-**chatbox** este o aplicație web de mesagerie inspirată de servicii cum 
+**chatbox** este o aplicație de mesagerie
+Web inspirată de servicii precum 
 ar fi Facebook sau Y! Messenger.
 
 **chatbox** dispune de următoarele caracteristici:
@@ -24,6 +28,8 @@ ar fi Facebook sau Y! Messenger.
 ### Tehnologii folosite:
 * html5
 * css3
+* bootstrap 3
+* chart.js
 * MySQL
 * php5  
 * javascript + jQuery
