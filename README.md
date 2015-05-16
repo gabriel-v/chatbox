@@ -34,3 +34,5 @@ ar fi Facebook sau Y! Messenger.
 * php5  
 * javascript + jQuery
 * websockets: [ratchet](http://socketo.me/)
+
+### [DOCUMENTAȚIE](doc_latex/documentatie.pdf)
